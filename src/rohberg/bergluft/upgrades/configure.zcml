@@ -1,0 +1,26 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
+    xmlns:zcml="http://namespaces.zope.org/zcml"
+    i18n_domain="plonetheme.onegov">
+
+    <include package="ftw.upgrade" file="meta.zcml" />
+
+    <upgrade-step:importProfile
+        title="register css-file"
+        profile="rohberg.bergluft:default"
+        source="*"
+        destination="1001"
+        directory="profiles/1001"
+        />
+
+    <upgrade-step:importProfile
+        title="register css-file"
+        profile="rohberg.bergluft:default"
+        source="*"
+        destination="1002"
+        directory="profiles/1002"
+        />
+	  
+</configure>

@@ -1,0 +1,76 @@
+<rules
+    xmlns="http://namespaces.plone.org/diazo"
+    xmlns:css="http://namespaces.plone.org/diazo/css"
+    xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+	xmlns:xi="http://www.w3.org/2001/XInclude">
+    <!-- Include the backend theme -->
+    <xi:include href="rules_backend.xml" />
+
+    <!-- Only theme front end pages -->
+    <rules css:if-content="body.userrole-anonymous">		  
+    <!-- <rules css:if-content="#visual-portal-wrapper"> -->
+
+	  
+	    <theme href="index.html" />
+		<!-- <theme href="theme/cards.html" css:if-content=".card"/> -->
+	
+	    <rules css:if-content="#portal-top">
+	      <!-- Attributes -->
+	      <copy attributes="*" css:theme="html" css:content="html" />
+	      <!-- Base tag -->
+	      <before css:theme="title" css:content="base" />
+	      <!-- Title -->
+	      <replace css:theme="title" css:content="title" />
+	      <!-- Pull in Plone Meta -->
+	      <after css:theme-children="head" css:content="head meta" />
+	      <!-- Don't use Plone icons, use the theme's -->
+	      <!-- <drop css:content="head link[rel='apple-touch-icon']" />
+	      <drop css:content="head link[rel='shortcut icon']" /> -->
+	      <!-- CSS -->
+	      <!-- <after css:theme-children="head" css:content="head link" /> -->
+	      <!-- <after css:theme-children="head" css:content="head style" /> -->
+	      <!-- Script -->
+	      <!-- <after css:theme-children="head" css:content="head script" /> -->
+	  
+		  <after css:theme-children="head" css:content="head link[rel='canonical']" />
+	    </rules>
+	
+	    <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
+	    <copy attributes="*" css:content="body" css:theme="body" />
+	
+		<!-- header -->
+		<replace css:theme-children=".site_branding .front_page" css:content-children=".portlet-static-sitebranding-1 .portletContent"/>	
+		<replace css:theme-children=".site_branding .content_page" css:content-children=".portlet-static-sitebranding-2 .portletContent"/>		
+	    <replace css:theme="#portal-logo a" css:content="#portal-logo" />
+		<drop attributes="id" css:content="#portal-logo" />		
+		<drop attributes="title" css:content="#portal-logo img" />		
+	
+		<!--intro -->
+		<!-- <replace css:theme-children=".content_head" css:content=".documentFirstHeading, .documentDescription"/> -->
+		<drop attributes="title" css:content="#portal-languageselector a" />
+	    <replace css:theme-children="#languageselector ul" css:content-children="#portal-languageselector" />
+	    <replace css:theme-children="#global_navi .navbar-nav" css:content-children="#portal-globalnav" />
+
+		<!-- overview -->
+	    <replace css:theme-children="#overview div.overview_inner" css:content="#content" />
+		<!-- folder view -->
+		<drop attributes="title" css:content=".tileHeadline a" />
+	
+		<replace css:content-children=".load-portlet-blog">
+		  <xsl:for-each select="//section[@class='portlet portletCollection portlet-collection-blog']/ul/li/a">
+		    <xsl:copy-of select="." />
+		  	<br/>
+		  </xsl:for-each>
+		</replace>
+		<drop css:content="div.documentActions" />
+	
+		<!-- details -->
+		<replace css:theme-children="div.details_inner" />
+	
+		<replace css:theme-children="div.footer_inner" css:content-children=".portlet-static-footer-2 section.portletContent"/>
+
+
+	</rules>
+
+	<!-- DEBUG: Comment the following before deploying -->
+</rules>

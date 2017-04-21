@@ -1,0 +1,364 @@
+// Bootstrap overrides
+//
+// Copy variables from `_variables.scss` to this file to override default values
+// without modifying source files.
+
+$sky-blue: #3b69be;
+$sky-blue-light: lighten($sky-blue, 20%);
+
+$body-bg:    #fff;
+$body-color: $gray-dark;
+
+
+// utilities
+// ********************
+@mixin highlight {
+	background-color: rgba(109, 28, 233, 0.2);
+}
+.highlight {
+    @include highlight;
+}
+// end utilities
+
+// overwrites and additons to bootstrap
+.sticky-top {
+	position: -webkit-sticky; 
+}
+
+
+.screen_reader_text {
+	clip: rect(1px, 1px, 1px, 1px);
+	height: 1px;
+	overflow: hidden;
+	position: absolute !important;
+	width: 1px;
+	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.discreet {
+	font-size: 75%;
+}
+a[class^="icon-"], a[class*=" icon-"] {
+	text-decoration: none;
+	line-height: 1.5;
+}
+
+// *** header
+.site_header {
+    background-color: $gray-dark;
+	display: none;
+}
+.custom_header {
+//	height: 20vh;
+	max-height: 100%;
+	overflow: hidden;
+}
+.custom_header_media {
+
+	img {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+}
+// end header
+
+// *
+// site branding
+
+.site_branding {
+	color: $body-bg;
+	background-color: transparent;
+	.custom_header_media_inside {
+		overflow: hidden;
+		margin: -1rem;
+		img {
+			width: 100vw;
+			height: 8rem;
+			object-fit: cover;
+//			object-position: 0rem -12rem;
+		}
+	}
+	.site_branding_inner {
+		margin-top: -5.5rem;
+//		-webkit-transition: all 500s;
+//		-moz-transition: all 500s;
+//		transition: all 500ms;
+		#portal-logo {
+			//		position: sticky;
+			//		position: -webkit-sticky;
+		padding-right: 1rem;
+		}
+		.front_page {
+			display: none;
+		}
+		.front_page, 
+		.content_page {
+			-webkit-transition: all 500s;
+			-moz-transition: all 500s;
+			transition: all 500ms;
+		}
+		a {
+			color: lighten($link-color, 25%);
+			font-weight: bold;
+		}
+	}
+}
+
+
+#global_navi {
+	background-color: transparent;
+	padding: 0;
+	min-width: 12rem;
+	.navbar-toggler {
+		border: none;
+		padding: 0;
+		.navbar-toggler-icon {
+			background-image: none;
+		}
+	}
+	div.navbar-collapse {
+		ul {
+			a {
+				padding-right: 1rem;
+			}
+		}
+	}
+}
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .selected > a {
+	color: $link-hover-color;
+}
+
+
+
+// Front-page
+body.section-front-page {
+	#global_navi {
+		display: none;
+	}
+	#overview header {
+		display: none;
+	}
+	.site_header {
+		display: block;
+	}
+	.custom_header {
+		height: 100vh;
+	}
+	.site_branding {
+		color: $body-bg;
+		background-color: transparent;
+		border-bottom: none;
+		#portal-logo {
+			display: none;
+		}
+		.site_branding_inner {
+			margin-top: -12rem;
+		}
+		.front_page {
+			display: block;
+		}
+		.content_page {
+			display: none;
+		}	
+		&.site_branding_scrolled {
+			margin-top: -11rem;
+
+			color: $body-color;
+			background-color: $body-bg;
+			border-bottom: 1px solid $gray-light;
+			#portal-logo {
+				display: block;
+				img {
+					filter: invert(100%);
+				}
+			}
+			.site_branding_inner {
+				margin-top: 0rem;
+				a {
+					color: $link-color;
+				}
+			}
+			.front_page {
+				display: none;
+			}
+			.content_page {
+				display: block;
+			}
+		}
+		.custom_header_media_inside { // nur .content_page
+			display: none;
+		}
+	}
+	.content_head, // Title and description
+	{
+		display: none !important;
+	}
+}
+
+#languageselector {
+//	position: absolute;
+//	top: 3rem;
+//	right: 2rem;
+//	z-index: 1;
+	color: #fff;
+	list-style-type: none;
+	ul {
+		margin-bottom: 0;
+		li {
+			display: inline;
+			&.currentLanguage a {
+				color: $link-hover-color;
+			}
+		}
+	}
+}
+
+
+// sections
+#intro,
+#overview,
+#details,
+#footer {
+	position: relative;
+	background-color: #fff;	
+	.section_inner {
+		width: 1140px;
+		max-width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+	}
+}
+#intro {
+	box-shadow: 0rem -2rem 3rem 2.5rem white;
+//	box-shadow: 0rem -2rem 5rem 5rem white;
+	padding-bottom: 3rem;
+}
+#overview {
+	article#content {
+		header, #parent-fieldname-text {
+			margin-bottom: 3rem;
+		}
+	}
+}
+#footer {
+	border-top: 1px solid $gray-light;
+	ul {
+		padding-left: 0;
+		li {
+			display: inline;
+			padding-right: 1rem;
+		}
+	}
+}
+
+// Blog
+article.tileItem {
+	margin-bottom: 3rem;
+	.tilePost {
+		margin-top: 0.5rem;
+		img {
+			max-width: 100%;
+		}
+	}
+}
+
+// Shariff
+.shariff {
+	.orientation-horizontal {
+		flex-wrap: nowrap;
+	}
+	.theme-white .shariff-button {
+		border: none;
+	}
+	.orientation-horizontal li {
+		min-width: 0;
+		max-width: 3rem;
+		.share_text {
+				display: none;
+			}
+	}
+	a:hover {
+		background-color: white !important;
+	};
+}
+
+// Cards
+.card {
+//	background-color: #8AB7D8;
+//	border: none;
+//	border-radius: 0 0 25px;
+//	border-right: 2px solid orange;
+//	border-bottom: 1px solid orangered;
+	margin-bottom: 1rem;
+	.card-footer {
+		background-color: transparent;
+		border: none;
+	}
+	.card-title {
+		&:before {
+			content: "_";
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+}
+
+
+// ueberschreiben:
+@include media-breakpoint-up(sm) {
+//	p {color: red;}
+  .card-deck {
+    flex-flow: row wrap;
+
+    .card {
+      flex: 1 0 auto;
+
+      // Selectively apply horizontal margins to cards to avoid doing the
+      // negative margin dance like our grid. This differs from the grid
+      // due to the use of margins as gutters instead of padding.
+      &:not(:first-child) { margin-left: 0 }
+      &:not(:last-child) { margin-right: 0 }
+    }
+  }
+}
+// same as original media-breakpoint-up(sm)
+@include media-breakpoint-up(md) {
+// p {color: orange;}
+  .card-deck {
+    display: flex;
+    flex-flow: row wrap;
+
+    .card {
+      display: flex;
+      flex: 1 0 0;
+      flex-direction: column;
+
+      // Selectively apply horizontal margins to cards to avoid doing the
+      // negative margin dance like our grid. This differs from the grid
+      // due to the use of margins as gutters instead of padding.
+      &:not(:first-child) { margin-left: $card-deck-margin; }
+      &:not(:last-child) { margin-right: $card-deck-margin; }
+    }
+  }
+}
+//@include media-breakpoint-up(lg) {
+//	p {color: yellow;}
+//}
+
+
+
+// end cards
+
+#hyper {
+	height: 0;
+	overflow: hidden;
+}
+// DEBUG debug-class
+.debug {
+	font-family: Courier;
+	color: lightgrey;
+}
