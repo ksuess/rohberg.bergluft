@@ -76,8 +76,11 @@
     <replace css:theme-children="#mainnavigation" css:content-children="#portal-mainnavigation" method="raw" />
 
     <!-- Hero unit on homepage only -->
-    <!-- <drop css:theme="div.principal" css:if-not-content="body.template-document_view.section-front-page" /> -->	    	<replace css:theme-children="#hero .gigantic" css:content-children=".hero"/>
+    <!-- <drop css:theme="div.principal" css:if-not-content="body.template-document_view.section-front-page" /> -->	    	
+	<replace css:theme-children="#hero .gigantic" css:content-children=".hero"/>
 	<drop css:theme="#hero" css:if-not-content=".gigantic" />
+	<drop css:content="#header_master" />
+
 
     <!-- Full-width breadcrumb -->
     <replace css:theme="#above-content" css:content="#viewlet-above-content" />

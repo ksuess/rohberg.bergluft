@@ -1,23 +1,5 @@
 $(document).ready(function(){
-	
-	if (window.location.hostname =="localhost" || window.location.hostname =="192.168.0.4") { // Nur local fürs Theming:
-		var hostname_alt = "roh.rohberg.ch";
-		var hostname_neu = "localhost:3000";
-		if (window.location.hostname=="192.168.0.4") {
-			var hostname_neu = "192.168.0.4:3000";
-		};
-
-		$("a").each(function() {
-			href = $(this).attr("href");
-			$(this).attr("href", href.replace(hostname_alt, hostname_neu));
-		});	
-		$(".custom_header_media_inside picture").children().each(function() {
-			tagname = this.nodeName;
-			sourceattributename = tagname=="IMG" ? "src" : "srcset";
-			$(this).attr(sourceattributename, $(this).attr(sourceattributename).replace("/media", "http://"+hostname_alt+"/media"));
-		});
-	};
-	
+		
 	// Tooltips
 	// $('[data-toggle="tooltip"]').tooltip();
 	$('a, img').tooltip(); // TODO drop title where Tooltips are not welcome

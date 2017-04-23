@@ -16,5 +16,26 @@
       name="rohberg.bergluft"
       directory="static"
       />
+	  
+	  
+  <!-- <browser:viewletManager
+      name="rohberg.bergluft.headermanager"
+      provides=".interfaces.IBergluftHeader"
+      class="plone.app.viewletmanager.manager.OrderedViewletManager"
+      layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"
+      permission="zope2.View"
+      />
+	   -->
+		  
+	  
+  <browser:viewlet
+    name="rohberg.bergluft.giganticheader"
+    class=".viewlets.GiganticHeaderViewlet"
+    permission="zope2.View"
+    layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"
+    template="templates/giganticheader.pt"
+	manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+    /> 
+    <!-- manager=".interfaces.IBergluftHeader" -->
 
 </configure>

@@ -66,16 +66,18 @@ a[class^="icon-"], a[class*=" icon-"] {
 
 // *
 // site branding
-
+$height-header: 8rem;
 .site_branding {
 	color: $body-bg;
 	background-color: transparent;
+	height: $height-header;
 	.custom_header_media_inside {
 		overflow: hidden;
 		margin: -1rem;
+		height: $height-header;
 		img {
 			width: 100vw;
-			height: 8rem;
+			height: $height-header;
 			object-fit: cover;
 //			object-position: 0rem -12rem;
 		}
@@ -95,9 +97,9 @@ a[class^="icon-"], a[class*=" icon-"] {
 		}
 		.front_page, 
 		.content_page {
-			-webkit-transition: all 500s;
-			-moz-transition: all 500s;
-			transition: all 500ms;
+//			-webkit-transition: all 500s;
+//			-moz-transition: all 500s;
+//			transition: all 500ms;
 		}
 		a {
 			color: lighten($link-color, 25%);
@@ -171,12 +173,12 @@ body.section-front-page {
 			border-bottom: 1px solid $gray-light;
 			#portal-logo {
 				display: block;
-				img {
+				a.invert img {
 					filter: invert(100%);
 				}
 			}
 			.site_branding_inner {
-				margin-top: 0rem;
+				margin-top: 1rem;
 				a {
 					color: $link-color;
 				}

@@ -27,7 +27,7 @@
 	      <!-- <drop css:content="head link[rel='apple-touch-icon']" />
 	      <drop css:content="head link[rel='shortcut icon']" /> -->
 	      <!-- CSS -->
-	      <!-- <after css:theme-children="head" css:content="head link" /> -->
+	      <after css:theme-children="head" css:content="head link[rel!='stylesheet']" />
 	      <!-- <after css:theme-children="head" css:content="head style" /> -->
 	      <!-- Script -->
 	      <!-- <after css:theme-children="head" css:content="head script" /> -->
@@ -38,12 +38,26 @@
 	    <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
 	    <copy attributes="*" css:content="body" css:theme="body" />
 	
-		<!-- header -->
+		<!-- header 
+		gigantic image-->
+		<replace css:theme-children=".custom_header_media_inside" css:content-children=".custom_header_media_inside"  />
+		
+		<!-- site branding -->
 		<replace css:theme-children=".site_branding .front_page" css:content-children=".portlet-static-sitebranding-1 .portletContent"/>	
-		<replace css:theme-children=".site_branding .content_page" css:content-children=".portlet-static-sitebranding-2 .portletContent"/>		
+		<replace css:theme-children=".site_branding .content_page" css:content-children=".portlet-static-sitebranding-2 .portletContent"/>	
+		
+		<!-- logo -->		
+		<replace css:content="*[id='portal-logo']"> <!-- invert logo only if $invert=="invert" -->
+		     <xsl:copy>
+				<xsl:attribute name="class"><xsl:value-of select="./@class" /> <xsl:value-of select="$invert"/></xsl:attribute>
+				<xsl:attribute name="title"><xsl:value-of select="./@title" /></xsl:attribute> <!-- preserves title -->
+				<xsl:attribute name="href"><xsl:value-of select="./@href" /></xsl:attribute> <!-- preserves href -->
+		        <xsl:apply-templates /> <!-- keeps children in place -->
+		     </xsl:copy>
+		</replace>
 	    <replace css:theme="#portal-logo a" css:content="#portal-logo" />
 		<drop attributes="id" css:content="#portal-logo" />		
-		<drop attributes="title" css:content="#portal-logo img" />		
+		<drop attributes="title" css:content="#portal-logo img" />
 	
 		<!--intro -->
 		<!-- <replace css:theme-children=".content_head" css:content=".documentFirstHeading, .documentDescription"/> -->
@@ -66,11 +80,14 @@
 	
 		<!-- details -->
 		<replace css:theme-children="div.details_inner" />
-	
+		
+		<!-- footer -->
 		<replace css:theme-children="div.footer_inner" css:content-children=".portlet-static-footer-2 section.portletContent"/>
+
+
+		<!-- DEBUG: Comment the following before deploying -->
 
 
 	</rules>
 
-	<!-- DEBUG: Comment the following before deploying -->
 </rules>

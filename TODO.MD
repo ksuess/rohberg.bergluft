@@ -6,30 +6,24 @@ https://v4-alpha.getbootstrap.com/components/navbar/#toggler
 + srcset Images: Bilder in verschiedenen Scales hinterlegen mit srcset. Dies mit media queries für die jeweiligen Bildschirmgrössen laden lassen.
 
 - Tooltip hinter Logo, ist zu hoch, besser ausrichten oder entfernen
-- Plone-Product basteln
 - Logo? "R"? Rohberg senkrecht
 - contact-info gestalten. Link in Header setzen.
-- View summary_view of syndicatable collection anpassen, damit ids / anchors existieren:
-	 tal:attributes="id python:item_link.split('/')[-1];"
-- sharing: auch print anbieten. Siehe NZZ
-     <a href="#print" 
-	 	onclick="window.print();return false;" 
-		target="_blank" class="social__link social__link--print" 
-		title="Drucken">
-			<svg class="icons icons--print" role="img" title="Drucken">
-				<use xlink:href="#printer" xmlns:xlink="http://www.w3.org/1999/xlink"></use>
-			</svg>
-	</a>
+- contac-info sollte auf kontakt-Formular leiten.
+- Zertifikat https www.rohberg.ch
 
 
 
 *später*
 
-- TODO: Facebook
+- Logo invertierung auf Startseite optional machen!
+- View summary_view of syndicatable collection anpassen, damit ids / anchors existieren:
+	 tal:attributes="id python:item_link.split('/')[-1];"
 - Blog: Kategorien anzeigen
 
 
 *noch später*
+
+- TODO: Facebook
 
 - (-) TinyMCE: 
 {

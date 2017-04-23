@@ -1,0 +1,30 @@
+<div id="header_master" class="site_header"
+	 tal:condition="view/show"
+	 tal:define="navigation_root_url string:${context/@@plone_portal_state/navigation_root_url}">
+  <div class="custom_header">
+	  <div class="custom_header_media">
+	 	 <div class="custom_header_media_inside">
+			 <picture>
+<!-- width or height: 1000px -->
+			   <source media="(min-width: 1100px)" srcset="/media/header_2000.jpg"
+				   tal:attributes="srcset string:$navigation_root_url/media/header_2000.jpg">
+			   <source media="(min-height: 1100px)" srcset="/media/header_2000.jpg"
+				   tal:attributes="srcset string:$navigation_root_url/media/header_2000.jpg">
+<!-- width or height: 700px -->
+			   <source media="(min-width: 700px)" srcset="/media/header_1200.jpg"
+				   tal:attributes="srcset string:$navigation_root_url/media/header_1200.jpg">
+			   <source media="(min-height: 700px)" srcset="/media/header_1200.jpg"
+				   tal:attributes="srcset string:$navigation_root_url/media/header_1200.jpg">
+				   
+			   <img src="/media/header_768.jpg" alt="Sky" 
+				   tal:attributes="src string:$navigation_root_url/media/header_768.jpg">
+			 </picture>
+	 	 </div>
+	  </div>
+  </div>
+
+  <script type="text/javascript" 
+  	tal:content="string:var navigation_root_url = '$navigation_root_url'">
+      var navigation_root_url = http://www.example.com/fr/
+  </script>
+</div>
