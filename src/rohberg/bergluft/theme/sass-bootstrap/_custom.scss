@@ -38,9 +38,19 @@ $body-color: $gray-dark;
 .discreet {
 	font-size: 75%;
 }
+.portalMessage.error {
+	color: orange;
+}
 a[class^="icon-"], a[class*=" icon-"] {
 	text-decoration: none;
 	line-height: 1.5;
+}
+span.required:before {
+	content: "*";
+	color: orange;
+};
+pre {
+	white-space: pre-wrap;
 }
 
 // *** header
@@ -267,6 +277,21 @@ article.tileItem {
 	}
 }
 
+body.portaltype-easyform form {
+	.field {
+		margin-top: 1rem;
+	}
+	div.formControls {
+		margin-top: 1rem;
+	}
+	.fieldErrorBox {
+		color: orange;
+	}
+	#formEpilogue {
+		margin-top: 1rem;
+	}
+}
+
 // Shariff
 .shariff {
 	.orientation-horizontal {
@@ -274,6 +299,9 @@ article.tileItem {
 	}
 	.theme-white .shariff-button {
 		border: none;
+		a {
+			color: grey !important; // overwrites brand colors
+		}
 	}
 	.orientation-horizontal li {
 		min-width: 0;
@@ -351,14 +379,22 @@ article.tileItem {
 //	p {color: yellow;}
 //}
 
-
-
 // end cards
+
+
+#content-core {
+	img { // .img-fluid
+		max-width: 100%;
+		height: auto;
+	}
+}
 
 #hyper {
 	height: 0;
 	overflow: hidden;
 }
+
+
 // DEBUG debug-class
 .debug {
 	font-family: Courier;

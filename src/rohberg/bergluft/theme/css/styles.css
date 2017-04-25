@@ -6011,9 +6011,19 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .discreet {
   font-size: 75%; }
 
+.portalMessage.error {
+  color: orange; }
+
 a[class^="icon-"], a[class*=" icon-"] {
   text-decoration: none;
   line-height: 1.5; }
+
+span.required:before {
+  content: "*";
+  color: orange; }
+
+pre {
+  white-space: pre-wrap; }
 
 .site_header {
   background-color: #292b2c;
@@ -6161,11 +6171,25 @@ article.tileItem {
     article.tileItem .tilePost img {
       max-width: 100%; }
 
+body.portaltype-easyform form .field {
+  margin-top: 1rem; }
+
+body.portaltype-easyform form div.formControls {
+  margin-top: 1rem; }
+
+body.portaltype-easyform form .fieldErrorBox {
+  color: orange; }
+
+body.portaltype-easyform form #formEpilogue {
+  margin-top: 1rem; }
+
 .shariff .orientation-horizontal {
   flex-wrap: nowrap; }
 
 .shariff .theme-white .shariff-button {
   border: none; }
+  .shariff .theme-white .shariff-button a {
+    color: grey !important; }
 
 .shariff .orientation-horizontal li {
   min-width: 0;
@@ -6208,6 +6232,10 @@ article.tileItem {
         margin-left: 15px; }
       .card-deck .card:not(:last-child) {
         margin-right: 15px; } }
+
+#content-core img {
+  max-width: 100%;
+  height: auto; }
 
 #hyper {
   height: 0;

@@ -1,24 +1,20 @@
 **TODO**
 
-+ Navigation, einfach, wie bei Mobile 
-https://v4-alpha.getbootstrap.com/components/navbar/#toggler
-+ Click auf Blog-Post-Titel auf Startseite sollte auf Blog leiten, nicht auf Einzelseite.
-+ srcset Images: Bilder in verschiedenen Scales hinterlegen mit srcset. Dies mit media queries für die jeweiligen Bildschirmgrössen laden lassen.
 
-- Tooltip hinter Logo, ist zu hoch, besser ausrichten oder entfernen
-- Logo? "R"? Rohberg senkrecht
-- contact-info gestalten. Link in Header setzen.
-- contac-info sollte auf kontakt-Formular leiten.
+- contac-info sollte auf kontakt-Formular leiten. Im englischen Teil funktionierts noch nicht. Eventuell die Seite für 404 überschreiben.
 - Zertifikat https www.rohberg.ch
+- Bilder im Artikel responsive machen
+
 
 
 
 *später*
 
-- Logo invertierung auf Startseite optional machen!
 - View summary_view of syndicatable collection anpassen, damit ids / anchors existieren:
 	 tal:attributes="id python:item_link.split('/')[-1];"
 - Blog: Kategorien anzeigen
+- Tooltip hinter Logo, ist zu hoch, besser ausrichten oder entfernen
+- Shariff: Tags mitgeben
 
 
 *noch später*

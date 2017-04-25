@@ -12,15 +12,15 @@
         profile="rohberg.bergluft:default"
         source="*"
         destination="1001"
-        directory="profiles/1001"
+        directory="1001"
         />
 
     <upgrade-step:importProfile
-        title="register css-file"
+        title="add Masonry collection view" 
         profile="rohberg.bergluft:default"
         source="*"
-        destination="1002"
-        directory="profiles/1002"
+        destination="1004"
+        directory="1004"
         />
 	  
 </configure>

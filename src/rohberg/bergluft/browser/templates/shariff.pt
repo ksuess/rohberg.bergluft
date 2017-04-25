@@ -1,0 +1,7 @@
+<div tal:condition="python:context.aq_parent.id=='blog'"
+	tal:attributes="data-url context/absolute_url;
+		data-title context/title;" 
+	class="shariff2" 
+	data-url="" data-title="" 
+	data-lang="en" data-theme="white" data-mail-url="mailto:"
+	data-services="[&quot;facebook&quot;,&quot;twitter&quot;,&quot;googleplus&quot;,&quot;linkedin&quot;,&quot;mail&quot;,&quot;print&quot;,&quot;info&quot;]"></div>

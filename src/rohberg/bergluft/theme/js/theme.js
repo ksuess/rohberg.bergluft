@@ -7,6 +7,8 @@ $(document).ready(function(){
 	// Anchors
 	// anchors.add(".tileHeadline");
 	
+	// forms
+	$("body.portaltype-easyform input[type='text'], body.portaltype-easyform textarea").addClass("form-control");
 	
 	// front-page: Click on blog post
 	$("body.section-front-page a.tile").click(function() {
@@ -88,12 +90,12 @@ $(document).ready(function(){
 				  	'data-services="[&quot;facebook&quot;,&quot;twitter&quot;,&quot;googleplus&quot;,&quot;linkedin&quot;,&quot;mail&quot;,&quot;print&quot;,&quot;info&quot;]"' + 
 				  	'></div>'
 			      footer.before(shariff);
-					article.find('.shariff2').each(function() {
+				  article.find('.shariff2').each(function() {
 						if (!this.hasOwnProperty('shariff')) {
 						    this.shariff = new Shariff(this);
 							$(this).addClass("shariff");
 						}
-					});				
+				  });				
 				  moreLink.remove();
 				  tilePost.children("div").attr("id", "");
 				  tilePost.fadeIn("slow");
@@ -123,13 +125,13 @@ $(document).ready(function(){
 	// 	shariff = '<div class="shariff2" data-url="' + href + '" data-lang="en" data-theme="white" data-services="[&quot;facebook&quot;,&quot;twitter&quot;,&quot;googleplus&quot;,&quot;linkedin&quot;,&quot;mail&quot;,&quot;info&quot;]"></div>'
 	// 	footer.before(shariff);
 	// });
-	// // initialize .shariff elements
-	// $('.shariff2').each(function() {
-	//     if (!this.hasOwnProperty('shariff')) {
-	//         this.shariff = new Shariff(this);
-	// 		$(this).addClass("shariff");
-	//     }
-	// });
+	// initialize .shariff elements
+	$('.shariff2').each(function() {
+	    if (!this.hasOwnProperty('shariff')) {
+	        this.shariff = new Shariff(this);
+			$(this).addClass("shariff");
+	    }
+	});
 	
 	
 	

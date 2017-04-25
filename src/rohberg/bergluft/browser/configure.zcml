@@ -38,4 +38,35 @@
     /> 
     <!-- manager=".interfaces.IBergluftHeader" -->
 
+	  
+    <browser:viewlet
+      name="rohberg.bergluft.shariff-article"
+	  for="plone.app.contenttypes.interfaces.IDocument"
+	  template="templates/shariff.pt"
+      permission="zope2.View"
+      layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"
+  	  manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+      /> 
+	  
+	  
+    <!-- Masonry view for collections 
+		  layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"
+	-->
+	<browser:page
+	      name="masonry_view"
+		  for="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
+	      permission="zope2.View"
+	      template="templates/masonry_view.pt"
+		  class="plone.app.contenttypes.browser.collection.CollectionView"
+		  />
+
+  
+    <browser:menuItem
+      for="plone.app.contenttypes.interfaces.ICollection"
+	  menu="plone_displayviews"
+      title="Masonry"
+      action="masonry_view"
+  		/>
+  
+	  
 </configure>
