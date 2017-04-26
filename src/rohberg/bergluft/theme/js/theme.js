@@ -87,15 +87,15 @@ $(document).ready(function(){
 		  		  var footer = moreLink.parent();
 				  tilePost.children("div").attr("id", "");
 				  tilePost.fadeIn("slow");
-				  footer.load(href_raw + " #viewlet-below-content-body", function( response, status, xhr ) {
-					  if( status =="success") {
-						  article.find('.shariff2').each(function() {
-								if (!this.hasOwnProperty('shariff')) {
-								    this.shariff = new Shariff(this);
-									$(this).addClass("shariff");
-								}
-						  });	
-					  }				  	
+				  footer.load(href_raw + " #viewlet-below-content", function( response, status, xhr ) {
+				  					  if( status =="success") {
+				  						  article.find('.shariff2').each(function() {
+				  								if (!this.hasOwnProperty('shariff')) {
+				  								    this.shariff = new Shariff(this);
+				  									$(this).addClass("shariff");
+				  								}
+				  						  });
+				  					  }
 				  });
 				  $('html, body').animate({
 				      scrollTop:tilePost.offset().top - 250

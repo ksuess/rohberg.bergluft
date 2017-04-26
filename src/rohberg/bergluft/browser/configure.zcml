@@ -46,7 +46,7 @@
 	  template="templates/shariff.pt"
       permission="zope2.View"
       layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"
-  	  manager="plone.app.layout.viewlets.interfaces.IBelowContentBody"
+  	  manager="plone.app.layout.viewlets.interfaces.IBelowContent"
       /> 
 	  
 	  

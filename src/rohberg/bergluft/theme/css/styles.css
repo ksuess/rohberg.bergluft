@@ -6260,6 +6260,23 @@ body.portaltype-easyform form #formEpilogue {
   max-width: 100%;
   height: auto; }
 
+nav#category #categories-filed-under {
+  display: none; }
+
+nav#category ul {
+  padding-left: 0; }
+
+nav#category li {
+  list-style: none;
+  display: inline;
+  padding-right: .7rem; }
+
+.pagination li {
+  list-style: none; }
+
+#searchform .input-group, #searchform .actionMenu {
+  display: none; }
+
 #hyper {
   height: 0;
   overflow: hidden; }
