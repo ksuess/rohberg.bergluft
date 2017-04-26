@@ -41,6 +41,7 @@
 	  
     <browser:viewlet
       name="rohberg.bergluft.shariff-article"
+      class=".viewlets.ShariffViewlet"
 	  for="plone.app.contenttypes.interfaces.IDocument"
 	  template="templates/shariff.pt"
       permission="zope2.View"
@@ -68,5 +69,11 @@
       action="masonry_view"
   		/>
   
+	<browser:page
+	    name="bergluft-controlpanel"
+	    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+	    class=".controlpanel.BergluftControlPanelView"
+	    permission="cmf.ManagePortal"
+	    />
 	  
 </configure>

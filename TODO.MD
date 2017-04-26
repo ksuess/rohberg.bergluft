@@ -4,6 +4,7 @@
 - contac-info sollte auf kontakt-Formular leiten. Im englischen Teil funktionierts noch nicht. Eventuell die Seite für 404 überschreiben.
 - Zertifikat https www.rohberg.ch
 - Bilder im Artikel responsive machen
+- Shariff konfigurierbar machen
 
 
 

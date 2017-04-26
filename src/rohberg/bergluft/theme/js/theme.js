@@ -71,7 +71,7 @@ $(document).ready(function(){
 	});
 	
 	// Blog-Post-Texte nachladen
-	$(".tileFooter a, .tileHeadline a").click(function() {
+	$(".tileFooter a, .tileHeadline a, .tileImage a").click(function() {
 		var href_raw = $(this).attr("href")
 		var href = href_raw + " #parent-fieldname-text";
 		var tileThing = $(this).parent();
@@ -85,20 +85,18 @@ $(document).ready(function(){
 			tilePost.hide().load(href, function( response, status, xhr ) {
 			  if ( status == "success" ) {
 		  		  var footer = moreLink.parent();
-				  shariff = '<div class="shariff2" data-url="' + href_raw + '" data-title="' + title + 
-				  	'" data-lang="en" data-theme="white" data-mail-url="mailto:" ' + 
-				  	'data-services="[&quot;facebook&quot;,&quot;twitter&quot;,&quot;googleplus&quot;,&quot;linkedin&quot;,&quot;mail&quot;,&quot;print&quot;,&quot;info&quot;]"' + 
-				  	'></div>'
-			      footer.before(shariff);
-				  article.find('.shariff2').each(function() {
-						if (!this.hasOwnProperty('shariff')) {
-						    this.shariff = new Shariff(this);
-							$(this).addClass("shariff");
-						}
-				  });				
-				  moreLink.remove();
 				  tilePost.children("div").attr("id", "");
 				  tilePost.fadeIn("slow");
+				  footer.load(href_raw + " #viewlet-below-content-body", function( response, status, xhr ) {
+					  if( status =="success") {
+						  article.find('.shariff2').each(function() {
+								if (!this.hasOwnProperty('shariff')) {
+								    this.shariff = new Shariff(this);
+									$(this).addClass("shariff");
+								}
+						  });	
+					  }				  	
+				  });
 				  $('html, body').animate({
 				      scrollTop:tilePost.offset().top - 250
 				  },'slow');

@@ -22,5 +22,13 @@
         destination="1004"
         directory="1004"
         />
+		
+    <upgrade-step:importProfile
+        title="image scales, controlpanel" 
+        profile="rohberg.bergluft:default"
+        source="*"
+        destination="1005"
+        directory="1005"
+        />
 	  
 </configure>
