@@ -1,0 +1,1 @@
+<div class="bergluft_byline" tal:content="view/getPubDate">01.01.2017</div>

@@ -6009,7 +6009,8 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   /* Many screen reader and browser combinations announce broken words as they would appear visually. */ }
 
 .discreet {
-  font-size: 75%; }
+  color: #777777;
+  font-weight: 300; }
 
 .portalMessage.error {
   color: orange; }
@@ -6163,11 +6164,15 @@ body.section-front-page .content_head {
     #footer ul li {
       display: inline;
       padding-right: 1rem; }
+  #footer span.discreet {
+    font-size: 75%; }
 
 article.tileItem {
   margin-bottom: 3rem; }
+  article.tileItem .tileHeadline .anchorjs-link {
+    display: none; }
   article.tileItem .tilePost {
-    margin-top: 0.5rem; }
+    margin-top: 2rem; }
     article.tileItem .tilePost img {
       max-width: 100%; }
 
@@ -6260,16 +6265,16 @@ body.portaltype-easyform form #formEpilogue {
   max-width: 100%;
   height: auto; }
 
-nav#category #categories-filed-under {
-  display: none; }
-
-nav#category ul {
-  padding-left: 0; }
-
-nav#category li {
-  list-style: none;
-  display: inline;
-  padding-right: .7rem; }
+nav#category {
+  display: flex; }
+  nav#category #categories-filed-under {
+    padding-right: 2rem; }
+  nav#category ul {
+    padding-left: 0; }
+  nav#category li {
+    list-style: none;
+    display: inline;
+    padding-right: .7rem; }
 
 .pagination li {
   list-style: none; }

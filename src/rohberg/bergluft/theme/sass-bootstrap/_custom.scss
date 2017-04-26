@@ -36,7 +36,8 @@ $body-color: $gray-dark;
 }
 
 .discreet {
-	font-size: 75%;
+    color: #777777;
+    font-weight: 300;
 }
 .portalMessage.error {
 	color: orange;
@@ -264,13 +265,27 @@ body.section-front-page {
 			padding-right: 1rem;
 		}
 	}
+	span.discreet {
+		font-size: 75%;
+	}
 }
 
 // Blog
 article.tileItem {
 	margin-bottom: 3rem;
+	.tileHeadline {
+//		&:before {
+//			@include icon-mixin;
+//			content: "";
+//		};
+	.anchorjs-link {
+		display: none;
+	}
+	}
+	.tileBody {
+	}
 	.tilePost {
-		margin-top: 0.5rem;
+		margin-top: 2rem;
 		img {
 			max-width: 100%;
 		}
@@ -413,8 +428,9 @@ body.portaltype-easyform form {
 	}
 }
 nav#category {
+	display: flex;
 	#categories-filed-under {
-		display: none;
+		padding-right: 2rem;
 	}
 	ul {
 		padding-left: 0;

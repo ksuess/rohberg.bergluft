@@ -30,5 +30,13 @@
         destination="1005"
         directory="1005"
         />
+		
+    <upgrade-step:importProfile
+        title="add Summary collection view with date" 
+        profile="rohberg.bergluft:default"
+        source="*"
+        destination="1006"
+        directory="1006"
+        />
 	  
 </configure>

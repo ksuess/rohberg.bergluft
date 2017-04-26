@@ -10,7 +10,7 @@ $(document).ready(function(){
 	// forms
 	$("body.portaltype-easyform input[type='text'], body.portaltype-easyform textarea").addClass("form-control");
 	
-	// front-page: Click on blog post
+	// front-page: Click on blog post: add anchor
 	$("body.section-front-page a.tile").click(function() {
 		var href = $(this).attr("href");
 		var anchor = href.split("/");
@@ -73,7 +73,7 @@ $(document).ready(function(){
 	// Blog-Post-Texte nachladen
 	$(".tileFooter a, .tileHeadline a, .tileImage a").click(function() {
 		var href_raw = $(this).attr("href")
-		var href = href_raw + " #parent-fieldname-text";
+		var href = href_raw + " #parent-fieldname-text"; // only body and later viewlet-below-content
 		var tileThing = $(this).parent();
 		var article = tileThing.parent();
 		var moreLink = article.find(".tileFooter a");
@@ -112,6 +112,7 @@ $(document).ready(function(){
 	var anchor = href.indexOf("#");
 	if (anchor!=-1) {
 		anchor = href.substring(anchor);
+		console.log(anchor);
 		$(anchor).find("a")[0].click();
 	};
 	

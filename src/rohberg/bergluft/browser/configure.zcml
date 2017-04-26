@@ -49,25 +49,51 @@
   	  manager="plone.app.layout.viewlets.interfaces.IBelowContent"
       /> 
 	  
+      <browser:viewlet
+        	name="rohberg.bergluft.bergluft-byline"
+			class=".viewlets.BergluftBylineViewlet"
+			for="plone.app.contenttypes.interfaces.IDocument"
+			template="templates/bergluft-byline.pt"
+			permission="zope2.View"
+			layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"
+			manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
+			/> 
+	  
+	  
 	  
     <!-- Masonry view for collections 
 		  layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"
 	-->
 	<browser:page
 	      name="masonry_view"
-		  for="plone.app.contenttypes.behaviors.collection.ISyndicatableCollection"
+		  for="plone.app.contenttypes.interfaces.ICollection"
 	      permission="zope2.View"
 	      template="templates/masonry_view.pt"
 		  class="plone.app.contenttypes.browser.collection.CollectionView"
 		  />
 
+  	<browser:page
+  	      name="summary_view_plus"
+		  for="plone.app.contenttypes.interfaces.ICollection"
+  	      permission="zope2.View"
+  	      template="templates/summary_view_plus.pt"
+  		  class=".views.CollectionViewPlus"
+  		  />
+
   
+  <browser:menuItem
+      for="plone.app.contenttypes.interfaces.ICollection"
+	  menu="plone_displayviews"
+	    title="Masonry"
+	    action="masonry_view"
+			/>  
     <browser:menuItem
       for="plone.app.contenttypes.interfaces.ICollection"
 	  menu="plone_displayviews"
-      title="Masonry"
-      action="masonry_view"
+      title="Summary Plus"
+      action="summary_view_plus"
   		/>
+		
   
 	<browser:page
 	    name="bergluft-controlpanel"

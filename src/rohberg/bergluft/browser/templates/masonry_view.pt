@@ -28,7 +28,8 @@
   	          </div>
 			  
 			  <div class="card-block">
-		          <h2 class="tileHeadline" metal:define-macro="listitem">
+		          <h2 class="tileHeadline" metal:define-macro="listitem"
+						tal:attributes="id item_id">
 		            <a class="summary url"
 		                tal:attributes="href item_link;
 		                                title item_type"

@@ -5,6 +5,7 @@
 - Zertifikat https www.rohberg.ch
 - Bilder im Artikel responsive machen
 - Shariff konfigurierbar machen
+- summary view mit Datum
 
 
 
