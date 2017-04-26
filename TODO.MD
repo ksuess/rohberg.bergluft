@@ -3,20 +3,15 @@
 
 - contac-info sollte auf kontakt-Formular leiten. Im englischen Teil funktionierts noch nicht. Eventuell die Seite für 404 überschreiben.
 - Zertifikat https www.rohberg.ch
-- Bilder im Artikel responsive machen
-- Shariff konfigurierbar machen
-- summary view mit Datum
-
-
+- Beim Blog-Post öffnen von Posts mit Bild und/oder langem Titel muss mehr gescrolled werden.
+- globale Links auf Social Media Kanäle
+- Fail: http://balkon.example.com/search_rss?Subject%3Alist=Anbauen
+- Link-Farbe im Control-Panel konfigurierbar machen.
 
 
 *später*
 
-- View summary_view of syndicatable collection anpassen, damit ids / anchors existieren:
-	 tal:attributes="id python:item_link.split('/')[-1];"
-- Blog: Kategorien anzeigen
-- Tooltip hinter Logo, ist zu hoch, besser ausrichten oder entfernen
-- Shariff: Tags mitgeben
+
 
 
 *noch später*

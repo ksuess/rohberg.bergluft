@@ -6,7 +6,9 @@
     metal:use-macro="context/main_template/macros/master"
     i18n:domain="plone">
     <tal:comment replace="nothing">
-      changes: byline
+      changes: 
+	  tileHeadline with id!
+	  byline with EffectivDate
 	  image_scale removed
     </tal:comment>
 <body>
