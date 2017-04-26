@@ -79,7 +79,7 @@ $(document).ready(function(){
 		var moreLink = article.find(".tileFooter a");
 		var title = article.find(".tileHeadline a").text()
 		
-		if (moreLink.length > 0){
+		if (article.find(".shariff").length == 0){
 			article.find(".tileBody").after("<div class='tilePost'></div>");
 			var tilePost = article.find(".tilePost");
 			tilePost.hide().load(href, function( response, status, xhr ) {
