@@ -6357,11 +6357,26 @@ nav#category {
       display: none; }
 
 body.portaltype-folder .documentPublished,
-body.portaltype-collection .documentPublished {
+body.portaltype-folder #viewlet-below-content,
+body.portaltype-collection .documentPublished,
+body.portaltype-collection #viewlet-below-content {
   display: none; }
 
 .shareable .documentPublished {
   display: block; }
+
+#col2cont {
+  padding-right: 0px; }
+  #col2cont aside {
+    font-size: .9rem;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: .8rem .5rem; }
+    #col2cont aside img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 4px;
+      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
 
 #hyper {
   height: 0;

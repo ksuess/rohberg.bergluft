@@ -553,13 +553,31 @@ nav#category {
 
 body.portaltype-folder, 
 body.portaltype-collection {
-	.documentPublished {
+	.documentPublished,
+	#viewlet-below-content { // categories of collection and pagination to posts
 		display: none;
 	}
 } 
 .shareable .documentPublished {
 		display: block;
 	}
+
+#col2cont {
+	padding-right: 0px;
+	aside {
+		font-size: .9rem;
+		@include shadow-light-allsides;
+		border: none;
+		padding: .8rem .5rem;
+		img {
+			max-width: 100%;
+			height: auto;
+			border-radius: 4px;
+			@include shadow-light-allsides;
+		}
+	}
+}
+
 
 #hyper {
 	height: 0;
