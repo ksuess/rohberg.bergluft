@@ -97,7 +97,8 @@ $(document).ready(function(){
 				  tilePost.children("div").attr("id", "");
 				  footer.hide();
 				  if (getViewletBelowContent) {
-					  footer.load(href_raw + " #viewlet-below-content", function( response, status, xhr ) {
+					  // footer.load(href_raw + " #viewlet-below-content", function( response, status, xhr ) {
+					  footer.load(href_raw + " .shariff2", function( response, status, xhr ) {
 						  if( status =="success") {
 							  article.find('.shariff2').each(function() {
 								  if (!this.hasOwnProperty('shariff')) {
