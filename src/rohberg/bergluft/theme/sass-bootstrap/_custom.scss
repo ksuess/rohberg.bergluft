@@ -18,6 +18,17 @@ $body-color: $gray-dark;
 .highlight {
     @include highlight;
 }
+
+
+@mixin shadow-light-allsides {
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+@mixin shadow-light-righttop {
+	box-shadow: 10px -10px 10px -10px rgba(0, 0, 0, 0.1);
+}
+@mixin shadow-normal-bottom {
+	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
+}
 // end utilities
 
 // overwrites and additons to bootstrap
@@ -40,7 +51,9 @@ $body-color: $gray-dark;
     font-weight: 300;
 }
 .portalMessage.error {
-	color: orange;
+    color: orange;
+    border: 1px solid orange;
+    padding: .5rem.8rem 0rem.8rem;
 }
 a[class^="icon-"], a[class*=" icon-"] {
 	text-decoration: none;
@@ -53,8 +66,22 @@ span.required:before {
 pre {
 	white-space: pre-wrap;
 }
+// Images in body
+.image-left{float:left;margin:.5em 1em .5em 0}
+.image-right{float:right;margin:.5em}
+.image-inline{float:none}
 
-// *** header
+.image-tile {float: right;}
+
+.entries::before, #content article.entry::after, #relatedItemBox ul li::after, #searchresults ul li::after {
+    content: " ";
+    display: block;
+    clear: both;
+    height: 2px;
+    visibility: hidden;
+}
+
+// *** Header
 .site_header {
     background-color: $gray-dark;
 	display: none;
@@ -65,7 +92,6 @@ pre {
 	overflow: hidden;
 }
 .custom_header_media {
-
 	img {
 		position: fixed;
 		width: 100%;
@@ -82,6 +108,7 @@ $height-header: 8rem;
 	color: $body-bg;
 	background-color: transparent;
 	height: $height-header;
+	@include shadow-normal-bottom;
 	.custom_header_media_inside {
 		overflow: hidden;
 		margin: -1rem;
@@ -139,10 +166,10 @@ $height-header: 8rem;
 		}
 	}
 }
-.navbar-light .navbar-nav .active > .nav-link,
-.navbar-light .navbar-nav .selected > a {
-	color: $link-hover-color;
-}
+//.navbar-light .navbar-nav .active > .nav-link,
+//.navbar-light .navbar-nav .selected > a {
+//	color: $link-hover-color;
+//}
 
 
 
@@ -164,6 +191,7 @@ body.section-front-page {
 		color: $body-bg;
 		background-color: transparent;
 		border-bottom: none;
+		box-shadow: none;
 		#portal-logo {
 			display: none;
 		}
@@ -181,7 +209,8 @@ body.section-front-page {
 
 			color: $body-color;
 			background-color: $body-bg;
-			border-bottom: 1px solid $gray-light;
+//			border-bottom: 1px solid $gray-light;
+			@include shadow-normal-bottom;
 			#portal-logo {
 				display: block;
 				a.invert img {
@@ -251,9 +280,20 @@ body.section-front-page {
 }
 #overview {
 	article#content {
-		header, #parent-fieldname-text {
+		& > header,
+		#parent-fieldname-text {
 			margin-bottom: 3rem;
 		}
+		#viewlet-below-content-title {
+			color: lightgreen;
+			display: none;
+		}
+	}
+}
+#details {
+	#viewlet-below-content-title {
+		color: magenta;
+		display: none;
 	}
 }
 #footer {
@@ -295,8 +335,13 @@ article.tileItem {
 body.portaltype-easyform form {
 	.field {
 		margin-top: 1rem;
+		input[type="text"],
+		textarea {
+			max-width: 30rem;
+			width: 100%;
+		}		
 	}
-	div.formControls {
+	div.formControls { // buttons
 		margin-top: 1rem;
 	}
 	.fieldErrorBox {
@@ -311,8 +356,11 @@ body.portaltype-easyform form {
     float: right;
     margin: 0 0 6px 6px;
     border-radius: 4px;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
+	@include shadow-light-allsides;
     overflow: hidden;
+	figcaption {
+		padding-left: .5rem;
+	}
 }
 
 // Shariff
@@ -340,12 +388,9 @@ body.portaltype-easyform form {
 
 // Cards
 .card {
-//	background-color: #8AB7D8;
-//	border: none;
-//	border-radius: 0 0 25px;
-//	border-right: 2px solid orange;
-//	border-bottom: 1px solid orangered;
 	margin-bottom: 1rem;
+	@include shadow-light-allsides;
+	border: none;
 	.card-footer {
 		background-color: transparent;
 		border: none;
@@ -356,6 +401,15 @@ body.portaltype-easyform form {
 		}
 		a {
 			text-decoration: none;
+		}
+	}
+	.card-text {
+		.tile {
+			display: block;
+			margin-bottom: .5rem;
+			.portletItemDetails {
+				display: block;
+			}	
 		}
 	}
 }
@@ -433,6 +487,8 @@ body.portaltype-easyform form {
 	img { // .img-fluid
 		max-width: 100%;
 		height: auto;
+		border-radius: 4px;
+		@include shadow-light-allsides;
 	}
 }
 nav#category {
@@ -443,21 +499,29 @@ nav#category {
 	}
 	ul {
 		padding-left: 0;
+		list-style-type: none;
+		li {
+			display: inline;
+			padding-right: .7rem;
 	}
-	li {
-		list-style: none;
-		display: inline;
-		padding-right: .7rem;
 	}
+
 }
 .pagination {
-	li {
-		list-style: none;
+	ul {
+		padding-left: 0;
+		list-style-type: none;
+		li {
+			display: inline;
+			padding-right: 5rem;
+		}
 	}
 }
 
 #searchform {
-	.input-group, .actionMenu {
+	.input-group, 
+	.actionMenu,
+	#rss-subscription {
 		display: none;
 	}
 	#search-results-bar {
@@ -487,13 +551,15 @@ nav#category {
 	}
 }
 
-body.template-contact-info {
-	input[type="text"],
-	textarea {
-		max-width: 30rem;
-		width: 100%;
+body.portaltype-folder, 
+body.portaltype-collection {
+	.documentPublished {
+		display: none;
 	}
-}
+} 
+.shareable .documentPublished {
+		display: block;
+	}
 
 #hyper {
 	height: 0;

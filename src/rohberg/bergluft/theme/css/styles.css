@@ -6013,7 +6013,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
   font-weight: 300; }
 
 .portalMessage.error {
-  color: orange; }
+  color: orange;
+  border: 1px solid orange;
+  padding: 0.5rem 0.8rem 0rem 0.8rem; }
 
 a[class^="icon-"], a[class*=" icon-"] {
   text-decoration: none;
@@ -6025,6 +6027,27 @@ span.required:before {
 
 pre {
   white-space: pre-wrap; }
+
+.image-left {
+  float: left;
+  margin: .5em 1em .5em 0; }
+
+.image-right {
+  float: right;
+  margin: .5em; }
+
+.image-inline {
+  float: none; }
+
+.image-tile {
+  float: right; }
+
+.entries::before, #content article.entry::after, #relatedItemBox ul li::after, #searchresults ul li::after {
+  content: " ";
+  display: block;
+  clear: both;
+  height: 2px;
+  visibility: hidden; }
 
 .site_header {
   background-color: #292b2c;
@@ -6043,7 +6066,8 @@ pre {
 .site_branding {
   color: #fff;
   background-color: transparent;
-  height: 8rem; }
+  height: 8rem;
+  box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2); }
   .site_branding .custom_header_media_inside {
     overflow: hidden;
     margin: -1rem;
@@ -6074,10 +6098,6 @@ pre {
   #global_navi div.navbar-collapse ul a {
     padding-right: 1rem; }
 
-.navbar-light .navbar-nav .active > .nav-link,
-.navbar-light .navbar-nav .selected > a {
-  color: #5194c5; }
-
 body.section-front-page #global_navi {
   display: none; }
 
@@ -6093,7 +6113,8 @@ body.section-front-page .custom_header {
 body.section-front-page .site_branding {
   color: #fff;
   background-color: transparent;
-  border-bottom: none; }
+  border-bottom: none;
+  box-shadow: none; }
   body.section-front-page .site_branding #portal-logo {
     display: none; }
   body.section-front-page .site_branding .site_branding_inner {
@@ -6106,7 +6127,7 @@ body.section-front-page .site_branding {
     margin-top: -11rem;
     color: #292b2c;
     background-color: #fff;
-    border-bottom: 1px solid #636c72; }
+    box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2); }
     body.section-front-page .site_branding.site_branding_scrolled #portal-logo {
       display: block; }
       body.section-front-page .site_branding.site_branding_scrolled #portal-logo a.invert img {
@@ -6154,8 +6175,17 @@ body.section-front-page .content_head {
   box-shadow: 0rem -2rem 3rem 2.5rem white;
   padding-bottom: 3rem; }
 
-#overview article#content header, #overview article#content #parent-fieldname-text {
+#overview article#content > header,
+#overview article#content #parent-fieldname-text {
   margin-bottom: 3rem; }
+
+#overview article#content #viewlet-below-content-title {
+  color: lightgreen;
+  display: none; }
+
+#details #viewlet-below-content-title {
+  color: magenta;
+  display: none; }
 
 #footer {
   border-top: 1px solid #636c72; }
@@ -6178,6 +6208,10 @@ article.tileItem {
 
 body.portaltype-easyform form .field {
   margin-top: 1rem; }
+  body.portaltype-easyform form .field input[type="text"],
+  body.portaltype-easyform form .field textarea {
+    max-width: 30rem;
+    width: 100%; }
 
 body.portaltype-easyform form div.formControls {
   margin-top: 1rem; }
@@ -6192,8 +6226,10 @@ body.portaltype-easyform form #formEpilogue {
   float: right;
   margin: 0 0 6px 6px;
   border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
   overflow: hidden; }
+  .newsImageContainer figcaption {
+    padding-left: .5rem; }
 
 .shariff .orientation-horizontal {
   flex-wrap: nowrap; }
@@ -6213,7 +6249,9 @@ body.portaltype-easyform form #formEpilogue {
   background-color: white !important; }
 
 .card {
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  border: none; }
   .card .card-footer {
     background-color: transparent;
     border: none; }
@@ -6221,6 +6259,11 @@ body.portaltype-easyform form #formEpilogue {
     content: "_"; }
   .card .card-title a {
     text-decoration: none; }
+  .card .card-text .tile {
+    display: block;
+    margin-bottom: .5rem; }
+    .card .card-text .tile .portletItemDetails {
+      display: block; }
 
 @media (min-width: 576px) {
   .card-deck {
@@ -6266,7 +6309,9 @@ body.portaltype-easyform form #formEpilogue {
 
 #content-core img {
   max-width: 100%;
-  height: auto; }
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
 
 nav#category {
   display: flex;
@@ -6274,16 +6319,22 @@ nav#category {
   nav#category #categories-filed-under {
     padding-right: 2rem; }
   nav#category ul {
-    padding-left: 0; }
-  nav#category li {
-    list-style: none;
+    padding-left: 0;
+    list-style-type: none; }
+    nav#category ul li {
+      display: inline;
+      padding-right: .7rem; }
+
+.pagination ul {
+  padding-left: 0;
+  list-style-type: none; }
+  .pagination ul li {
     display: inline;
-    padding-right: .7rem; }
+    padding-right: 5rem; }
 
-.pagination li {
-  list-style: none; }
-
-#searchform .input-group, #searchform .actionMenu {
+#searchform .input-group,
+#searchform .actionMenu,
+#searchform #rss-subscription {
   display: none; }
 
 #searchform #search-results-bar {
@@ -6305,10 +6356,12 @@ nav#category {
     #searchform #search-results li .documentModified {
       display: none; }
 
-body.template-contact-info input[type="text"],
-body.template-contact-info textarea {
-  max-width: 30rem;
-  width: 100%; }
+body.portaltype-folder .documentPublished,
+body.portaltype-collection .documentPublished {
+  display: none; }
+
+.shareable .documentPublished {
+  display: block; }
 
 #hyper {
   height: 0;

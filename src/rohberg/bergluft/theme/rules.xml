@@ -73,7 +73,7 @@
 		<replace css:content-children=".load-portlet-blog">
 		  <xsl:for-each select="//section[@class='portlet portletCollection portlet-collection-blog']/ul/li/a">
 		    <xsl:copy-of select="." />
-		  	<br/>
+		  	<!-- <br/> -->
 		  </xsl:for-each>
 		</replace>
 		<drop css:content="div.documentActions" />
@@ -85,6 +85,14 @@
 		<replace css:theme-children="div.footer_inner" css:content-children=".portlet-static-footer-2 section.portletContent"/>
 
 
+
+
+		<after css:theme-children="style">
+		    a, a:link, a:visited, a:hover, a:active {
+		      color: <xsl:value-of select="$link-color" />;
+		    }
+		</after>
+		
 		<!-- DEBUG: Comment the following before deploying -->
 
 

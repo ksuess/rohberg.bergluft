@@ -1,7 +1,3 @@
-<h1>
-	bergluft plone.app.contenttypes.browser.listing.pt 
-</h1>
-
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
     xmlns:tal="http://xml.zope.org/namespaces/tal"
     xmlns:metal="http://xml.zope.org/namespaces/metal"
@@ -25,9 +21,6 @@
   <metal:listingmacro define-macro="listing">
     <tal:results define="batch view/batch">
       <tal:listing condition="batch">
-        <div class="entries" metal:define-slot="entries"
-            tal:define="portal context/@@plone_portal_state/portal;
-                        image_scale portal/@@image_scale">
           <tal:repeat repeat="item batch" metal:define-macro="entries">
             <tal:block tal:define="obj item/getObject;
                 item_url item/getURL;
@@ -50,8 +43,6 @@
                   <header metal:define-macro="listitem" tal:attributes="class python:'vevent' if item_is_event else None">
                     <span class="summary" tal:attributes="title item_type">
                      <a tal:attributes="href item_link">
-                        <img tal:condition="item_has_image"
-                             tal:replace="structure python:image_scale.tag(item, 'image', scale='tile', css_class='image-tile')">
                       </a>
                       <a tal:attributes="href item_link;
                                          class string:$item_type_class $item_wf_state_class url;
@@ -61,18 +52,14 @@
                              Item Title
                       </a>
                      </span>
-					 
-					 
                     <metal:block metal:define-macro="document_byline">
                       <div class="documentByLine">
-						  
                         <tal:event condition="item_is_event">
                           <tal:date tal:replace="structure python:view.formatted_date(obj)"/>
                           <span tal:condition="item/location" i18n:translate="label_event_byline_location">&mdash;
                             <span tal:content="string:${item/location}" class="location" i18n:name="location">Oslo</span>,
                           </span>
                         </tal:event>
-						
                         <tal:byline condition="view/show_about">
 							<span class="documentAuthor">
 	                            <tal:name tal:condition="item_creator"
@@ -110,13 +97,7 @@
                            </tal:comment>
 
 
-                           <metal:description define-slot="description_slot">
-	                            <tal:comment replace="nothing">
-	                              Place custom listing info for custom types here
-	                            </tal:comment>
-                           </metal:description>
                         </tal:byline>
-						
                       </div>
                     </metal:block>
 					

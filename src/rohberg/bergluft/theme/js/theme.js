@@ -70,35 +70,51 @@ $(document).ready(function(){
 		minScrollDistance = $(window).height() * 0.9;
 	});
 	
-	// Blog-Post-Texte nachladen
+	// *
+	// Load blog posts
+	// *
+	var sitebrandingheight = $("body > header").height();
+	// Load content like sharing buttons?
+	var getViewletBelowContent = ($("body").find(".shareable").length>0);
 	$(".tileFooter a, .tileHeadline a, .tileImage a").click(function() {
 		var href_raw = $(this).attr("href")
 		var href = href_raw + " #parent-fieldname-text"; // only body and later viewlet-below-content
 		var tileThing = $(this).parent();
-		var article = tileThing.parent();
+		var article = tileThing.closest("article");
+		var headline = article.find(".tileHeadline");
+		var toScrollTo = article.offset().top - sitebrandingheight - headline.outerHeight();
 		var moreLink = article.find(".tileFooter a");
-		var title = article.find(".tileHeadline a").text()
+		var title = article.find(".tileHeadline a").text();
 		
-		if (article.find(".shariff").length == 0){
+		if (!article.hasClass("enriched")){ // check if content is already loaded
 			article.find(".tileBody").after("<div class='tilePost'></div>");
 			var tilePost = article.find(".tilePost");
 			tilePost.hide().load(href, function( response, status, xhr ) {
 			  if ( status == "success" ) {
+				  article.addClass("enriched");
+				  // load sharing buttons
 		  		  var footer = moreLink.parent();
 				  tilePost.children("div").attr("id", "");
+				  footer.hide();
+				  if (getViewletBelowContent) {
+					  footer.load(href_raw + " #viewlet-below-content", function( response, status, xhr ) {
+						  if( status =="success") {
+							  article.find('.shariff2').each(function() {
+								  if (!this.hasOwnProperty('shariff')) {
+									  this.shariff = new Shariff(this);
+									  $(this).addClass("shariff");
+								  }
+							  });
+						  }
+					  });
+				  };
 				  tilePost.fadeIn("slow");
-				  footer.load(href_raw + " #viewlet-below-content", function( response, status, xhr ) {
-				  					  if( status =="success") {
-				  						  article.find('.shariff2').each(function() {
-				  								if (!this.hasOwnProperty('shariff')) {
-				  								    this.shariff = new Shariff(this);
-				  									$(this).addClass("shariff");
-				  								}
-				  						  });
-				  					  }
-				  });
+				  if (getViewletBelowContent) {
+					  footer.fadeIn("slow");
+				  };
+				  // scroll up to make loaded content visible
 				  $('html, body').animate({
-				      scrollTop:tilePost.offset().top - 250
+	  					  scrollTop:toScrollTo
 				  },'slow');
 			  }
 			});
@@ -112,7 +128,6 @@ $(document).ready(function(){
 	var anchor = href.indexOf("#");
 	if (anchor!=-1) {
 		anchor = href.substring(anchor);
-		console.log(anchor);
 		$(anchor).find("a")[0].click();
 	};
 	
@@ -152,6 +167,9 @@ $(document).ready(function(){
 		return false;
 	});
 
+
+	// Cookie hint
+	
 	
 	
 })

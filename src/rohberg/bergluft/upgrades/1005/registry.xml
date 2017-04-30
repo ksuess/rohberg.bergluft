@@ -1,15 +1,18 @@
 <?xml version="1.0"?>
 <registry>
 	
+	<!-- bergluft interfaces -->
 	<records interface="rohberg.bergluft.browser.controlpanel.IBergluftControlPanel"
 	         prefix="bergluft" />
 			 
-  <records
-      interface="Products.CMFPlone.interfaces.controlpanel.IImagingSchema"
-      prefix="plone">
-    <value key="allowed_sizes" purge="false">
-      <element>cardimage 550:550</element>
-    </value>
-  </records>
+			 
+	<!-- Plone -->
+	<records
+			interface="Products.CMFPlone.interfaces.controlpanel.IImagingSchema"
+			prefix="plone">
+		<value key="allowed_sizes" purge="false">
+			<element>cardimage 550:550</element>
+		</value>
+	</records>
   
 </registry>

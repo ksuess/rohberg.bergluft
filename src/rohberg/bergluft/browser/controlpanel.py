@@ -19,6 +19,7 @@ class IBergluftControlPanel(Interface):
      )
 
 
+
 class BergluftControlPanelForm(RegistryEditForm):
     schema = IBergluftControlPanel
     schema_prefix = "bergluft"

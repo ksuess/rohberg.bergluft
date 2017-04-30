@@ -69,14 +69,14 @@
 		  for="plone.app.contenttypes.interfaces.ICollection"
 	      permission="zope2.View"
 	      template="templates/masonry_view.pt"
-		  class="plone.app.contenttypes.browser.collection.CollectionView"
+  		  class=".views.CollectionViewPlus"
 		  />
 
   	<browser:page
   	      name="summary_view_plus"
 		  for="plone.app.contenttypes.interfaces.ICollection"
   	      permission="zope2.View"
-  	      template="templates/summary_view_plus.pt"
+  	      template="templates/listing_summary_plus.pt"
   		  class=".views.CollectionViewPlus"
   		  />
 
