@@ -66,12 +66,14 @@
 	    <replace css:theme-children="#global_navi .navbar-nav" css:content-children="#portal-globalnav" />
 
 		<!-- overview -->
+	    <!-- <replace css:theme="#content-container" method="raw" css:content="#content, #viewlet-below-content" /> -->
+
 	    <!-- Central column -->
 	    <replace css:theme="#content-container" method="raw">
 
 	      <xsl:variable name="central">
-	        <xsl:if test="//aside[@id='portal-column-two']">col-xs-12 col-lg-10</xsl:if>
-	        <xsl:if test="not(//aside[@id='portal-column-two'])">col-xs-12 col-lg-12</xsl:if>
+	        <xsl:if test="//aside[@id='portal-column-two']">col-xs-12 col-lg-10 p-0</xsl:if>
+	        <xsl:if test="not(//aside[@id='portal-column-two'])">col-xs-12 col-lg-12 p-0</xsl:if>
 	      </xsl:variable>
 
 	      <div class="{$central}">
@@ -89,6 +91,7 @@
 	        </div>
 	      </replace>
 	    </rules>
+		
 		<!-- folder view -->
 		<drop attributes="title" css:content=".tileHeadline a" />
 	
@@ -107,8 +110,22 @@
 		<replace css:theme-children="div.footer_inner" css:content-children=".portlet-static-footer-2 section.portletContent"/>
 
 
+		<!-- Google Tag Manager -->
+		<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+		})(window,document,'script','dataLayer','GTM-55M393F');</script> -->
+		<!-- End Google Tag Manager -->
 
 
+
+		<!-- Google Tag Manager (noscript) -->
+		<!-- <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-55M393F"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript> -->
+		<!-- End Google Tag Manager (noscript) -->
+
+		<!-- link color configurable -->
 		<after css:theme-children="style">
 		    a, a:link, a:visited, a:hover, a:active {
 		      color: <xsl:value-of select="$link-color" />;

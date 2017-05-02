@@ -26,7 +26,7 @@ $(document).ready(function(){
 	var didScroll = false;
 	var lastYPos = 0;
 	var delta = 5;
-	var minScrollDistance = $(window).height() * 0.80;
+	var minScrollDistance =  $(window).height(); // - $(".site_branding").outerHeight();    //.offset().top
 		
 	function doWhenScrolledStartpage() {
 		var yPos = $(window).scrollTop();
@@ -74,6 +74,7 @@ $(document).ready(function(){
 	// Load blog posts
 	// *
 	var sitebrandingheight = $("body > header").height();
+	var sitebrandingheight = $("body > header").outerHeight();
 	// Load content like sharing buttons?
 	var getViewletBelowContent = ($("body").find(".shareable").length>0);
 	$(".tileFooter a, .tileHeadline a, .tileImage a").click(function() {

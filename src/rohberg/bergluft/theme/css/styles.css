@@ -6028,6 +6028,9 @@ span.required:before {
 pre {
   white-space: pre-wrap; }
 
+p.callout {
+  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1); }
+
 .image-left {
   float: left;
   margin: .5em 1em .5em 0; }
@@ -6066,18 +6069,18 @@ pre {
 .site_branding {
   color: #fff;
   background-color: transparent;
-  height: 8rem;
+  height: auto;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2); }
   .site_branding .custom_header_media_inside {
     overflow: hidden;
     margin: -1rem;
-    height: 8rem; }
+    z-index: 0; }
     .site_branding .custom_header_media_inside img {
       width: 100vw;
-      height: 8rem;
+      height: 5.5rem;
       object-fit: cover; }
   .site_branding .site_branding_inner {
-    margin-top: -5.5rem; }
+    position: absolute; }
     .site_branding .site_branding_inner #portal-logo {
       padding-right: 1rem; }
     .site_branding .site_branding_inner .front_page {
@@ -6085,6 +6088,8 @@ pre {
     .site_branding .site_branding_inner a {
       color: #eaf2f8;
       font-weight: bold; }
+  .site_branding p {
+    margin: 0; }
 
 #global_navi {
   background-color: transparent;
@@ -6114,17 +6119,18 @@ body.section-front-page .site_branding {
   color: #fff;
   background-color: transparent;
   border-bottom: none;
-  box-shadow: none; }
+  box-shadow: none;
+  transition: background-color .2s ease-in-out, color .2s ease-in-out, box-shadow .2s ease-in-out, border .2s ease-in-out; }
   body.section-front-page .site_branding #portal-logo {
     display: none; }
   body.section-front-page .site_branding .site_branding_inner {
-    margin-top: -12rem; }
+    position: relative; }
   body.section-front-page .site_branding .front_page {
-    display: block; }
+    display: block;
+    margin-top: -12rem; }
   body.section-front-page .site_branding .content_page {
     display: none; }
   body.section-front-page .site_branding.site_branding_scrolled {
-    margin-top: -11rem;
     color: #292b2c;
     background-color: #fff;
     box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2); }
@@ -6132,10 +6138,8 @@ body.section-front-page .site_branding {
       display: block; }
       body.section-front-page .site_branding.site_branding_scrolled #portal-logo a.invert img {
         filter: invert(100%); }
-    body.section-front-page .site_branding.site_branding_scrolled .site_branding_inner {
-      margin-top: 1rem; }
-      body.section-front-page .site_branding.site_branding_scrolled .site_branding_inner a {
-        color: #8AB7D8; }
+    body.section-front-page .site_branding.site_branding_scrolled .site_branding_inner a {
+      color: #8AB7D8; }
     body.section-front-page .site_branding.site_branding_scrolled .front_page {
       display: none; }
     body.section-front-page .site_branding.site_branding_scrolled .content_page {
@@ -6173,7 +6177,8 @@ body.section-front-page .content_head {
 
 #intro {
   box-shadow: 0rem -2rem 3rem 2.5rem white;
-  padding-bottom: 3rem; }
+  padding-bottom: 3rem;
+  padding-top: 2rem; }
 
 #overview article#content > header,
 #overview article#content #parent-fieldname-text {
@@ -6226,7 +6231,7 @@ body.portaltype-easyform form #formEpilogue {
   float: right;
   margin: 0 0 6px 6px;
   border-radius: 4px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1);
   overflow: hidden; }
   .newsImageContainer figcaption {
     padding-left: .5rem; }
@@ -6250,7 +6255,7 @@ body.portaltype-easyform form #formEpilogue {
 
 .card {
   margin-bottom: 1rem;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1);
   border: none; }
   .card .card-footer {
     background-color: transparent;
@@ -6301,17 +6306,23 @@ body.portaltype-easyform form #formEpilogue {
 
 @media (min-width: 992px) and (max-width: 1199px) {
   .card-columns {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
     column-count: 3; } }
+  .card-columns .card {
+    overflow: hidden;
+    box-shadow: none;
+    border: 0.5px solid rgba(0, 0, 0, 0.2); }
   .card-columns .documentAuthor {
     display: none; }
   .card-columns nav#category {
     display: block; }
 
-#content-core img {
+#content-core p img {
   max-width: 100%;
   height: auto;
   border-radius: 4px;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
+  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1); }
 
 nav#category {
   display: flex;
@@ -6369,14 +6380,14 @@ body.portaltype-collection #viewlet-below-content {
   padding-right: 0px; }
   #col2cont aside {
     font-size: .9rem;
-    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1);
     border: none;
     padding: .8rem .5rem; }
     #col2cont aside img {
       max-width: 100%;
       height: auto;
       border-radius: 4px;
-      box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1); }
+      box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1); }
 
 #hyper {
   height: 0;
