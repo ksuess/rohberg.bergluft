@@ -24,9 +24,9 @@ $shadow-enabled: false;
 	@if $shadow-enabled {
 		border: none;
 		box-shadow: 0 0 .4rem 0 rgba(0, 0, 0, 0.1);		
-	} else {
+	} @else {
 		box-shadow: none;
-		border: .4rem solid rgba(0, 0, 0, 0.2);
+		border: 1px solid rgba(0, 0, 0, 0.1);
 	}
 }
 @mixin shadow-light-righttop {
@@ -72,10 +72,19 @@ span.required:before {
 pre {
 	white-space: pre-wrap;
 }
-// Todo: Callout
 p.callout {
-//    border-left: 1em solid #ccc;
-	@include shadow-light-allsides;	
+    background: lighten($link-color, 25%);
+    padding: 1em;
+    border-left: 1em solid $link-color;
+    clear: both;
+	border-radius: 4px;
+}
+code, pre {
+    padding: 0.2rem 0.4rem;
+    font-size: 90%;
+    color: #bd4147;
+    background-color: #f7f7f9;
+    border-radius: 0.25rem;
 }
 // Images in body
 .image-left{float:left;margin:.5em 1em .5em 0}

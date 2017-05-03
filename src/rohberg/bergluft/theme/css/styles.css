@@ -6028,9 +6028,19 @@ span.required:before {
 pre {
   white-space: pre-wrap; }
 
-p.callout else {
-  box-shadow: none;
-  border: 0.4rem solid rgba(0, 0, 0, 0.2); }
+p.callout {
+  background: #eaf2f8;
+  padding: 1em;
+  border-left: 1em solid #8AB7D8;
+  clear: both;
+  border-radius: 4px; }
+
+code, pre {
+  padding: 0.2rem 0.4rem;
+  font-size: 90%;
+  color: #bd4147;
+  background-color: #f7f7f9;
+  border-radius: 0.25rem; }
 
 .image-left {
   float: left;
@@ -6232,10 +6242,9 @@ body.portaltype-easyform form #formEpilogue {
   float: right;
   margin: 0 0 6px 6px;
   border-radius: 4px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden; }
-  .newsImageContainer else {
-    box-shadow: none;
-    border: 0.4rem solid rgba(0, 0, 0, 0.2); }
   .newsImageContainer figcaption {
     padding-left: .5rem; }
 
@@ -6257,10 +6266,9 @@ body.portaltype-easyform form #formEpilogue {
   background-color: white !important; }
 
 .card {
-  margin-bottom: 1rem; }
-  .card else {
-    box-shadow: none;
-    border: 0.4rem solid rgba(0, 0, 0, 0.2); }
+  margin-bottom: 1rem;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
   .card .card-footer {
     background-color: transparent;
     border: none; }
@@ -6321,10 +6329,9 @@ body.portaltype-easyform form #formEpilogue {
 #content-core p img {
   max-width: 100%;
   height: auto;
-  border-radius: 4px; }
-  #content-core p img else {
-    box-shadow: none;
-    border: 0.4rem solid rgba(0, 0, 0, 0.2); }
+  border-radius: 4px;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.1); }
 
 #content-core .card p img {
   box-shadow: none; }
@@ -6385,18 +6392,16 @@ body.portaltype-collection #viewlet-below-content {
   padding-right: 0px; }
   #col2cont aside {
     font-size: .9rem;
+    box-shadow: none;
+    border: 1px solid rgba(0, 0, 0, 0.1);
     border: none;
     padding: .8rem .5rem; }
-    #col2cont aside else {
-      box-shadow: none;
-      border: 0.4rem solid rgba(0, 0, 0, 0.2); }
     #col2cont aside img {
       max-width: 100%;
       height: auto;
-      border-radius: 4px; }
-      #col2cont aside img else {
-        box-shadow: none;
-        border: 0.4rem solid rgba(0, 0, 0, 0.2); }
+      border-radius: 4px;
+      box-shadow: none;
+      border: 1px solid rgba(0, 0, 0, 0.1); }
 
 #hyper {
   height: 0;
