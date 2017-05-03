@@ -43,7 +43,7 @@
 		<replace css:theme-children=".custom_header_media_inside" css:content-children=".custom_header_media_inside"  />
 		
 		<!-- site branding -->
-		<replace css:theme-children=".site_branding .front_page" css:content-children=".portlet-static-sitebranding-1 .portletContent"/>	
+		<replace css:theme-children=".front_page" css:content-children=".portlet-static-sitebranding-1 .portletContent"/>	
 		<replace css:theme-children=".site_branding .content_page" css:content-children=".portlet-static-sitebranding-2 .portletContent"/>	
 		
 		<!-- logo -->		

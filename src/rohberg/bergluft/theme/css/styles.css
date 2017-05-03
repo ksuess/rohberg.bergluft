@@ -6028,8 +6028,9 @@ span.required:before {
 pre {
   white-space: pre-wrap; }
 
-p.callout {
-  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1); }
+p.callout else {
+  box-shadow: none;
+  border: 0.4rem solid rgba(0, 0, 0, 0.2); }
 
 .image-left {
   float: left;
@@ -6053,7 +6054,7 @@ p.callout {
   visibility: hidden; }
 
 .site_header {
-  background-color: #292b2c;
+  background-color: #fff;
   display: none; }
 
 .custom_header {
@@ -6110,10 +6111,14 @@ body.section-front-page #overview header {
   display: none; }
 
 body.section-front-page .site_header {
-  display: block; }
-
-body.section-front-page .custom_header {
-  height: 100vh; }
+  display: block;
+  color: #fff; }
+  body.section-front-page .site_header .custom_header {
+    height: 100vh; }
+    body.section-front-page .site_header .custom_header .front_page {
+      display: block;
+      position: absolute;
+      bottom: 10rem; }
 
 body.section-front-page .site_branding {
   color: #fff;
@@ -6125,11 +6130,8 @@ body.section-front-page .site_branding {
     display: none; }
   body.section-front-page .site_branding .site_branding_inner {
     position: relative; }
-  body.section-front-page .site_branding .front_page {
-    display: block;
-    margin-top: -12rem; }
   body.section-front-page .site_branding .content_page {
-    display: none; }
+    opacity: 0; }
   body.section-front-page .site_branding.site_branding_scrolled {
     color: #292b2c;
     background-color: #fff;
@@ -6140,10 +6142,8 @@ body.section-front-page .site_branding {
         filter: invert(100%); }
     body.section-front-page .site_branding.site_branding_scrolled .site_branding_inner a {
       color: #8AB7D8; }
-    body.section-front-page .site_branding.site_branding_scrolled .front_page {
-      display: none; }
     body.section-front-page .site_branding.site_branding_scrolled .content_page {
-      display: block; }
+      opacity: 1; }
   body.section-front-page .site_branding .custom_header_media_inside {
     display: none; }
 
@@ -6176,7 +6176,7 @@ body.section-front-page .content_head {
     margin-right: auto; }
 
 #intro {
-  box-shadow: 0rem -2rem 3rem 2.5rem white;
+  box-shadow: 0rem -2rem 5rem 5rem white;
   padding-bottom: 3rem;
   padding-top: 2rem; }
 
@@ -6231,8 +6231,10 @@ body.portaltype-easyform form #formEpilogue {
   float: right;
   margin: 0 0 6px 6px;
   border-radius: 4px;
-  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1);
   overflow: hidden; }
+  .newsImageContainer else {
+    box-shadow: none;
+    border: 0.4rem solid rgba(0, 0, 0, 0.2); }
   .newsImageContainer figcaption {
     padding-left: .5rem; }
 
@@ -6254,9 +6256,10 @@ body.portaltype-easyform form #formEpilogue {
   background-color: white !important; }
 
 .card {
-  margin-bottom: 1rem;
-  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1);
-  border: none; }
+  margin-bottom: 1rem; }
+  .card else {
+    box-shadow: none;
+    border: 0.4rem solid rgba(0, 0, 0, 0.2); }
   .card .card-footer {
     background-color: transparent;
     border: none; }
@@ -6309,10 +6312,6 @@ body.portaltype-easyform form #formEpilogue {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3; } }
-  .card-columns .card {
-    overflow: hidden;
-    box-shadow: none;
-    border: 0.5px solid rgba(0, 0, 0, 0.2); }
   .card-columns .documentAuthor {
     display: none; }
   .card-columns nav#category {
@@ -6321,8 +6320,13 @@ body.portaltype-easyform form #formEpilogue {
 #content-core p img {
   max-width: 100%;
   height: auto;
-  border-radius: 4px;
-  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1); }
+  border-radius: 4px; }
+  #content-core p img else {
+    box-shadow: none;
+    border: 0.4rem solid rgba(0, 0, 0, 0.2); }
+
+#content-core .card p img {
+  box-shadow: none; }
 
 nav#category {
   display: flex;
@@ -6380,14 +6384,18 @@ body.portaltype-collection #viewlet-below-content {
   padding-right: 0px; }
   #col2cont aside {
     font-size: .9rem;
-    box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1);
     border: none;
     padding: .8rem .5rem; }
+    #col2cont aside else {
+      box-shadow: none;
+      border: 0.4rem solid rgba(0, 0, 0, 0.2); }
     #col2cont aside img {
       max-width: 100%;
       height: auto;
-      border-radius: 4px;
-      box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1); }
+      border-radius: 4px; }
+      #col2cont aside img else {
+        box-shadow: none;
+        border: 0.4rem solid rgba(0, 0, 0, 0.2); }
 
 #hyper {
   height: 0;

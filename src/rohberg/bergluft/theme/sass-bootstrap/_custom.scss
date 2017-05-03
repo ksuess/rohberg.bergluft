@@ -19,9 +19,15 @@ $body-color: $gray-dark;
     @include highlight;
 }
 
-
+$shadow-enabled: false;
 @mixin shadow-light-allsides {
-	box-shadow: 0 0 .6rem 0 rgba(0, 0, 0, 0.1);
+	@if $shadow-enabled {
+		border: none;
+		box-shadow: 0 0 .4rem 0 rgba(0, 0, 0, 0.1);		
+	} else {
+		box-shadow: none;
+		border: .4rem solid rgba(0, 0, 0, 0.2);
+	}
 }
 @mixin shadow-light-righttop {
 	box-shadow: 10px -10px 10px -10px rgba(0, 0, 0, 0.1);
@@ -88,7 +94,7 @@ p.callout {
 
 // *** Header
 .site_header {
-    background-color: $gray-dark;
+    background-color: $body-bg;
 	display: none;
 }
 .custom_header {
@@ -187,10 +193,20 @@ body.section-front-page {
 	}
 	.site_header {
 		display: block;
+		color: $body-bg;
+		.custom_header {
+			height: 100vh;
+			.front_page {
+				display: block;
+		//			padding-bottom: 12rem;  // TODO: branding ruckelt. siehe Transition .site_branding
+				position: absolute;
+		//		color: coral;
+				bottom: 10rem;
+			}
+		}
 	}
-	.custom_header {
-		height: 100vh;
-	}
+
+
 	.site_branding { // front-page
 //		margin-top: -11rem;
 		color: $body-bg;
@@ -205,12 +221,8 @@ body.section-front-page {
 		.site_branding_inner {
 			position: relative;
 		}
-		.front_page {
-			display: block;
-			margin-top: -12rem;  // TODO: branding ruckelt. siehe Transition .site_branding
-		}
 		.content_page {
-			display: none;
+			opacity: 0;
 		}	
 		&.site_branding_scrolled {
 			color: $body-color;
@@ -229,10 +241,9 @@ body.section-front-page {
 				}
 			}
 			.front_page {
-				display: none;
 			}
 			.content_page {
-				display: block;
+				opacity: 1;
 			}
 		}
 		.custom_header_media_inside { // nur .content_page
@@ -279,7 +290,7 @@ body.section-front-page {
 	}
 }
 #intro {
-	box-shadow: 0rem -2rem 3rem 2.5rem white;
+	box-shadow: 0rem -2rem 5rem 5rem white;
 //	box-shadow: 0rem -2rem 5rem 5rem white;
 	padding-bottom: 3rem;
 	padding-top: 2rem;
@@ -396,7 +407,6 @@ body.portaltype-easyform form {
 .card {
 	margin-bottom: 1rem;
 	@include shadow-light-allsides;
-	border: none;
 	.card-footer {
 		background-color: transparent;
 		border: none;
@@ -481,10 +491,7 @@ body.portaltype-easyform form {
 //		column-count: 4;
 	}
 	.card {
-		overflow: hidden;
-		box-shadow: none;
-		border: .5px solid rgba(0,0,0,.2);
-		img.card-img-top {			
+		img.card-img-top {	
 		}
 	}
 	.documentAuthor {
@@ -495,6 +502,7 @@ body.portaltype-easyform form {
 	}
 }
 
+
 // end cards
 
 
@@ -504,6 +512,9 @@ body.portaltype-easyform form {
 		height: auto;
 		border-radius: 4px;
 		@include shadow-light-allsides;
+	}
+	.card p img { // no shadow inside cards
+		box-shadow: none;
 	}
 }
 nav#category {

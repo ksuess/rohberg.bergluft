@@ -1,4 +1,20 @@
+$.fn.clicktoggle = function(a, b) {
+    return this.each(function() {
+        var clicked = false;
+        $(this).click(function() {
+            if (clicked) {
+                clicked = false;
+                return b.apply(this, arguments);
+            }
+            clicked = true;
+            return a.apply(this, arguments);
+        });
+    });
+};
+
+
 $(document).ready(function(){
+	var sitebrandingheight = $("body > header").outerHeight();
 		
 	// Tooltips
 	// $('[data-toggle="tooltip"]').tooltip();
@@ -26,7 +42,8 @@ $(document).ready(function(){
 	var didScroll = false;
 	var lastYPos = 0;
 	var delta = 5;
-	var minScrollDistance =  $(window).height(); // - $(".site_branding").outerHeight();    //.offset().top
+	var minScrollDistance =  $(window).height()+0; // - $(".site_branding").outerHeight();    //.offset().top
+	console.log(minScrollDistance);
 		
 	function doWhenScrolledStartpage() {
 		var yPos = $(window).scrollTop();
@@ -67,62 +84,70 @@ $(document).ready(function(){
 	
 	$(window).on('resize', function(){
 		// watchScrolling depends on window height. So we recalculate height
-		minScrollDistance = $(window).height() * 0.9;
+		minScrollDistance = $(window).height();
 	});
 	
 	// *
 	// Load blog posts
 	// *
-	var sitebrandingheight = $("body > header").height();
-	var sitebrandingheight = $("body > header").outerHeight();
 	// Load content like sharing buttons?
 	var getViewletBelowContent = ($("body").find(".shareable").length>0);
-	$(".tileFooter a, .tileHeadline a, .tileImage a").click(function() {
-		var href_raw = $(this).attr("href")
-		var href = href_raw + " #parent-fieldname-text"; // only body and later viewlet-below-content
-		var tileThing = $(this).parent();
-		var article = tileThing.closest("article");
-		var headline = article.find(".tileHeadline");
-		var toScrollTo = article.offset().top - sitebrandingheight - headline.outerHeight();
-		var moreLink = article.find(".tileFooter a");
-		var title = article.find(".tileHeadline a").text();
+	$(".tileFooter a, .tileHeadline a, .tileImage a").clicktoggle(
+		function() {
+			var href_raw = $(this).attr("href")
+			var href = href_raw + " #parent-fieldname-text"; // only body and later viewlet-below-content
+			var tileThing = $(this).parent();
+			var article = tileThing.closest("article");
+			var headline = article.find(".tileHeadline");
+			var toScrollTo = article.offset().top - sitebrandingheight - headline.outerHeight();
+			var moreLink = article.find(".tileFooter a");
+			var title = article.find(".tileHeadline a").text();
 		
-		if (!article.hasClass("enriched")){ // check if content is already loaded
-			article.find(".tileBody").after("<div class='tilePost'></div>");
+			if (!article.hasClass("enriched")) { // check if content is already loaded
+				article.find(".tileBody").after("<div class='tilePost'></div>");
+				var tilePost = article.find(".tilePost");
+				tilePost.hide().load(href, function( response, status, xhr ) {
+				  if ( status == "success" ) {
+					  article.addClass("enriched");
+					  // load sharing buttons
+			  		  var footer = moreLink.parent();
+					  tilePost.children("div").attr("id", "");
+					  footer.slideUp();
+					  if (getViewletBelowContent) {
+						  footer.load(href_raw + " .shariff2", function( response, status, xhr ) {
+							  if( status =="success") {
+								  article.find('.shariff2').each(function() {
+									  if (!this.hasOwnProperty('shariff')) {
+										  this.shariff = new Shariff(this);
+										  $(this).addClass("shariff");
+									  }
+								  });
+							  }
+						  });
+					  };
+					  tilePost.slideDown();
+					  if (getViewletBelowContent) {
+						  footer.slideDown();
+					  };
+					  // scroll up to make loaded content visible
+					  $('html, body').animate({
+		  					  scrollTop:toScrollTo
+					  },'slow');
+				  }
+				});
+			} else { // article already enriched
+				var tilePost = article.find(".tilePost");
+				tilePost.slideDown();
+			};
+			return false;
+		},
+		function() {
+			var article = $(this).closest("article");
 			var tilePost = article.find(".tilePost");
-			tilePost.hide().load(href, function( response, status, xhr ) {
-			  if ( status == "success" ) {
-				  article.addClass("enriched");
-				  // load sharing buttons
-		  		  var footer = moreLink.parent();
-				  tilePost.children("div").attr("id", "");
-				  footer.hide();
-				  if (getViewletBelowContent) {
-					  // footer.load(href_raw + " #viewlet-below-content", function( response, status, xhr ) {
-					  footer.load(href_raw + " .shariff2", function( response, status, xhr ) {
-						  if( status =="success") {
-							  article.find('.shariff2').each(function() {
-								  if (!this.hasOwnProperty('shariff')) {
-									  this.shariff = new Shariff(this);
-									  $(this).addClass("shariff");
-								  }
-							  });
-						  }
-					  });
-				  };
-				  tilePost.fadeIn("slow");
-				  if (getViewletBelowContent) {
-					  footer.fadeIn("slow");
-				  };
-				  // scroll up to make loaded content visible
-				  $('html, body').animate({
-	  					  scrollTop:toScrollTo
-				  },'slow');
-			  }
-			});
-		};
-		return false;
-	});
+			tilePost.slideUp('slow');
+			return false;
+		}
+	); // clicktoggle
 	
 	
 	// if page called with anchor: on load of page: click link in anchor to open details 
@@ -157,12 +182,12 @@ $(document).ready(function(){
 	$("a.inline_link").click(function() {
 		var href = $(this).attr("href") + " #content";
 		details = $(".details_inner");
-		details.fadeOut("slow");
+		// details.fadeOut();
 		details.load(href, function( response, status, xhr ) {
 			  if ( status == "success" ) {
-				  details.fadeIn("slow");
+				  // details.fadeIn();
 				  $('html, body').animate({
-				      scrollTop:details.offset().top - 140
+				      scrollTop:details.offset().top - sitebrandingheight
 				  },'slow');
 			  }
 		});
