@@ -92,7 +92,6 @@ $(document).ready(function(){
 		if (pos!=-1) {
 			href = href.substring(0,pos);
 		}
-		alert(href);
 		window.location.assign(href + "#intro");
 		return false;
 	})
