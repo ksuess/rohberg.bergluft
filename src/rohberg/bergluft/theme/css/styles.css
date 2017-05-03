@@ -6118,7 +6118,8 @@ body.section-front-page .site_header {
     body.section-front-page .site_header .custom_header .front_page {
       display: block;
       position: absolute;
-      bottom: 10rem; }
+      bottom: 5rem;
+      cursor: pointer; }
 
 body.section-front-page .site_branding {
   color: #fff;

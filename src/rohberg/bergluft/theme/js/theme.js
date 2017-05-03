@@ -42,8 +42,7 @@ $(document).ready(function(){
 	var didScroll = false;
 	var lastYPos = 0;
 	var delta = 5;
-	var minScrollDistance =  $(window).height()+0; // - $(".site_branding").outerHeight();    //.offset().top
-	console.log(minScrollDistance);
+	var minScrollDistance = $("body > header").offset().top;
 		
 	function doWhenScrolledStartpage() {
 		var yPos = $(window).scrollTop();
@@ -86,6 +85,17 @@ $(document).ready(function(){
 		// watchScrolling depends on window height. So we recalculate height
 		minScrollDistance = $(window).height();
 	});
+	
+	$(".front_page").click(function() {
+		var href = window.location.href;
+		pos = href.indexOf("#");
+		if (pos!=-1) {
+			href = href.substring(0,pos);
+		}
+		alert(href);
+		window.location.assign(href + "#intro");
+		return false;
+	})
 	
 	// *
 	// Load blog posts

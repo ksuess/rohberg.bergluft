@@ -198,10 +198,9 @@ body.section-front-page {
 			height: 100vh;
 			.front_page {
 				display: block;
-		//			padding-bottom: 12rem;  // TODO: branding ruckelt. siehe Transition .site_branding
 				position: absolute;
-		//		color: coral;
-				bottom: 10rem;
+				bottom: 5rem;
+				cursor: pointer;
 			}
 		}
 	}
