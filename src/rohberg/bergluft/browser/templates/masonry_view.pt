@@ -2,7 +2,7 @@
     xmlns:tal="http://xml.zope.org/namespaces/tal"
     xmlns:metal="http://xml.zope.org/namespaces/metal"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-    lang="en"
+    lang="de"
     metal:use-macro="context/main_template/macros/master"
     i18n:domain="plone">
     <tal:comment replace="nothing">
@@ -45,7 +45,6 @@
 		          </h2>
 
 		          <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>
-		          <div class="bergluft_byline" tal:content="python: view.getPubDate(item)">01.01.2017</div>
 				  
 
 		          <div class="tileBody" tal:condition="item_description">

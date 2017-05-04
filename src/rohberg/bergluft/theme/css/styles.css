@@ -6056,6 +6056,9 @@ code, pre {
 .image-tile {
   float: right; }
 
+.documentPublished {
+  font-size: 80%; }
+
 .entries::before, #content article.entry::after, #relatedItemBox ul li::after, #searchresults ul li::after {
   content: " ";
   display: block;
@@ -6171,6 +6174,10 @@ body.section-front-page .content_head {
       #languageselector ul li.currentLanguage a {
         color: #5194c5; }
 
+#viewlet-below-content-title {
+  display: none;
+  margin-bottom: 1rem; }
+
 #intro,
 #overview,
 #details,
@@ -6195,12 +6202,7 @@ body.section-front-page .content_head {
 #overview article#content #parent-fieldname-text {
   margin-bottom: 3rem; }
 
-#overview article#content #viewlet-below-content-title {
-  color: lightgreen;
-  display: none; }
-
 #details #viewlet-below-content-title {
-  color: magenta;
   display: none; }
 
 #footer {
@@ -6221,6 +6223,10 @@ article.tileItem {
     margin-top: 2rem; }
     article.tileItem .tilePost img {
       max-width: 100%; }
+
+body.section-blog #viewlet-below-content-title,
+body.subsection-blog #viewlet-below-content-title {
+  display: block; }
 
 body.portaltype-easyform form .field {
   margin-top: 1rem; }
@@ -6379,9 +6385,7 @@ nav#category {
     #searchform #search-results li .documentModified {
       display: none; }
 
-body.portaltype-folder .documentPublished,
 body.portaltype-folder #viewlet-below-content,
-body.portaltype-collection .documentPublished,
 body.portaltype-collection #viewlet-below-content {
   display: none; }
 

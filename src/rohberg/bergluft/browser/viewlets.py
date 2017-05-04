@@ -6,6 +6,7 @@ import math
 from plone.app.layout.viewlets import common as base
 from plone import api
 
+from Products.CMFCore.utils import getToolByName
 
 def format_datetime_friendly_ago(date):
     """ Format date & time using site specific settings.
@@ -73,6 +74,14 @@ class ShariffViewlet(base.ViewletBase):
 class BergluftBylineViewlet(base.ViewletBase):
     """
     """
+
+    def toLocalizedTime(self, time, long_format=None, time_only=None):
+        """Convert time to localized time
+        """
+        util = getToolByName(self.context, 'translation_service')
+        return util.ulocalized_time(time, long_format, time_only, self.context,
+                                    domain='plonelocales')
+                                    # 
     def getPubDate(self):
         dt = self.context.effective_date or self.context.modification_date
         dt_friendly = format_datetime_friendly_ago(dt)

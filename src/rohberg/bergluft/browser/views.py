@@ -55,10 +55,5 @@ def format_datetime_friendly_ago(date):
                 return "few seconds ago"
 
 class CollectionViewPlus(CollectionView):
-
-    def getPubDate(self, item):
-        
-        dt = item.effective_date or item.modification_date
-        dt_friendly = format_datetime_friendly_ago(dt)
-        return dt_friendly
-        
+    """ CollectionViewPlus
+    """

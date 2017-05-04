@@ -92,6 +92,9 @@ code, pre {
 .image-inline{float:none}
 
 .image-tile {float: right;}
+.documentPublished {
+	font-size: 80%;
+}
 
 .entries::before, #content article.entry::after, #relatedItemBox ul li::after, #searchresults ul li::after {
     content: " ";
@@ -283,6 +286,12 @@ body.section-front-page {
 }
 
 
+// byline etc
+#viewlet-below-content-title {
+	display: none;
+	margin-bottom: 1rem;
+}
+
 // sections
 #intro,
 #overview,
@@ -309,15 +318,10 @@ body.section-front-page {
 		#parent-fieldname-text {
 			margin-bottom: 3rem;
 		}
-		#viewlet-below-content-title {
-			color: lightgreen;
-			display: none;
-		}
 	}
 }
 #details {
 	#viewlet-below-content-title {
-		color: magenta;
 		display: none;
 	}
 }
@@ -336,6 +340,7 @@ body.section-front-page {
 }
 
 // Blog
+
 article.tileItem {
 	margin-bottom: 3rem;
 	.tileHeadline {
@@ -354,6 +359,16 @@ article.tileItem {
 		img {
 			max-width: 100%;
 		}
+	}
+}
+
+// Blog Posts
+
+
+body.section-blog,
+body.subsection-blog {
+	#viewlet-below-content-title {
+		display: block;
 	}
 }
 
@@ -587,7 +602,7 @@ nav#category {
 
 body.portaltype-folder, 
 body.portaltype-collection {
-	.documentPublished,
+//	.documentPublished,
 	#viewlet-below-content { // categories of collection and pagination to posts
 		display: none;
 	}

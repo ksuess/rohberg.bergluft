@@ -33,7 +33,6 @@
           </h2>
 
           <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>
-		  <div class="bergluft_byline" tal:content="python: view.getPubDate(item)">01.01.2017</div>
 
           <div class="tileImage"
                tal:condition="item_has_image"
