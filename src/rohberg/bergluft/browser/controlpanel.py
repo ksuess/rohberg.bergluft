@@ -17,7 +17,11 @@ class IBergluftControlPanel(Interface):
          value_type=schema.TextLine(),
          required=False
      )
-
+     GTMCode = schema.TextLine(
+        title=u'GTMCode',
+        description=u'Google Tag Manager Code',
+        required=False,
+     )
 
 
 class BergluftControlPanelForm(RegistryEditForm):

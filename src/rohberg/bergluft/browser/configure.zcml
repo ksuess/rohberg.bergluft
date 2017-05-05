@@ -59,7 +59,26 @@
 			manager="plone.app.layout.viewlets.interfaces.IBelowContentTitle"
 			/> 
 	  
-	  
+
+	<!-- Google Tag Manager -->
+    <browser:viewlet
+      name="rohberg.bergluft.tagmanagerhead"
+      class=".viewlets.GoogleTagManagerViewlet"
+      permission="zope2.View"
+      layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"
+      template="templates/tagmanagerhead.pt"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      /> 
+
+	<browser:viewlet
+	  name="rohberg.bergluft.tagmanagerbody"
+	  class=".viewlets.GoogleTagManagerViewlet"
+	  permission="zope2.View"
+	  layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"
+	  template="templates/tagmanagerbody.pt"
+	  manager="plone.app.layout.viewlets.interfaces.IPortalHeader"
+	  /> 
+
 	  
     <!-- Masonry view for collections 
 		  layer="rohberg.bergluft.interfaces.IRohbergBergluftLayer"

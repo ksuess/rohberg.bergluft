@@ -86,3 +86,28 @@ class BergluftBylineViewlet(base.ViewletBase):
         dt = self.context.effective_date or self.context.modification_date
         dt_friendly = format_datetime_friendly_ago(dt)
         return dt_friendly
+
+class GoogleTagManagerViewlet(base.ViewletBase):
+    """ two snippets: header and body
+    
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-schnupsi');</script>
+    <!-- End Google Tag Manager -->
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-schnupsi"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    """
+
+    def show(self):
+        return True
+        
+    def GTMCode(self):
+        gtmc = api.portal.get_registry_record('bergluft.GTMCode')
+        return gtmc
+        
