@@ -545,6 +545,7 @@ nav#category {
 	hyphens: none;
 	#categories-filed-under {
 		padding-right: 2rem;
+		display: none;
 	}
 	ul {
 		padding-left: 0;
@@ -552,7 +553,11 @@ nav#category {
 		li {
 			display: inline;
 			padding-right: .7rem;
-	}
+			a.link-category {
+				@include button-variant($body-bg, $link-color, transparent);
+				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+			}
+		}
 	}
 
 }
@@ -563,6 +568,14 @@ nav#category {
 		li {
 			display: inline;
 			padding-right: 5rem;
+			white-space: nowrap;
+
+			&.previous a:before {
+				content: "<  ";
+			}
+			&.next a:after {
+				content: "  >";			
+			}
 		}
 	}
 }
