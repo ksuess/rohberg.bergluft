@@ -383,6 +383,10 @@ body.portaltype-easyform form {
 	}
 	div.formControls { // buttons
 		margin-top: 1rem;
+		.button-field {
+			@include button-variant($body-bg, $link-color, transparent);
+			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+		}
 	}
 	.fieldErrorBox {
 		color: orange;
