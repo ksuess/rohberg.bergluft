@@ -109,7 +109,7 @@
   	                        </tal:byline>
 
 
-  	                        <tal:published condition="python: item_type != 'Event'">
+  	                        <tal:published condition="python: item_type != 'Event' and getattr(context, 'shareable', False)">
   							  <span class="documentPublished">
   	                              <span tal:replace="python:view.toLocalizedTime(item_published,long_format=0)">
   	                                August 16, 2001 at 23:35:59
