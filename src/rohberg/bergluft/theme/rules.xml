@@ -113,11 +113,11 @@
 		<replace css:theme-children="div.footer_inner" css:content-children=".portlet-static-footer-2 section.portletContent"/>
 
 		<!-- link color configurable -->
-		<after css:theme-children="style">
+		<!-- <after css:theme-children="style">
 		    a, a:link, a:visited, a:hover, a:active {
 		      color: <xsl:value-of select="$link-color" />;
 		    }
-		</after>
+		</after> -->
 		
 		<!-- DEBUG: Comment the following before deploying -->
 

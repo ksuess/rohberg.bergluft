@@ -69,7 +69,6 @@ class ShariffViewlet(base.ViewletBase):
     """
     def show(self):
         shareable = getattr(self.context.aq_parent, "shareable", False)
-        print("parent is shareable {}".format(str(shareable)))
         return shareable
 
     def getDataServices(self):

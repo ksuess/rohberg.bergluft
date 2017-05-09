@@ -2,8 +2,8 @@ $font-size-base: 1.1rem;
 $font-family-base: 'Roboto', sans-serif;
 $headings-font-family: 'Noto Sans', sans-serif;
 $link-color: #8AB7D8; // blue. see Adobe Kuler "Bergluft" 
-//$link-color: #8DC82C; // light green
-$link-hover-color: darken($link-color, 15%) ;
+//$link-color: #8DC82C; // light green. lighten: #c5e68d darken: #61891e
+$link-hover-color: darken($link-color, 15%);
 //https://color.adobe.com/de/cloud/aHR0cHM6Ly9jYy1hcGktYXNzZXRzLmFkb2JlLmlv/library/c177376d-49e3-41e1-999a-9bef3f4fbf08/theme/6a06f5e9-1d02-4cde-9afa-6ff00b0805d2/
 
 /*
