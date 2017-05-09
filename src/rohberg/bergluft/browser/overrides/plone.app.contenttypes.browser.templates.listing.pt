@@ -7,14 +7,13 @@
     i18n:domain="plone">
     <tal:comment replace="nothing">
       changes: 
-	  marker shareable
 	  published
     </tal:comment>
 <body>
 
 <metal:content-core fill-slot="content-core">
 <metal:block define-macro="content-core">
-	<div tal:attributes="class python:(getattr(context, 'shareable', False) and 'shareable' or '') " >
+	<div>
   	  <div metal:define-macro="text-field-view"
   	      id="parent-fieldname-text" class="stx"
   	      tal:define="text view/text"
@@ -149,7 +148,7 @@
 
   	    </tal:results>
   	  </metal:listingmacro>
-	</div> <!-- shareable -->
+	</div>
 
 
 

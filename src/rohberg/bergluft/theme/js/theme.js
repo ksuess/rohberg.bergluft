@@ -100,7 +100,7 @@ $(document).ready(function(){
 	// Load blog posts
 	// *
 	// Load content like sharing buttons?
-	var getViewletBelowContent = ($("body").find(".shareable").length>0);
+	var getViewletBelowContent = true // ($("body").find(".shareable").length>0);
 	$(".tileFooter a, .tileHeadline a, .tileImage a").clicktoggle(
 		function() {
 			var href_raw = $(this).attr("href")

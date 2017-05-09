@@ -1,4 +1,4 @@
-<div tal:condition="python:context.aq_parent.id=='blog'"
+<div tal:condition="view/show"
 	tal:attributes="data-url context/absolute_url;
 		data-title context/title;
         data-services view/getDataServices" 

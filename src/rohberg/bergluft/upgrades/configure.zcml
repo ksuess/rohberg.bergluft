@@ -40,12 +40,12 @@
         />
 		
     <upgrade-step:importProfile
-        title="Collection: added field shareable" 
+        title="Folder: added field shareable" 
 		description="shareable means that sharing buttons for facebook, etc are shown. To be configured in control panel."
         profile="rohberg.bergluft:default"
         source="*"
-        destination="1008"
-        directory="1008"
+        destination="1009"
+        directory="1009"
         />
 	  
 </configure>

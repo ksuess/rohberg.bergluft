@@ -67,6 +67,11 @@ class GiganticHeaderViewlet(base.ViewletBase):
 class ShariffViewlet(base.ViewletBase):
     """ Social Media Sharing with Heise Shariff
     """
+    def show(self):
+        shareable = getattr(self.context.aq_parent, "shareable", False)
+        print("parent is shareable {}".format(str(shareable)))
+        return shareable
+
     def getDataServices(self):
         channels = api.portal.get_registry_record('bergluft.channels')
         return json.dumps(channels)
