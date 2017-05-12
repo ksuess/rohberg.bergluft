@@ -52,14 +52,47 @@ $shadow-enabled: false;
 	word-wrap: normal !important; /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
+input[type="submit"], button {
+	@include button-variant($body-bg, $link-color, transparent);
+	@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+	padding: 0.15rem 0.5rem 0.05rem 0.5rem;
+	&:hover {
+		@include button-variant($body-bg, $link-hover-color, transparent);
+	}
+}
+input[type="text"], input[type="email"], input[type="password"], textarea, select {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+	padding: .2rem .3rem;
+}
+textarea {
+	width: 50rem;
+	height: 10rem;
+	max-width: 100%;
+}
+label {
+	margin-bottom: 0;
+}
+
 .discreet {
     color: #777777;
     font-weight: 300;
 }
+
 .portalMessage.error {
     color: orange;
     border: 1px solid orange;
     padding: .5rem.8rem 0rem.8rem;
+}
+.field.error > label, .field.error div.error {
+    color: $color-error;
+}
+.field.error input, .field.error textarea, .field.error select {
+    border-color: $color-error;
+}
+
+.field {
+    margin-bottom: .5rem;
 }
 a[class^="icon-"], a[class*=" icon-"] {
 	text-decoration: none;
@@ -547,6 +580,7 @@ body.portaltype-easyform form {
 nav#category {
 	display: flex;
 	hyphens: none;
+	margin-bottom: 1rem;
 	#categories-filed-under {
 		padding-right: 2rem;
 		display: none;
@@ -557,32 +591,94 @@ nav#category {
 		li {
 			display: inline;
 			padding-right: .7rem;
-			a.link-category {
+			a.link-category { // TODO: hover
 				@include button-variant($body-bg, $link-color, transparent);
 				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
+				&:hover {
+					@include button-variant($body-bg, $link-hover-color, transparent);
+				}
 			}
 		}
 	}
 
 }
 .pagination {
+	margin: 1rem 0 0 0;
 	ul {
 		padding-left: 0;
 		list-style-type: none;
+		width: 100%;
 		li {
-			display: inline;
-			padding-right: 5rem;
+			display: block;
 			white-space: nowrap;
 
-			&.previous a:before {
-				content: "<  ";
+			&.previous {
+				float: left;
+				a:before {
+					content: "<  ";
+				}
 			}
-			&.next a:after {
-				content: "  >";			
+			&.next {
+				float: right;
+				a:after {
+					content: "  >";			
+				}
 			}
 		}
 	}
 }
+
+
+.discussion, 
+#commenting {
+	margin: 2rem 0;
+	border-top: 1px solid $gray-light;
+	padding-top: 1rem;
+	font-size: 80%;
+	.documentByLine {
+		.commentAuthor {
+			font-weight: bold;	
+		}
+		.commentDate {
+			font-weight: normal;
+		}
+	}
+	legend {
+		font-size: 100%;
+		font-weight: bold;
+	}
+	form {
+		label {
+			display: block;
+		}
+		.formControls {
+			margin-top: 1rem;
+		}
+	}
+	.reply {
+		margin: 2rem 0 0 5rem;
+		border-top: 1px solid $gray-light;
+		padding-top: 1rem;
+		
+	}
+	.comment {
+		margin-top: .5rem;
+		&.replyTreeLevel1 {
+			margin-left: 1rem;
+		}
+		&.replyTreeLevel2 {
+			margin-left: 2rem;
+		}
+		&.replyTreeLevel3 {
+			margin-left: 3rem;
+		}
+		p {
+			margin-bottom: .3rem;
+		}
+	}
+
+}
+
 
 #searchform {
 	.input-group, 
@@ -644,6 +740,9 @@ body.portaltype-collection {
 	}
 }
 
+.captchaAudio {
+	display: none;
+}
 
 #hyper {
 	height: 0;

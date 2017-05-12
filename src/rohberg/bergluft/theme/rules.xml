@@ -79,10 +79,11 @@
 	        <xsl:if test="not(//aside[@id='portal-column-two'])">col-xs-12 col-lg-12 p-0</xsl:if>
 	      </xsl:variable>
 
-	      <div class="{$central}">
+	      <div id="content-container" class="{$central}">
 	            <xsl:apply-templates css:select="#content, #viewlet-below-content" />
 	      </div>
 	    </replace>
+		<after css:theme-children="#content-container" method="raw" css:content="#global_statusmessage"/>
 		
 	    <!-- Right column -->
 	    <rules css:if-content="#portal-column-two">
