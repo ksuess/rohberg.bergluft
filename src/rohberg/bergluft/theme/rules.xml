@@ -83,7 +83,8 @@
 	            <xsl:apply-templates css:select="#content, #viewlet-below-content" />
 	      </div>
 	    </replace>
-		<after css:theme-children="#content-container" method="raw" css:content="#global_statusmessage"/>
+		
+		<replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage"/>
 		
 	    <!-- Right column -->
 	    <rules css:if-content="#portal-column-two">
@@ -112,16 +113,6 @@
 		
 		<!-- footer -->
 		<replace css:theme-children="div.footer_inner" css:content-children=".portlet-static-footer-2 section.portletContent"/>
-
-		<!-- link color configurable -->
-		<!-- <after css:theme-children="style">
-		    a, a:link, a:visited, a:hover, a:active {
-		      color: <xsl:value-of select="$link-color" />;
-		    }
-		</after> -->
-		
-		<!-- DEBUG: Comment the following before deploying -->
-
 
 	</rules>
 

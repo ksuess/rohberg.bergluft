@@ -129,6 +129,15 @@ $(document).ready(function(){
 									  if (!this.hasOwnProperty('shariff')) {
 										  this.shariff = new Shariff(this);
 										  $(this).addClass("shariff");
+										  
+										  // Todo: den folgenden Link zu den Kommentaren nur anzeigen, wenn die Diskussion global aktiviert ist.
+										  var $li = $('<li class="shariff-button">').addClass("comments");
+										  var $shareLink = $('<a target="_blank">')
+										    .attr('href', href_raw+'#discussion');
+										  $shareLink.append('<span class="fa fa-comments">');
+										  $li.append($shareLink);
+										  $(this).find("ul")
+										  	.append($li);
 									  }
 								  });
 							  }
@@ -164,7 +173,14 @@ $(document).ready(function(){
 	var anchor = href.indexOf("#");
 	if (anchor!=-1) {
 		anchor = href.substring(anchor);
-		$(anchor).find("a")[0].click();
+		link = $(anchor).find("a");
+		if (link.length>0) {
+			link[0].click();
+		};
+	  	$('html').animate({
+	      scrollTop:$(anchor).offset().top - sitebrandingheight
+	  	},'fast');
+
 	};
 	
 	
@@ -202,8 +218,7 @@ $(document).ready(function(){
 		});
 		return false;
 	});
-
-
+	
 	// Cookie hint
 	
 	

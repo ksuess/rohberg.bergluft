@@ -11,10 +11,12 @@
                        errors options/state/getErrors|nothing;
                        wtool context/@@plone_tools/workflow;
                        auth_token context/@@authenticator/token|nothing"
-           tal:condition="python:isDiscussionAllowed or has_replies"
+           tal:condition="python:getattr(context.aq_parent, 'shareable', False) and (isDiscussionAllowed or has_replies)"
            i18n:domain="plone">
            <tal:comment replace="nothing">
 			   changes: ksuess 12.05.2017 Author
+			   ksuess 15.05.2017 coments only if parent shareable
+			   id "discussion" to have an anchor to jump to
            </tal:comment>
 
     <div class="reply"
@@ -28,7 +30,7 @@
         </form>
     </div>
 
-    <div class="discussion"
+    <div id="discussion" class="discussion"
          tal:attributes="class python: showCommenterImage and 'discussion showCommenterImage' or 'discussion';"
          tal:condition="has_replies">
         <tal:getreplies repeat="reply_dict replies">

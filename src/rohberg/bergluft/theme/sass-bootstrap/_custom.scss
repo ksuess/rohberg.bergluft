@@ -125,7 +125,8 @@ code, pre {
 .image-inline{float:none}
 
 .image-tile {float: right;}
-.documentPublished {
+.documentPublished,
+.tileFooter {
 	font-size: 80%;
 }
 
@@ -161,6 +162,7 @@ code, pre {
 // site branding
 $height-header: 5.5rem;
 .site_branding {
+	font-family: $headings-font-family;
 	color: $body-bg;
 	background-color: transparent;
 	height: auto; //$height-header;
@@ -461,6 +463,12 @@ body.portaltype-easyform form {
 	a:hover {
 		background-color: white !important;
 	};
+	.shariff-button.comments .fa-comments:before {
+		@include icon-mixin;
+		content: "\f086";
+		font-size: 16px;
+	    line-height: 30px;
+	}
 }
 
 // Cards
@@ -591,12 +599,15 @@ nav#category {
 		li {
 			display: inline;
 			padding-right: .7rem;
-			a.link-category { // TODO: hover
+			a.link-category { 
 				@include button-variant($body-bg, $link-color, transparent);
 				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
 				&:hover {
 					@include button-variant($body-bg, $link-hover-color, transparent);
 				}
+				&:before {
+					content: "#";
+				};
 			}
 		}
 	}
@@ -749,6 +760,24 @@ body.portaltype-collection {
 	overflow: hidden;
 }
 
+// Alerts
+
+.alert.status, .portalMessage {
+    padding: 15px;
+    padding-left: 45px;
+    margin-bottom: 20px;
+    border: 0;
+    border-radius: 4px;
+    // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
+    font-size: 14px;
+    font-weight: 400;
+    text-shadow: 0 1px rgba(255, 255, 255, 0.1);
+}
+.alert.status.alert-success, .portalMessage.alert-success, .alert.status.info, .portalMessage.info {
+    background-color: #aad6ea;
+    border: 1px solid #9acee6;
+    color: rgba(0, 0, 0, 0.5);
+}
 
 
 // DEBUG debug-class
