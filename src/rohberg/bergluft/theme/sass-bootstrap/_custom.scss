@@ -26,6 +26,7 @@ $shadow-enabled: false;
 		box-shadow: 0 0 .4rem 0 rgba(0, 0, 0, 0.1);		
 	} @else {
 		box-shadow: none;
+		border: 1px solid #aaa;
 		border: 1px solid rgba(0, 0, 0, 0.1);
 	}
 }
@@ -80,8 +81,8 @@ label {
 }
 
 .portalMessage.error {
-    color: orange;
-    border: 1px solid orange;
+    color: $color-error;
+    border: 1px solid $color-error;
     padding: .5rem.8rem 0rem.8rem;
 }
 .field.error > label, .field.error div.error {
@@ -424,7 +425,8 @@ body.portaltype-easyform form {
 		}
 	}
 	.fieldErrorBox {
-		color: orange;
+		color: $color-error;
+		font-size: .9rem;
 	}
 	#formEpilogue {
 		margin-top: 1rem;
@@ -434,11 +436,16 @@ body.portaltype-easyform form {
 .newsImageContainer {
     float: right;
     margin: 0 0 6px 6px;
-    border-radius: 4px;
+    border-radius: 3px;
 	@include shadow-light-allsides;
     overflow: hidden;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
 	figcaption {
 		padding-left: .5rem;
+		font-size: 80%;
 	}
 }
 
@@ -767,9 +774,9 @@ body.portaltype-collection {
     padding-left: 45px;
     margin-bottom: 20px;
     border: 0;
-    border-radius: 4px;
+    border-radius: 3px;
     // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.17);
-    font-size: 14px;
+	font-size: .9rem;
     font-weight: 400;
     text-shadow: 0 1px rgba(255, 255, 255, 0.1);
 }

@@ -6073,8 +6073,8 @@ label {
   font-weight: 300; }
 
 .portalMessage.error {
-  color: orange;
-  border: 1px solid orange;
+  color: #c4183c;
+  border: 1px solid #c4183c;
   padding: 0.5rem 0.8rem 0rem 0.8rem; }
 
 .field.error > label, .field.error div.error {
@@ -6332,7 +6332,8 @@ body.portaltype-easyform form div.formControls {
       border-color: transparent; }
 
 body.portaltype-easyform form .fieldErrorBox {
-  color: orange; }
+  color: #c4183c;
+  font-size: .9rem; }
 
 body.portaltype-easyform form #formEpilogue {
   margin-top: 1rem; }
@@ -6340,12 +6341,17 @@ body.portaltype-easyform form #formEpilogue {
 .newsImageContainer {
   float: right;
   margin: 0 0 6px 6px;
-  border-radius: 4px;
+  border-radius: 3px;
   box-shadow: none;
+  border: 1px solid #aaa;
   border: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden; }
+  .newsImageContainer img {
+    max-width: 100%;
+    height: auto; }
   .newsImageContainer figcaption {
-    padding-left: .5rem; }
+    padding-left: .5rem;
+    font-size: 80%; }
 
 .shariff .orientation-horizontal {
   flex-wrap: nowrap; }
@@ -6382,6 +6388,7 @@ body.portaltype-easyform form #formEpilogue {
 .card {
   margin-bottom: 1rem;
   box-shadow: none;
+  border: 1px solid #aaa;
   border: 1px solid rgba(0, 0, 0, 0.1); }
   .card .card-footer {
     background-color: transparent;
@@ -6445,6 +6452,7 @@ body.portaltype-easyform form #formEpilogue {
   height: auto;
   border-radius: 4px;
   box-shadow: none;
+  border: 1px solid #aaa;
   border: 1px solid rgba(0, 0, 0, 0.1); }
 
 #content-core .card p img {
@@ -6604,6 +6612,7 @@ body.portaltype-collection #viewlet-below-content {
   #col2cont aside {
     font-size: .9rem;
     box-shadow: none;
+    border: 1px solid #aaa;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border: none;
     padding: .8rem .5rem; }
@@ -6612,6 +6621,7 @@ body.portaltype-collection #viewlet-below-content {
       height: auto;
       border-radius: 4px;
       box-shadow: none;
+      border: 1px solid #aaa;
       border: 1px solid rgba(0, 0, 0, 0.1); }
 
 .captchaAudio {
@@ -6626,8 +6636,8 @@ body.portaltype-collection #viewlet-below-content {
   padding-left: 45px;
   margin-bottom: 20px;
   border: 0;
-  border-radius: 4px;
-  font-size: 14px;
+  border-radius: 3px;
+  font-size: .9rem;
   font-weight: 400;
   text-shadow: 0 1px rgba(255, 255, 255, 0.1); }
 
