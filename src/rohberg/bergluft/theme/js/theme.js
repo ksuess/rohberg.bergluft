@@ -30,7 +30,7 @@ $(document).ready(function(){
 	$("body.section-front-page a.tile").click(function() {
 		var href = $(this).attr("href");
 		var anchor = href.split("/");
-		var anchor = anchor[anchor.length-1];
+		anchor = anchor[anchor.length-1];
 		var href_new = href.replace(anchor, "#"+anchor);
 		window.location.assign(href_new);
 		return false;
@@ -86,24 +86,29 @@ $(document).ready(function(){
 		minScrollDistance = $(window).height();
 	});
 	
+	// Front Page: on click on branding: scroll to content 
 	$(".front_page").click(function() {
 		var href = window.location.href;
 		pos = href.indexOf("#");
 		if (pos!=-1) {
 			href = href.substring(0,pos);
 		}
-		window.location.assign(href + "#intro");
+		// window.location.assign(href + "#intro");
+		// todo: scroll slowly
+		$('html, body').animate({
+		      scrollTop:$("#intro").offset().top
+		},'slow');
 		return false;
-	})
+	});
 	
 	// *
 	// Load blog posts
 	// *
 	// Load content like sharing buttons?
-	var getViewletBelowContent = true // ($("body").find(".shareable").length>0);
+	var getViewletBelowContent = true; // ($("body").find(".shareable").length>0);
 	$(".tileFooter a, .tileHeadline a, .tileImage a").clicktoggle(
 		function() {
-			var href_raw = $(this).attr("href")
+			var href_raw = $(this).attr("href");
 			var href = href_raw + " #parent-fieldname-text"; // only body and later viewlet-below-content
 			var tileThing = $(this).parent();
 			var article = tileThing.closest("article");
@@ -223,4 +228,4 @@ $(document).ready(function(){
 	
 	
 	
-})
+});
