@@ -569,7 +569,10 @@ body.portaltype-easyform form {
 //		column-count: 4;
 	}
 	.card {
-		img.card-img-top {	
+		img.card-img-top {
+			.tilePost {
+				margin-top: 2rem;
+			}
 		}
 	}
 	.documentAuthor {
