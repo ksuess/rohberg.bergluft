@@ -60,6 +60,9 @@ input[type="submit"], button {
 	&:hover {
 		@include button-variant($body-bg, $link-hover-color, transparent);
 	}
+	&.navbar-toggler:hover { // exception
+		@include button-variant($body-color, transparent, transparent);
+	}
 }
 input[type="text"], input[type="email"], input[type="password"], textarea, select {
     border: 1px solid #ccc;
