@@ -43,6 +43,9 @@ $shadow-enabled: false;
 	position: -webkit-sticky; 
 }
 
+section {
+	hyphens: auto;
+}
 
 .screen_reader_text {
 	clip: rect(1px, 1px, 1px, 1px);
@@ -552,8 +555,6 @@ body.portaltype-easyform form {
 
 
 .card-columns {
-	hyphens: auto;
-
 	@include media-breakpoint-only(sm) {
 		column-count: 2;
 	}

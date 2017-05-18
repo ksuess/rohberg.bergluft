@@ -6001,6 +6001,9 @@ a.text-gray-dark:focus, a.text-gray-dark:hover {
 .sticky-top {
   position: -webkit-sticky; }
 
+section {
+  hyphens: auto; }
+
 .screen_reader_text {
   clip: rect(1px, 1px, 1px, 1px);
   height: 1px;
@@ -6446,9 +6449,6 @@ body.portaltype-easyform form #formEpilogue {
       .card-deck .card:not(:last-child) {
         margin-right: 15px; } }
 
-.card-columns {
-  hyphens: auto; }
-
 @media (min-width: 576px) and (max-width: 767px) {
   .card-columns {
     column-count: 2; } }
@@ -6462,12 +6462,15 @@ body.portaltype-easyform form #formEpilogue {
     -webkit-column-count: 3;
     -moz-column-count: 3;
     column-count: 3; } }
-  .card-columns .card img.card-img-top .tilePost {
-    margin-top: 2rem; }
-  .card-columns .documentAuthor {
-    display: none; }
-  .card-columns nav#category {
-    display: block; }
+
+.card-columns .card img.card-img-top .tilePost {
+  margin-top: 2rem; }
+
+.card-columns .documentAuthor {
+  display: none; }
+
+.card-columns nav#category {
+  display: block; }
 
 #content-core p img {
   max-width: 100%;

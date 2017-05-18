@@ -18,7 +18,7 @@ $(document).ready(function(){
 		
 	// Tooltips
 	// $('[data-toggle="tooltip"]').tooltip();
-	$('a, img').tooltip(); // TODO drop title where Tooltips are not welcome
+	$('a, img').not("#portal-logo a").tooltip(); // TODO drop title where Tooltips are not welcome
 	
 	// Anchors
 	// anchors.add(".tileHeadline");
