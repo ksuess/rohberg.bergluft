@@ -1,11 +1,6 @@
 <?xml version="1.0"?>
 <registry>
 	
-	<!-- bergluft interfaces -->
-	<records interface="rohberg.bergluft.browser.controlpanel.IBergluftControlPanel"
-	         prefix="bergluft" />
-			 
-			 
 	<!-- Plone -->
 	<records
 			interface="Products.CMFPlone.interfaces.controlpanel.IImagingSchema"
