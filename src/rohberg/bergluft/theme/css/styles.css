@@ -6136,7 +6136,7 @@ code, pre {
 
 .image-left {
   float: left;
-  margin: .5em 1em .5em 0; }
+  margin: .2em 1em .5em 0; }
 
 .image-right {
   float: right;
@@ -6363,11 +6363,8 @@ body.portaltype-easyform form #formEpilogue {
 
 .newsImageContainer {
   float: right;
-  margin: 0 0 6px 6px;
+  margin: 0 0 .5rem 1rem;
   border-radius: 3px;
-  box-shadow: none;
-  border: 1px solid #aaa;
-  border: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden; }
   .newsImageContainer img {
     max-width: 100%;

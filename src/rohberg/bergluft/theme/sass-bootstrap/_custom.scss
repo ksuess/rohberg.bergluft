@@ -127,7 +127,7 @@ code, pre {
     border-radius: 0.25rem;
 }
 // Images in body
-.image-left{float:left;margin:.5em 1em .5em 0}
+.image-left{float:left;margin:.2em 1em .5em 0}
 .image-right{float:right;margin:.5em}
 .image-inline{float:none}
 
@@ -441,9 +441,9 @@ body.portaltype-easyform form {
 
 .newsImageContainer {
     float: right;
-    margin: 0 0 6px 6px;
+    margin: 0 0 .5rem 1rem; // TODO: margin nicht bei schmalem Fenster
     border-radius: 3px;
-	@include shadow-light-allsides;
+	//	@include shadow-light-allsides;
     overflow: hidden;
 	img {
 		max-width: 100%;
