@@ -18,7 +18,8 @@ $(document).ready(function(){
 		
 	// Tooltips
 	// $('[data-toggle="tooltip"]').tooltip();
-	$('a, img').not("#portal-logo a").tooltip(); // TODO drop title where Tooltips are not welcome
+	$('a, img').not("#portal-logo a").not(".newsImage")
+		.tooltip();
 	
 	// Anchors
 	// anchors.add(".tileHeadline");
@@ -26,7 +27,7 @@ $(document).ready(function(){
 	// forms
 	$("body.portaltype-easyform input[type='text'], body.portaltype-easyform textarea").addClass("form-control");
 	
-	// front-page: Click on blog post: add anchor
+	// front-page: Click on blog post: add anchor and open blog with post
 	$("body.section-front-page a.tile").click(function() {
 		var href = $(this).attr("href");
 		var anchor = href.split("/");
@@ -86,6 +87,8 @@ $(document).ready(function(){
 		minScrollDistance = $(window).height();
 	});
 	
+	// end // scrolling
+	
 	// Front Page: on click on branding: scroll to content 
 	$(".front_page").click(function() {
 		var href = window.location.href;
@@ -106,71 +109,86 @@ $(document).ready(function(){
 	// *
 	// Load content like sharing buttons?
 	var getViewletBelowContent = true; // ($("body").find(".shareable").length>0);
-	$(".tileFooter a, .tileHeadline a, .tileImage a").clicktoggle(
+	$(".tileFooter a, .tileHeadline a, .tileImage a").click(
 		function() {
 			var href_raw = $(this).attr("href");
 			var href = href_raw + " #parent-fieldname-text"; // only body and later viewlet-below-content
 			var tileThing = $(this).parent();
 			var article = tileThing.closest("article");
-			var headline = article.find(".tileHeadline");
-			var toScrollTo = article.offset().top - sitebrandingheight - headline.outerHeight();
+			
 			var moreLink = article.find(".tileFooter a");
 			var title = article.find(".tileHeadline a").text();
-		
-			if (!article.hasClass("enriched")) { // check if content is already loaded
-				article.find(".tileBody").after("<div class='tilePost'></div>");
+			
+			if (!article.hasClass("clicked")) { // open article
+				article.addClass("clicked");
+				if (!article.hasClass("enriched")) { // check if content is already loaded
+					article.find(".tileBody").after("<div class='tilePost'></div>");
+					var tilePost = article.find(".tilePost");
+					tilePost.hide().load(href, function( response, status, xhr ) {
+					  if ( status == "success" ) {
+							article.addClass("enriched");
+							// load sharing buttons
+							var footer = moreLink.parent();
+							tilePost.children("div").attr("id", "");
+							footer.slideUp();
+							if (getViewletBelowContent) {
+							  footer.load(href_raw + " .shariff2", function( response, status, xhr ) {
+								  if( status =="success") {
+									  article.find('.shariff2').each(function() {
+										  if (!this.hasOwnProperty('shariff')) {
+											  this.shariff = new Shariff(this);
+											  $(this).addClass("shariff");				  
+											  // Todo: den folgenden Link zu den Kommentaren nur anzeigen, wenn die Diskussion global aktiviert ist.
+											  var $li = $('<li class="shariff-button">').addClass("comments");
+											  var $shareLink = $('<a>')
+											    .attr('href', href_raw+'#discussion');
+											  $shareLink.append('<span class="fa fa-comments">');
+											  $li.append($shareLink);
+											  $(this).find("ul")
+											  	.append($li);
+										  }
+									  });
+								  }
+							  });
+							};
+							tilePost.slideDown("slow", function(){
+								if (getViewletBelowContent) {
+									footer.slideDown();
+								};
+								// scroll up to make loaded content visible
+								var cb = article.find(".card-block");
+								var toScrollTo = cb.offset().top - sitebrandingheight;
+								// console.log("show article"); console.log(cb.offset().top); console.log(sitebrandingheight);
+								// console.log(toScrollTo);	article.css("background-color", "rgb(239, 223, 243)");
+								$('html, body').animate({
+									 scrollTop:toScrollTo
+								},'slow');
+							});
+					  }
+					});
+				} else { // article already enriched
+					var tilePost = article.find(".tilePost");
+					tilePost.slideDown("slow", function(){
+						// scroll up to make loaded content visible
+						var cb = article.find(".card-block");
+						var toScrollTo = cb.offset().top - sitebrandingheight;
+						// console.log("show article"); console.log(cb.offset().top); console.log(sitebrandingheight);
+						// console.log(toScrollTo);	article.css("background-color", "rgb(239, 223, 243)");
+						$('html, body').animate({
+							 scrollTop:toScrollTo
+						},'slow');		
+					});		
+				};
+				return false;
+			} else { // close article
+				article.removeClass("clicked");
+				var article = $(this).closest("article");
 				var tilePost = article.find(".tilePost");
-				tilePost.hide().load(href, function( response, status, xhr ) {
-				  if ( status == "success" ) {
-					  article.addClass("enriched");
-					  // load sharing buttons
-			  		  var footer = moreLink.parent();
-					  tilePost.children("div").attr("id", "");
-					  footer.slideUp();
-					  if (getViewletBelowContent) {
-						  footer.load(href_raw + " .shariff2", function( response, status, xhr ) {
-							  if( status =="success") {
-								  article.find('.shariff2').each(function() {
-									  if (!this.hasOwnProperty('shariff')) {
-										  this.shariff = new Shariff(this);
-										  $(this).addClass("shariff");
-										  
-										  // Todo: den folgenden Link zu den Kommentaren nur anzeigen, wenn die Diskussion global aktiviert ist.
-										  var $li = $('<li class="shariff-button">').addClass("comments");
-										  var $shareLink = $('<a target="_blank">')
-										    .attr('href', href_raw+'#discussion');
-										  $shareLink.append('<span class="fa fa-comments">');
-										  $li.append($shareLink);
-										  $(this).find("ul")
-										  	.append($li);
-									  }
-								  });
-							  }
-						  });
-					  };
-					  tilePost.slideDown();
-					  if (getViewletBelowContent) {
-						  footer.slideDown();
-					  };
-					  // scroll up to make loaded content visible
-					  $('html, body').animate({
-		  					  scrollTop:toScrollTo
-					  },'slow');
-				  }
-				});
-			} else { // article already enriched
-				var tilePost = article.find(".tilePost");
-				tilePost.slideDown();
+				tilePost.slideUp('slow');
+				return false;
 			};
-			return false;
-		},
-		function() {
-			var article = $(this).closest("article");
-			var tilePost = article.find(".tilePost");
-			tilePost.slideUp('slow');
-			return false;
 		}
-	); // clicktoggle
+	); // click
 	
 	
 	// if page called with anchor: on load of page: click link in anchor to open details 
@@ -182,7 +200,7 @@ $(document).ready(function(){
 		if (link.length>0) {
 			link[0].click();
 		};
-	  	$('html').animate({
+	  	$('html, body').animate({
 	      scrollTop:$(anchor).offset().top - sitebrandingheight
 	  	},'fast');
 
