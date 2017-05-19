@@ -16,20 +16,7 @@
       name="rohberg.bergluft"
       directory="static"
       />
-
 	  
-  <!-- exercise javascript -->
-  		<plone:static
-  		     directory="javascripts"
-  		     type="plone"
-  		     name="rohberg.bergluft.javascripts"
-  		     /> 
-			 
-	<plone:static
-	     directory="patterns"
-	     type="plone"
-	     name="rohberg.bergluft.patterns"
-	     /> 
 	  
   <!-- <browser:viewletManager
       name="rohberg.bergluft.headermanager"
@@ -133,5 +120,5 @@
 	    class=".controlpanel.BergluftControlPanelView"
 	    permission="cmf.ManagePortal"
 	    />
-
+	  
 </configure>

@@ -39,21 +39,13 @@
         directory="1006"
         />
 		
-	    <upgrade-step:importProfile
-	        title="Folder: added field shareable" 
-			description="shareable means that sharing buttons for facebook, etc are shown. To be configured in control panel."
-	        profile="rohberg.bergluft:default"
-	        source="*"
-	        destination="1010"
-	        directory="1010"
-	        />		
     <upgrade-step:importProfile
-        title="Exercise javascript" 
-		description="Adding javascript to Plone"
+        title="Folder: added field shareable" 
+		description="shareable means that sharing buttons for facebook, etc are shown. To be configured in control panel."
         profile="rohberg.bergluft:default"
         source="*"
-        destination="1011"
-        directory="1011"
+        destination="1010"
+        directory="1010"
         />
 	  
 </configure>

@@ -24,7 +24,7 @@ $(document).ready(function(){
 	// Anchors
 	// anchors.add(".tileHeadline");
 	
-	// forms (easy-forms)
+	// forms
 	$("body.portaltype-easyform input[type='text'], body.portaltype-easyform textarea").addClass("form-control");
 	
 	// front-page: Click on blog post: add anchor and open blog with post
