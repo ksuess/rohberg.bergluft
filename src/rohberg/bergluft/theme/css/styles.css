@@ -6598,29 +6598,48 @@ nav#category {
     #commenting .comment p {
       margin-bottom: .3rem; }
 
-#searchform .input-group,
-#searchform .actionMenu,
-#searchform #rss-subscription {
+#searchform .input-group {
+  margin-bottom: 1rem; }
+
+#searchform .actionMenu {
   display: none; }
 
-#searchform #search-results-bar {
-  font-size: 115%; }
+#searchform .documentFirstHeading {
+  font-size: 2rem; }
+
+#searchform #search-results-bar,
+#searchform #searchResultsSort {
+  font-size: 90%; }
 
 #searchform #search-results {
   margin-top: 2rem; }
-  #searchform #search-results li {
-    margin-bottom: 2rem; }
-    #searchform #search-results li p {
-      margin-bottom: .5rem; }
-    #searchform #search-results li .documentLocation, #searchform #search-results li .link-location {
-      font-size: 80%; }
-    #searchform #search-results li .croppedDescription {
-      color: #292b2c; }
-    #searchform #search-results li cite {
-      font-style: inherit; }
-    #searchform #search-results li .documentAuthor,
-    #searchform #search-results li .documentModified {
-      display: none; }
+  #searchform #search-results ul, #searchform #search-results ol {
+    padding: 0; }
+    #searchform #search-results ul li, #searchform #search-results ol li {
+      margin-bottom: 2rem;
+      list-style: none; }
+      #searchform #search-results ul li p, #searchform #search-results ol li p {
+        margin-bottom: .5rem; }
+      #searchform #search-results ul li .result-title, #searchform #search-results ol li .result-title {
+        font-size: 115%; }
+      #searchform #search-results ul li .croppedDescription, #searchform #search-results ol li .croppedDescription {
+        color: #292b2c; }
+      #searchform #search-results ul li .documentLocation, #searchform #search-results ul li .link-location, #searchform #search-results ol li .documentLocation, #searchform #search-results ol li .link-location {
+        font-size: 80%;
+        display: none; }
+      #searchform #search-results ul li cite, #searchform #search-results ol li cite {
+        font-style: inherit; }
+      #searchform #search-results ul li .documentAuthor,
+      #searchform #search-results ul li .documentModified, #searchform #search-results ol li .documentAuthor,
+      #searchform #search-results ol li .documentModified {
+        display: none; }
+      #searchform #search-results ul li img, #searchform #search-results ol li img {
+        width: 5rem;
+        height: auto;
+        float: left;
+        padding-right: 1rem; }
+      #searchform #search-results ul li .categories, #searchform #search-results ol li .categories {
+        font-size: 80%; }
 
 body.portaltype-folder #viewlet-below-content,
 body.portaltype-collection #viewlet-below-content {

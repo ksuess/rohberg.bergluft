@@ -706,33 +706,55 @@ nav#category {
 
 
 #searchform {
-	.input-group, 
-	.actionMenu,
-	#rss-subscription {
+	.input-group {
+		margin-bottom: 1rem;
+	}
+	.actionMenu { //	#rss-subscription
 		display: none;
 	}
-	#search-results-bar {
-		font-size: 115%;
+	.documentFirstHeading {
+		font-size: 2rem;
+	}
+	#search-results-bar,
+	#searchResultsSort {
+		font-size: 90%;
 	}
 	#search-results {
 		margin-top: 2rem;
-		li {
-			margin-bottom: 2rem;
-			p {
-				margin-bottom: .5rem;
-			}
-			.documentLocation, .link-location {
-				font-size: 80%;
-			}
-			.croppedDescription {
-				color: $body-color;
-			}
-			cite {
-				font-style: inherit;
-			}
-			.documentAuthor,
-			.documentModified {
-				display: none;
+		ul, ol {
+			padding: 0;
+			li {
+				margin-bottom: 2rem;
+				list-style: none;
+				p {
+					margin-bottom: .5rem;
+				}
+				.result-title {
+					font-size: 115%;
+				}
+				.croppedDescription {
+					color: $body-color;				
+				}
+				.documentLocation, .link-location {
+					font-size: 80%;
+					display: none;
+				}
+				cite {
+					font-style: inherit;
+				}
+				.documentAuthor,
+				.documentModified {
+					display: none;
+				}
+				img {
+					width: 5rem;
+					height: auto;
+					float: left;
+					padding-right: 1rem;
+				}
+				.categories {
+					font-size: 80%;
+				}
 			}
 		}
 	}
