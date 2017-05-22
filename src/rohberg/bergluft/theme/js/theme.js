@@ -105,7 +105,7 @@ $(document).ready(function(){
 	});
 	
 	// *
-	// Load blog posts
+	// Load blog posts details
 	// *
 	// Load content like sharing buttons?
 	var getViewletBelowContent = true; // ($("body").find(".shareable").length>0);
@@ -157,6 +157,7 @@ $(document).ready(function(){
 								};
 								// scroll up to make loaded content visible
 								var cb = article.find(".card-block");
+								cb = (cb.length==0) ? article : cb;
 								var toScrollTo = cb.offset().top - sitebrandingheight;
 								// console.log("show article"); console.log(cb.offset().top); console.log(sitebrandingheight);
 								// console.log(toScrollTo);	article.css("background-color", "rgb(239, 223, 243)");
@@ -171,6 +172,7 @@ $(document).ready(function(){
 					tilePost.slideDown("slow", function(){
 						// scroll up to make loaded content visible
 						var cb = article.find(".card-block");
+						cb = (cb.length==0) ? article : cb;
 						var toScrollTo = cb.offset().top - sitebrandingheight;
 						// console.log("show article"); console.log(cb.offset().top); console.log(sitebrandingheight);
 						// console.log(toScrollTo);	article.css("background-color", "rgb(239, 223, 243)");
@@ -196,13 +198,17 @@ $(document).ready(function(){
 	var anchor = href.indexOf("#");
 	if (anchor!=-1) {
 		anchor = href.substring(anchor);
-		link = $(anchor).find("a");
-		if (link.length>0) {
-			link[0].click();
-		};
-	  	$('html, body').animate({
-	      scrollTop:$(anchor).offset().top - sitebrandingheight
-	  	},'fast');
+		var anchor_jq = $(anchor);
+		anchor_jq = (anchor_jq.length==0 && anchor=="#discussion") ? $("#commenting") : anchor_jq;
+		if (anchor_jq.length>0) {
+			link = anchor_jq.filter(".tileHeadline").find("a");
+			if (link.length>0) {
+				link[0].click();
+			};
+		  	$('html, body').animate({
+		      scrollTop:anchor_jq.offset().top - sitebrandingheight
+		  	},'fast');
+		}
 
 	};
 	
