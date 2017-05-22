@@ -629,12 +629,15 @@ nav#category {
 }
 .pagination {
 	margin: 1rem 0 0 0;
+	font-size: 85%;
 	ul {
 		padding-left: 0;
 		list-style-type: none;
 		width: 100%;
 		li {
-			display: block;
+//			display: block;
+			display: inline;
+			padding-right: .5rem;
 			white-space: nowrap;
 
 			&.previous {
@@ -709,7 +712,8 @@ nav#category {
 	.input-group {
 		margin-bottom: 1rem;
 	}
-	.actionMenu { //	#rss-subscription
+	.actionMenu,
+	#rss-subscription {
 		display: none;
 	}
 	.documentFirstHeading {
@@ -721,7 +725,7 @@ nav#category {
 	}
 	#search-results {
 		margin-top: 2rem;
-		ul, ol {
+		.searchResults {
 			padding: 0;
 			li {
 				margin-bottom: 2rem;

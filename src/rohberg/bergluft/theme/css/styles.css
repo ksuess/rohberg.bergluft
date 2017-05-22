@@ -6538,13 +6538,15 @@ nav#category {
           content: "#"; }
 
 .pagination {
-  margin: 1rem 0 0 0; }
+  margin: 1rem 0 0 0;
+  font-size: 85%; }
   .pagination ul {
     padding-left: 0;
     list-style-type: none;
     width: 100%; }
     .pagination ul li {
-      display: block;
+      display: inline;
+      padding-right: .5rem;
       white-space: nowrap; }
       .pagination ul li.previous {
         float: left; }
@@ -6601,7 +6603,8 @@ nav#category {
 #searchform .input-group {
   margin-bottom: 1rem; }
 
-#searchform .actionMenu {
+#searchform .actionMenu,
+#searchform #rss-subscription {
   display: none; }
 
 #searchform .documentFirstHeading {
@@ -6613,32 +6616,31 @@ nav#category {
 
 #searchform #search-results {
   margin-top: 2rem; }
-  #searchform #search-results ul, #searchform #search-results ol {
+  #searchform #search-results .searchResults {
     padding: 0; }
-    #searchform #search-results ul li, #searchform #search-results ol li {
+    #searchform #search-results .searchResults li {
       margin-bottom: 2rem;
       list-style: none; }
-      #searchform #search-results ul li p, #searchform #search-results ol li p {
+      #searchform #search-results .searchResults li p {
         margin-bottom: .5rem; }
-      #searchform #search-results ul li .result-title, #searchform #search-results ol li .result-title {
+      #searchform #search-results .searchResults li .result-title {
         font-size: 115%; }
-      #searchform #search-results ul li .croppedDescription, #searchform #search-results ol li .croppedDescription {
+      #searchform #search-results .searchResults li .croppedDescription {
         color: #292b2c; }
-      #searchform #search-results ul li .documentLocation, #searchform #search-results ul li .link-location, #searchform #search-results ol li .documentLocation, #searchform #search-results ol li .link-location {
+      #searchform #search-results .searchResults li .documentLocation, #searchform #search-results .searchResults li .link-location {
         font-size: 80%;
         display: none; }
-      #searchform #search-results ul li cite, #searchform #search-results ol li cite {
+      #searchform #search-results .searchResults li cite {
         font-style: inherit; }
-      #searchform #search-results ul li .documentAuthor,
-      #searchform #search-results ul li .documentModified, #searchform #search-results ol li .documentAuthor,
-      #searchform #search-results ol li .documentModified {
+      #searchform #search-results .searchResults li .documentAuthor,
+      #searchform #search-results .searchResults li .documentModified {
         display: none; }
-      #searchform #search-results ul li img, #searchform #search-results ol li img {
+      #searchform #search-results .searchResults li img {
         width: 5rem;
         height: auto;
         float: left;
         padding-right: 1rem; }
-      #searchform #search-results ul li .categories, #searchform #search-results ol li .categories {
+      #searchform #search-results .searchResults li .categories {
         font-size: 80%; }
 
 body.portaltype-folder #viewlet-below-content,
