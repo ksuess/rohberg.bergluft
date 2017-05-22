@@ -66,6 +66,7 @@
 		<!-- <replace css:theme-children=".content_head" css:content=".documentFirstHeading, .documentDescription"/> -->
 		<drop attributes="title" css:content="#portal-languageselector a" />
 	    <replace css:theme-children="#languageselector ul" css:content-children="#portal-languageselector" />
+		<!-- <after css:theme="#global_navi .navbar-nav" css:content="#portal-searchbox"/> -->
 	    <replace css:theme-children="#global_navi .navbar-nav" css:content-children="#portal-globalnav" />
 
 		<!-- overview -->
