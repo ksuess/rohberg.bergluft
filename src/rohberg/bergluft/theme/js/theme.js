@@ -151,6 +151,12 @@ $(document).ready(function(){
 								  }
 							  });
 							};
+							// load categories
+							$('<div class="tileCategories"></div>').load(href_raw + " #category", function(response, status, xhr){
+								if (status=="success") {
+									tilePost.after($(this));
+								};
+							});
 							tilePost.slideDown("slow", function(){
 								if (getViewletBelowContent) {
 									footer.slideDown();
