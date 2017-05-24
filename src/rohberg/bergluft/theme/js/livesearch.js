@@ -96,8 +96,12 @@ var livesearch = (function () {
 			//                 $cache[$$query] = $data;
 			//             }, 'text');
 			var target = $(".livesearchContainer"); //$(".LSShadow");
-			var myurl = window.location.origin;
-			var qtarget = myurl + "/@@search?SearchableText="+$inputnode.value;
+			var baseurl = window.location.origin; 
+			var lang =  $("html").attr("lang");
+			if ($("link[rel='canonical']").attr("href").indexOf("/"+lang) !== -1) {
+				baseurl += "/" + lang;
+			};
+			var qtarget = baseurl + "/@@search?SearchableText="+$inputnode.value;
 			// target.load(qtarget + " .searchResults", function(response, status, xhr) {
 			target.load(qtarget + " #search-results-wrapper", function(response, status, xhr) {
 				  if ( status =="success") {

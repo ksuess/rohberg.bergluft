@@ -136,15 +136,16 @@ $(document).ready(function(){
 									  article.find('.shariff2').each(function() {
 										  if (!this.hasOwnProperty('shariff')) {
 											  this.shariff = new Shariff(this);
-											  $(this).addClass("shariff");				  
-											  // Todo: den folgenden Link zu den Kommentaren nur anzeigen, wenn die Diskussion global aktiviert ist.
-											  var $li = $('<li class="shariff-button">').addClass("comments");
-											  var $shareLink = $('<a>')
-											    .attr('href', href_raw+'#discussion');
-											  $shareLink.append('<span class="fa fa-comments">');
-											  $li.append($shareLink);
-											  $(this).find("ul")
-											  	.append($li);
+											  $(this).addClass("shariff");
+											  if (response.indexOf("commenting") !== -1) {
+												  var $li = $('<li class="shariff-button">').addClass("comments");
+												  var $shareLink = $('<a>')
+												    .attr('href', href_raw+'#discussion');
+												  $shareLink.append('<span class="fa fa-comments">');
+												  $li.append($shareLink);
+												  $(this).find("ul")
+												  	.append($li);
+											  }
 										  }
 									  });
 								  }

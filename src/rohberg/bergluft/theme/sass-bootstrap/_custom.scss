@@ -244,6 +244,7 @@ $height-header: 5.5rem;
 	background-color: transparent;
 	padding: 0;
 	min-width: 12rem;
+	height: 2em;
 	.navbar-toggler {
 		border: none;
 		padding: 0;
@@ -279,6 +280,10 @@ body.section-front-page {
 				position: absolute;
 				bottom: 5rem;
 				cursor: pointer;
+//				&:before {
+//					@include icon-mixin;
+//					content: "\f0c9";
+//				}
 			}
 		}
 	}

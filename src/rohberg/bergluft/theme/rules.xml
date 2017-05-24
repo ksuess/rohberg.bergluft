@@ -67,6 +67,7 @@
 		<drop attributes="title" css:content="#portal-languageselector a" />
 	    <replace css:theme-children="#languageselector ul" css:content-children="#portal-languageselector" />
 		<!-- <after css:theme="#global_navi .navbar-nav" css:content="#portal-searchbox"/> -->
+		<copy attributes="action" css:content="#portal-searchbox form" css:theme="#portal-searchbox form" />
 	    <replace css:theme-children="#global_navi .navbar-nav" css:content-children="#portal-globalnav" />
 
 		<!-- overview -->

@@ -6225,7 +6225,8 @@ code, pre {
 #global_navi {
   background-color: transparent;
   padding: 0;
-  min-width: 12rem; }
+  min-width: 12rem;
+  height: 2em; }
   #global_navi .navbar-toggler {
     border: none;
     padding: 0; }
