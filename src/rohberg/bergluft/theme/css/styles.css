@@ -6649,7 +6649,7 @@ nav#category {
     #portal-searchbox .LSShadow #search-results-bar {
       display: none; }
     #portal-searchbox .LSShadow ul li {
-      padding: .5rem 0 .5rem .5rem; }
+      padding: .5rem; }
       #portal-searchbox .LSShadow ul li.LSHighlight {
         box-shadow: 0 0 0.5rem 0 #8AB7D8; }
 
