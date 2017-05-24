@@ -97,7 +97,6 @@ $(document).ready(function(){
 			href = href.substring(0,pos);
 		}
 		// window.location.assign(href + "#intro");
-		// todo: scroll slowly
 		$('html, body').animate({
 		      scrollTop:$("#intro").offset().top
 		},'slow');
@@ -201,7 +200,7 @@ $(document).ready(function(){
 	
 	// if page called with anchor: on load of page: click link in anchor to open details 
 	var href = window.location.href;
-	var anchor = href.indexOf("#");
+	var anchor = href.indexOf("#"); // TODO: window.location.hash
 	if (anchor!=-1) {
 		anchor = href.substring(anchor);
 		var anchor_jq = $(anchor);

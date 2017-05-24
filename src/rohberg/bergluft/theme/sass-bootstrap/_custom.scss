@@ -3,6 +3,21 @@
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
 
+/* 
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+)
+*/
+
 $sky-blue: #3b69be;
 $sky-blue-light: lighten($sky-blue, 20%);
 
@@ -69,8 +84,12 @@ input[type="submit"], button {
 }
 input[type="text"], input[type="email"], input[type="password"], textarea, select {
     border: 1px solid #ccc;
-    border-radius: 2px;
+    border-radius: 3px;
 	padding: .2rem .3rem;
+	&:focus {
+		border-color: $link-hover-color;
+		box-shadow: 0 0 .5rem 0 $link-color;
+	}
 }
 textarea {
 	width: 50rem;
@@ -79,6 +98,9 @@ textarea {
 }
 label {
 	margin-bottom: 0;
+}
+input:focus, textarea:focus, select:focus {
+	border-color: $link-hover-color;
 }
 
 .discreet {
@@ -97,7 +119,9 @@ label {
 .field.error input, .field.error textarea, .field.error select {
     border-color: $color-error;
 }
-
+.hiddenStructure {
+	display: none;
+}
 .field {
     margin-bottom: .5rem;
 }
@@ -414,17 +438,19 @@ body.subsection-blog {
 	}
 }
 
-body.portaltype-easyform form {
+body.portaltype-easyform .easyformForm {
+	max-width: 30rem;
 	.field {
 		margin-top: 1rem;
 		input[type="text"],
 		textarea {
-			max-width: 30rem;
+//			max-width: 30rem;
 			width: 100%;
 		}		
 	}
 	div.formControls { // buttons
 		margin-top: 1rem;
+		text-align: end;
 		.button-field {
 			@include button-variant($body-bg, $link-color, transparent);
 			@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
@@ -441,7 +467,10 @@ body.portaltype-easyform form {
 
 .newsImageContainer {
     float: right;
-    margin: 0 0 .5rem 1rem; // TODO: margin nicht bei schmalem Fenster
+    margin: 0 0 .5rem 1rem;
+	@include media-breakpoint-down(sm) {
+		max-width: 40%;
+	}
     border-radius: 3px;
 	//	@include shadow-light-allsides;
     overflow: hidden;
@@ -514,20 +543,19 @@ body.portaltype-easyform form {
 
 // ueberschreiben:
 @include media-breakpoint-up(sm) {
-//	p {color: red;}
-  .card-deck {
-    flex-flow: row wrap;
+	.card-deck {
+    	flex-flow: row wrap;
 
-    .card {
-      flex: 1 0 auto;
+	    .card {
+	      flex: 1 0 auto;
 
-      // Selectively apply horizontal margins to cards to avoid doing the
-      // negative margin dance like our grid. This differs from the grid
-      // due to the use of margins as gutters instead of padding.
-      &:not(:first-child) { margin-left: 0 }
-      &:not(:last-child) { margin-right: 0 }
-    }
-  }
+	      // Selectively apply horizontal margins to cards to avoid doing the
+	      // negative margin dance like our grid. This differs from the grid
+	      // due to the use of margins as gutters instead of padding.
+	      &:not(:first-child) { margin-left: 0 }
+	      &:not(:last-child) { margin-right: 0 }
+	    }
+  	}
 }
 // same as original media-breakpoint-up(sm)
 @include media-breakpoint-up(md) {
@@ -611,8 +639,9 @@ nav#category {
 		padding-left: 0;
 		list-style-type: none;
 		li {
-			display: inline;
-			padding-right: .7rem;
+			display: inline-block;
+			padding-right: .2rem;
+			margin-bottom: .2rem;
 			a.link-category { 
 				@include button-variant($body-bg, $link-color, transparent);
 				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
@@ -708,7 +737,59 @@ nav#category {
 }
 
 
-#searchform {
+#portal-searchbox {
+	width: 20rem;
+	text-align: end;
+	input[type="text"] {
+		line-height: 0.8em;
+		font-size: 90%;
+		border-color: $link-color;
+		display: inline;
+		width: auto;
+//		&:focus {
+//			border-color: $link-hover-color;
+//			box-shadow: 0 0 .5rem 0 $link-color;
+//		}
+	}
+	.searchSection,
+	.searchButton {
+		display: none;
+	}
+	.LSResult {
+		padding: .5rem 0 .5rem .5rem;
+		text-align: start;
+	}
+	.LSShadow {
+		max-width: 20rem;
+		max-height: 50rem;
+		#searchResultsSort,
+		#search-results-bar {
+			display: none;
+		}
+		ul {
+			li {
+				padding: .5rem 0 .5rem .5rem;
+				&.LSHighlight {
+					box-shadow: 0 0 .5rem 0 $link-color;
+				}
+			}
+		}
+	}
+}
+@include media-breakpoint-down(md) {
+	#portal-searchbox {
+		display: none;
+	}
+}
+@include media-breakpoint-up(lg) {
+	#global_navi {
+		align-items: baseline;
+		right: -5rem;
+	}
+}
+
+#searchform, 
+#livesearch0 {
 	.input-group {
 		margin-bottom: 1rem;
 	}
@@ -725,40 +806,44 @@ nav#category {
 	}
 	#search-results {
 		margin-top: 2rem;
-		.searchResults {
-			padding: 0;
-			li {
-				margin-bottom: 2rem;
-				list-style: none;
-				p {
-					margin-bottom: .5rem;
-				}
-				.result-title {
-					font-size: 115%;
-				}
-				.croppedDescription {
-					color: $body-color;				
-				}
-				.documentLocation, .link-location {
-					font-size: 80%;
-					display: none;
-				}
-				cite {
-					font-style: inherit;
-				}
-				.documentAuthor,
-				.documentModified {
-					display: none;
-				}
-				img {
-					width: 5rem;
-					height: auto;
-					float: left;
-					padding-right: 1rem;
-				}
-				.categories {
-					font-size: 80%;
-				}
+		p strong {
+			font-weight: unset;
+		}
+	}
+	.searchResults {
+		padding: 0;
+		line-height: 1.3em;
+		li {
+			margin-bottom: 2rem;
+			list-style: none;
+			p {
+				margin-bottom: .5rem;
+			}
+			.result-title {
+				font-size: 115%;
+			}
+			.croppedDescription {
+				color: $body-color;				
+			}
+			.documentLocation, .link-location {
+				font-size: 80%;
+				display: none;
+			}
+			cite {
+				font-style: inherit;
+			}
+			.documentAuthor,
+			.documentModified {
+				display: none;
+			}
+			img {
+				width: 5rem;
+				height: auto;
+				float: left;
+				padding-right: 1rem;
+			}
+			.categories {
+				font-size: 80%;
 			}
 		}
 	}

@@ -74,26 +74,41 @@
 	   				    </div>
 					</div>
 						
-						<nav id="global_navi" class="navbar navbar-toggleable-md navbar-light bg-faded">
-						  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-						    <span class="navbar-toggler-icon icon-bars"></span>
-						  </button>
+					<nav id="global_navi" class="navbar navbar-toggleable-md navbar-light bg-faded">
+					  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+					    <span class="navbar-toggler-icon icon-bars"></span>
+					  </button>
 
-						  <div class="collapse navbar-collapse" id="navbarToggler">
-							<!-- <a class="navbar-brand" href="#">Rohberg</a> -->
-						    <ul class="navbar-nav mr-auto mt-0 mt-md-0">
-						      <li class="nav-item active">
-						        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-						      </li>
-						      <li class="nav-item">
-						        <a class="nav-link" href="/de/blog">Blog</a>
-						      </li>
-						      <li class="nav-item">
-						        <a class="nav-link disabled" href="#">Disabled</a>
-						      </li>
-						    </ul>
-						  </div>
-						</nav>
+					  <div class="collapse navbar-collapse" id="navbarToggler">
+						<!-- <a class="navbar-brand" href="#">Rohberg</a> -->
+					    <ul class="navbar-nav mr-auto mt-0 mt-md-0">
+					      <li class="nav-item active">
+					        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link" href="/de/blog">Blog</a>
+					      </li>
+					      <li class="nav-item">
+					        <a class="nav-link disabled" href="#">Disabled</a>
+					      </li>
+					    </ul>
+					  </div>
+					</nav>
+					
+					<div id="portal-searchbox">
+						<form id="livesearch0" action="./@@search">
+						        <div class="LSBox">
+						          <input class="searchField portlet-search-gadget" name="SearchableText" type="text" size="18" title="" placeholder="" autocomplete="off" accesskey="4" tabindex="1">
+						          <input class="searchButton" type="submit" value="Suche">
+
+						          <div class="LSResult" style="display: none;">
+						            <div class="LSShadow">
+						            	<fieldset class="livesearchContainer">livesearchContainer</fieldset>
+						            </div>
+						          </div>
+						        </div>
+						      </form>
+					</div>
 						
 			</div>
 		</section>
@@ -167,10 +182,12 @@
 		<section class="hidden" id="hyper"></section>
 		
 
-		<script type="text/javascript" src="./js/jquery-3.2.0.min.js"></script>
+		<script type="text/javascript" src="./js/jquery.min.js"></script>
+		<script type="text/javascript" src="./js/jquery-ui.js"></script>
 		<script type="text/javascript" src="./js/mycomments.js"></script>
 		<script type="text/javascript" src="./js/tether-1.4.0.min.js"></script>
 		<script type="text/javascript" src="./js/bootstrap-4.0.0-alpha.6.min.js"></script>
+		<script type="text/javascript" src="./js/livesearch.js"></script>
 		<script type="text/javascript" src="./js/theme.js"></script>
     	<script type="text/javascript" src="./js/shariff.min.js"></script>
 		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/3.2.2/anchor.min.js"></script> -->
