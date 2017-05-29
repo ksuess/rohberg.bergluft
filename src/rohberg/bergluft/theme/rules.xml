@@ -62,7 +62,7 @@
 		<drop attributes="id" css:content="#portal-logo" />		
 		<drop attributes="title" css:content="#portal-logo img" />
 	
-		<!--intro -->
+		<!--action_header (Feed, Navi, Language, Search) -->
 		<!-- <replace css:theme-children=".content_head" css:content=".documentFirstHeading, .documentDescription"/> -->
 		<drop attributes="title" css:content="#portal-languageselector a" />
 	    <replace css:theme-children="#languageselector ul" css:content-children="#portal-languageselector" />

@@ -96,9 +96,9 @@ $(document).ready(function(){
 		if (pos!=-1) {
 			href = href.substring(0,pos);
 		}
-		// window.location.assign(href + "#intro");
+		// window.location.assign(href + "#action_header");
 		$('html, body').animate({
-		      scrollTop:$("#intro").offset().top
+		      scrollTop:$("#action_header").offset().top
 		},'slow');
 		return false;
 	});

@@ -6296,13 +6296,13 @@ body.section-front-page .content_head {
   display: none;
   margin-bottom: 1rem; }
 
-#intro,
+#action_header,
 #overview,
 #details,
 #footer {
   position: relative;
   background-color: #fff; }
-  #intro .section_inner,
+  #action_header .section_inner,
   #overview .section_inner,
   #details .section_inner,
   #footer .section_inner {
@@ -6311,7 +6311,7 @@ body.section-front-page .content_head {
     margin-left: auto;
     margin-right: auto; }
 
-#intro {
+#action_header {
   box-shadow: 0rem -2rem 5rem 5rem white;
   padding-bottom: 3rem;
   padding-top: 2rem; }
