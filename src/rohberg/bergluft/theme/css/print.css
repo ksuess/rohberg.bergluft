@@ -1,6 +1,43 @@
+.image-left,
+.image-right,
+.image-inline,
 .shariff,
 .pagination,
 #commenting,
-#discussion {
+#discussion,
+.leadImage,
+.newsImage,
+#action_header,
+.custom_header_media_inside,
+#footer {
 	display: none;
+}
+
+.site_branding .site_branding_inner,
+.sticky-top {
+	position: relative;
+}
+.site_branding {
+	color: #000;
+}
+#page-break-inside {
+	page-break-inside: auto;
+}
+nav#category ul li a.link-category {
+	color: #292b2c;
+	background-color: transparent;
+}
+/*body *,
+#parent-fieldname-text {
+	page-break-inside: auto;
+}*/
+
+body.template-document_view #content-core a:after { /* select links in the content area only */
+content: " [" attr(href) "] ";
+text-decoration: none;
+display: inline;
+}
+
+#portal-logo a img {
+		filter: invert(100%);
 }
