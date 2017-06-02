@@ -279,7 +279,7 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
   font-weight: normal;
-  line-height: 1.5;
+  line-height: 1.4;
   color: #292b2c;
   background-color: #fff; }
 
@@ -2421,7 +2421,7 @@ tbody.collapse.show {
 .custom-control {
   position: relative;
   display: inline-flex;
-  min-height: 1.5rem;
+  min-height: 1.4rem;
   padding-left: 1.5rem;
   margin-right: 1rem;
   cursor: pointer; }
@@ -2447,7 +2447,7 @@ tbody.collapse.show {
 
 .custom-control-indicator {
   position: absolute;
-  top: 0.25rem;
+  top: 0.2rem;
   left: 0;
   display: block;
   width: 1rem;
@@ -3668,7 +3668,7 @@ button.close {
   font-weight: normal;
   letter-spacing: normal;
   line-break: auto;
-  line-height: 1.5;
+  line-height: 1.4;
   text-align: left;
   text-align: start;
   text-decoration: none;
@@ -3750,7 +3750,7 @@ button.close {
   font-weight: normal;
   letter-spacing: normal;
   line-break: auto;
-  line-height: 1.5;
+  line-height: 1.4;
   text-align: left;
   text-align: start;
   text-decoration: none;
