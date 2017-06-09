@@ -1,3 +1,6 @@
+<tal:comment replace="nothing">
+	gigantic header image
+</tal:comment>
 <div id="header_master" class="site_header"
 	 tal:condition="view/show"
 	 tal:define="navigation_root_url string:${context/@@plone_portal_state/navigation_root_url}">
@@ -5,12 +8,12 @@
 	  <div class="custom_header_media">
 	 	 <div class="custom_header_media_inside">
 			 <picture>
-<!-- width or height: 1000px -->
+			   <!-- width or height: 1000px -->
 			   <source media="(min-width: 1100px)" srcset="/media/header_2000.jpg"
 				   tal:attributes="srcset string:$navigation_root_url/media/header_2000.jpg">
 			   <source media="(min-height: 1100px)" srcset="/media/header_2000.jpg"
 				   tal:attributes="srcset string:$navigation_root_url/media/header_2000.jpg">
-<!-- width or height: 700px -->
+			   <!-- width or height: 700px -->
 			   <source media="(min-width: 700px)" srcset="/media/header_1200.jpg"
 				   tal:attributes="srcset string:$navigation_root_url/media/header_1200.jpg">
 			   <source media="(min-height: 700px)" srcset="/media/header_1200.jpg"

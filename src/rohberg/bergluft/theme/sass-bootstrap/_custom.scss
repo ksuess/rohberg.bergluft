@@ -170,7 +170,7 @@ code, pre {
 }
 
 // *** Header
-.site_header {
+.site_header { // gigantic header image
     background-color: $body-bg;
 	display: none;
 }
@@ -270,7 +270,7 @@ body.section-front-page {
 	#overview header {
 		display: none;
 	}
-	.site_header {
+	.site_header { // gigantic header image
 		display: block;
 		color: $body-bg;
 		.custom_header {
