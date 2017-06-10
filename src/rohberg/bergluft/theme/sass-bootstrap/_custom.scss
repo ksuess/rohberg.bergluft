@@ -270,7 +270,7 @@ body.section-front-page {
 	#overview header {
 		display: none;
 	}
-	.site_header { // gigantic header image
+	.site_header {
 		display: block;
 		color: $body-bg;
 		.custom_header {
@@ -280,22 +280,15 @@ body.section-front-page {
 				position: absolute;
 				bottom: 5rem;
 				cursor: pointer;
-//				&:before {
-//					@include icon-mixin;
-//					content: "\f0c9";
-//				}
 			}
 		}
+
 	}
-
-
 	.site_branding { // front-page
-//		margin-top: -11rem;
 		color: $body-bg;
 		background-color: transparent;
 		border-bottom: none;
 		box-shadow: none;
-//		transition: background-color .2s ease-in-out .2s, color .2s ease-in-out .2s, box-shadow .2s ease-in-out .2s, border .2s ease-in-out .2s;
 		transition: background-color .2s ease-in-out, color .2s ease-in-out, box-shadow .2s ease-in-out, border .2s ease-in-out;
 		#portal-logo {
 			display: none;
@@ -309,7 +302,6 @@ body.section-front-page {
 		&.site_branding_scrolled {
 			color: $body-color;
 			background-color: $body-bg;
-//			border-bottom: 1px solid $gray-light;
 			@include shadow-normal-bottom;
 			#portal-logo {
 				display: block;
@@ -321,8 +313,6 @@ body.section-front-page {
 				a {
 					color: $link-color;
 				}
-			}
-			.front_page {
 			}
 			.content_page {
 				opacity: 1;

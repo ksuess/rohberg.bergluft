@@ -12,6 +12,28 @@ $.fn.clicktoggle = function(a, b) {
     });
 };
 
+function setCookie(cname, cvalue, exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+    var expires = "expires="+d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+};
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            var returnvalue = c.substring(name.length, c.length);
+			return returnvalue;
+        }
+    }
+    return "";
+};
 
 $(document).ready(function(){
 	var sitebrandingheight = $("body > header").outerHeight();
@@ -23,6 +45,7 @@ $(document).ready(function(){
 	
 	// Anchors
 	// anchors.add(".tileHeadline");
+	
 	
 	// forms of package easyform
 	$("body.portaltype-easyform input[type='text'], body.portaltype-easyform textarea").addClass("form-control");
@@ -88,6 +111,27 @@ $(document).ready(function(){
 	});
 	
 	// end // scrolling
+	
+	
+	// show gigantic header image once and then hide for 7 days, if cookie can be set
+	// 1. No gigantic header if cookie cannot be set
+	// 2. Gigantic header if no cookie is found but can be set
+	var showGiganticHeader = getCookie("showGiganticHeader");
+	if (showGiganticHeader=="") {
+		setCookie("showGiganticHeader", "1", 7);		
+	};
+	showGiganticHeader = getCookie("showGiganticHeader");
+	if (showGiganticHeader=="1") {
+		// show gigantic header
+		// and set cookie to hide gigantic header for 7 days
+		setCookie("showGiganticHeader", "0", 7);
+	} else {
+		// hide gigantic header image by scrolling
+		$('html, body').animate({
+		      scrollTop:$("#action_header").offset().top
+		},'slow');
+	};	
+	
 	
 	// Front Page: on click on branding: scroll to content 
 	$(".front_page").click(function() {
