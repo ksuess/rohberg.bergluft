@@ -1,7 +1,10 @@
 <div tal:condition="view/show"
+	tal:define="dtitle string:${context/title}. ${context/@@plone_portal_state/portal_title};"
 	tal:attributes="data-url context/absolute_url;
-		data-title context/title;
-        data-services view/getDataServices" 
+		data-title dtitle;
+		data-mail-subject dtitle;
+        data-services view/getDataServices;
+        data-media-url string: ${context/absolute_url}/@@images/image/cardimage" 
 	class="shariff2" 
 	data-url="" data-title="" 
 	data-lang="en" data-theme="white" data-mail-url="mailto:"
