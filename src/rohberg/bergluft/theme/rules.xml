@@ -7,7 +7,7 @@
     <xi:include href="rules_backend.xml" />
 
     <!-- Only theme front end pages -->
-    <rules css:if-content="body.userrole-anonymous">		  
+    <rules css:if-content="body.userrole-anonymous">
     <!-- <rules css:if-content="#visual-portal-wrapper"> -->
 
 	  
