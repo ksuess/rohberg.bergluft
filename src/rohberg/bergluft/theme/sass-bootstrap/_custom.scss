@@ -51,6 +51,21 @@ $shadow-enabled: false;
 @mixin shadow-normal-bottom {
 	box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2);
 }
+
+@mixin newsImageContainer {
+    float: right;
+    margin: 0 0 .5rem 1rem;
+	@include media-breakpoint-down(sm) {
+		max-width: 40%;
+	}
+    border-radius: 3px;
+	@include shadow-light-allsides;
+    overflow: hidden;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
 // end utilities
 
 // overwrites and additons to bootstrap
@@ -409,9 +424,12 @@ article.tileItem {
 //			@include icon-mixin;
 //			content: "";
 //		};
-	.anchorjs-link {
-		display: none;
+		.anchorjs-link {
+			display: none;
+		}
 	}
+	.tileImage {
+		@include newsImageContainer;
 	}
 	.tileBody {
 	}
@@ -464,18 +482,7 @@ body.portaltype-easyform .easyformForm {
 }
 
 .newsImageContainer {
-    float: right;
-    margin: 0 0 .5rem 1rem;
-	@include media-breakpoint-down(sm) {
-		max-width: 40%;
-	}
-    border-radius: 3px;
-	//	@include shadow-light-allsides;
-    overflow: hidden;
-	img {
-		max-width: 100%;
-		height: auto;
-	}
+	@include newsImageContainer;
 	figcaption {
 		padding-left: .5rem;
 		font-size: 80%;

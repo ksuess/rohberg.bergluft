@@ -22,6 +22,23 @@
       <metal:entry fill-slot="entry">
 
         <article class="tileItem">
+
+
+	      <div class="tileImage"
+	             tal:condition="item_has_image"
+	             tal:attributes="class python: 'tileImage' if item_description else 'tileImageNoFloat'">
+	             <a tal:attributes="href item_link">
+	               <img tal:define="scales obj/@@images;
+	                                scale python:scales.scale('image', 'preview')"
+	                   tal:replace="structure python:scale and scale.tag() or None" />
+	             </a>
+			    <tal:comment replace="nothing">
+		            <a tal:attributes="href item_link">
+		              <img tal:replace="structure python:image_scale.tag(item, 'image', scale='thumb')" />
+		            </a>
+			    </tal:comment>
+	      </div>
+			
           <h2 class="tileHeadline" metal:define-macro="listitem"
 		  		tal:attributes="id item_id">
             <a class="summary url"
@@ -30,19 +47,13 @@
                 tal:content="item_title">
               Item Title
             </a>
+			<a class="icon-structure-search-plus free_post" 
+			tal:attributes="href item_link;"
+			href="#"></a>
           </h2>
 
           <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>
 
-          <div class="tileImage"
-               tal:condition="item_has_image"
-               tal:attributes="class python: 'tileImage' if item_description else 'tileImageNoFloat'">
-			    <tal:comment replace="nothing">
-		            <a tal:attributes="href item_link">
-		              <img tal:replace="structure python:image_scale.tag(item, 'image', scale='thumb')" />
-		            </a>
-			    </tal:comment>
-          </div>
 
           <div class="tileBody" tal:condition="item_description">
             <span class="description" tal:content="item_description">

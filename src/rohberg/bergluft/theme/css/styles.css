@@ -6337,6 +6337,20 @@ article.tileItem {
   margin-bottom: 3rem; }
   article.tileItem .tileHeadline .anchorjs-link {
     display: none; }
+  article.tileItem .tileImage {
+    float: right;
+    margin: 0 0 .5rem 1rem;
+    border-radius: 3px;
+    box-shadow: none;
+    border: 1px solid #aaa;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow: hidden; }
+    @media (max-width: 767px) {
+      article.tileItem .tileImage {
+        max-width: 40%; } }
+    article.tileItem .tileImage img {
+      max-width: 100%;
+      height: auto; }
   article.tileItem .tilePost {
     margin-top: 2rem; }
     article.tileItem .tilePost img {
@@ -6390,6 +6404,9 @@ body.portaltype-easyform .easyformForm {
   float: right;
   margin: 0 0 .5rem 1rem;
   border-radius: 3px;
+  box-shadow: none;
+  border: 1px solid #aaa;
+  border: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden; }
   @media (max-width: 767px) {
     .newsImageContainer {
