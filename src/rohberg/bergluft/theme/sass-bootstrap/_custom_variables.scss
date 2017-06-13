@@ -30,6 +30,20 @@ font-family: 'Amatic SC', cursive;
     -moz-osx-font-smoothing: grayscale;
 }
 
+@mixin icon-mixin-structure {
+    font-family: 'icomoon_structure' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 //// customizations balkon
 // grün
 //$link-color: #8DC82C; $link-hover-color: darken($link-color, 8%);// light green. lighten: #c5e68d darken: #61891e

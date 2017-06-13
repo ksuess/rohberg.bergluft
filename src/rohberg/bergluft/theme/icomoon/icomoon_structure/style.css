@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'icomoon_structure';
+  src:  url('fonts/icomoon_structure.eot?fx25d1');
+  src:  url('fonts/icomoon_structure.eot?fx25d1#iefix') format('embedded-opentype'),
+    url('fonts/icomoon_structure.ttf?fx25d1') format('truetype'),
+    url('fonts/icomoon_structure.woff?fx25d1') format('woff'),
+    url('fonts/icomoon_structure.svg?fx25d1#icomoon_structure') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-structure-"], [class*=" icon-structure-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon_structure' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-structure-plus:before {
+  content: "\f067";
+}
+.icon-structure-question:before {
+  content: "\f128";
+}
+.icon-structure-minus:before {
+  content: "\f068";
+}
+.icon-structure-envelope-o:before {
+  content: "\f003";
+}
+.icon-structure-heart:before {
+  content: "\f004";
+}
+.icon-structure-star:before {
+  content: "\f005";
+}
+.icon-structure-check:before {
+  content: "\f00c";
+}
+.icon-structure-close:before {
+  content: "\f00d";
+}
+.icon-structure-remove:before {
+  content: "\f00d";
+}
+.icon-structure-times:before {
+  content: "\f00d";
+}
+.icon-structure-search-plus:before {
+  content: "\f00e";
+}
+.icon-structure-search-minus:before {
+  content: "\f010";
+}
+.icon-structure-clock-o:before {
+  content: "\f017";
+}
+.icon-structure-tag:before {
+  content: "\f02b";
+}
+.icon-structure-tags:before {
+  content: "\f02c";
+}
+.icon-structure-bookmark:before {
+  content: "\f02e";
+}
+.icon-structure-calendar:before {
+  content: "\f073";
+}
+.icon-structure-shopping-cart:before {
+  content: "\f07a";
+}
+.icon-structure-square:before {
+  content: "\f0c8";
+}
+.icon-structure-circle:before {
+  content: "\f111";
+}
