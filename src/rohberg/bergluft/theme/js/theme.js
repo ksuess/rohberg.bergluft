@@ -116,21 +116,23 @@ $(document).ready(function(){
 	// show gigantic header image once and then hide for 7 days, if cookie can be set
 	// 1. No gigantic header if cookie cannot be set
 	// 2. Gigantic header if no cookie is found but can be set
-	var showGiganticHeader = getCookie("showGiganticHeader");
-	if (showGiganticHeader=="") {
-		setCookie("showGiganticHeader", "1", 7);		
-	};
-	showGiganticHeader = getCookie("showGiganticHeader");
-	if (showGiganticHeader=="1") {
-		// show gigantic header
-		// and set cookie to hide gigantic header for 7 days
-		setCookie("showGiganticHeader", "0", 7);
-	} else {
-		// hide gigantic header image by scrolling
-		$('html, body').animate({
-		      scrollTop:$("#action_header").offset().top
-		},'slow');
-	};	
+    if ($("body").hasClass("section-front-page")) {
+		var showGiganticHeader = getCookie("showGiganticHeader");
+		if (showGiganticHeader=="") {
+			setCookie("showGiganticHeader", "1", 7);		
+		};
+		showGiganticHeader = getCookie("showGiganticHeader");
+		if (showGiganticHeader=="1") {
+			// show gigantic header
+			// and set cookie to hide gigantic header for 7 days
+			setCookie("showGiganticHeader", "0", 7);
+		} else {
+			// hide gigantic header image by scrolling
+			$('html, body').animate({
+			      scrollTop:$("#action_header").offset().top
+			},'slow');
+		};
+	}
 	
 	
 	// Front Page: on click on branding: scroll to content 
