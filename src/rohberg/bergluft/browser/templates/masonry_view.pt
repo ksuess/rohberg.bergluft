@@ -42,6 +42,9 @@
 		                tal:content="item_title">
 		              Item Title
 		            </a>
+					<a class="icon-structure-search-plus free_post" 
+					tal:attributes="href item_link;"
+					href="#"></a>
 		          </h2>
 
 		          <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>

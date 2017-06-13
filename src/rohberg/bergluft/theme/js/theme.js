@@ -154,7 +154,7 @@ $(document).ready(function(){
 	// *
 	// Load content like sharing buttons?
 	var getViewletBelowContent = true; // ($("body").find(".shareable").length>0);
-	$(".tileFooter a, .tileHeadline a, .tileImage a").click(
+	$(".tileFooter a, .tileHeadline a.summary, .tileImage a").click(
 		function() {
 			var href_raw = $(this).attr("href");
 			var href = href_raw + " #parent-fieldname-text"; // only body and later viewlet-below-content
