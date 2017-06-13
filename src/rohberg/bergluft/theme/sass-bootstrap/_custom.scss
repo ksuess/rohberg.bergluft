@@ -156,7 +156,7 @@ p.callout {
     padding: 1em;
     border-left: 1em solid $link-color;
     clear: both;
-	border-radius: 4px;
+	border-radius: 3px;
 }
 code, pre {
     padding: 0.2rem 0.4rem;
@@ -625,7 +625,7 @@ body.portaltype-easyform .easyformForm {
 	p img { // .img-fluid
 		max-width: 100%;
 		height: auto;
-		border-radius: 4px;
+		border-radius: 3px;
 		@include shadow-light-allsides;
 	}
 	.card p img { // no shadow inside cards
@@ -875,7 +875,7 @@ body.portaltype-collection {
 		img {
 			max-width: 100%;
 			height: auto;
-			border-radius: 4px;
+			border-radius: 3px;
 			@include shadow-light-allsides;
 		}
 	}

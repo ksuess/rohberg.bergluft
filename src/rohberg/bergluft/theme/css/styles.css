@@ -6148,7 +6148,7 @@ p.callout {
   padding: 1em;
   border-left: 1em solid #8AB7D8;
   clear: both;
-  border-radius: 4px; }
+  border-radius: 3px; }
 
 code, pre {
   padding: 0.2rem 0.4rem;
@@ -6517,7 +6517,7 @@ body.portaltype-easyform .easyformForm {
 #content-core p img {
   max-width: 100%;
   height: auto;
-  border-radius: 4px;
+  border-radius: 3px;
   box-shadow: none;
   border: 1px solid #aaa;
   border: 1px solid rgba(0, 0, 0, 0.1); }
@@ -6767,7 +6767,7 @@ body.portaltype-collection #viewlet-below-content {
     #col2cont aside img {
       max-width: 100%;
       height: auto;
-      border-radius: 4px;
+      border-radius: 3px;
       box-shadow: none;
       border: 1px solid #aaa;
       border: 1px solid rgba(0, 0, 0, 0.1); }
