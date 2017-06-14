@@ -27,11 +27,11 @@ $body-color: $gray-dark;
 
 // utilities
 // ********************
-@mixin highlight {
-	background-color: rgba(109, 28, 233, 0.2);
+@mixin highlighted {
+	background-color: lighten($link-color, 10%);
 }
-.highlight {
-    @include highlight;
+.highlighted {
+    @include highlighted;
 }
 
 $shadow-enabled: false;
@@ -164,6 +164,9 @@ code, pre {
     color: #bd4147;
     background-color: #f7f7f9;
     border-radius: 0.25rem;
+	.highlighted {
+		@include highlighted;
+	}
 }
 // Images in body
 .image-left{float:left;margin:.2em 1em .5em 0}

@@ -6009,8 +6009,8 @@ $grid-breakpoints: (
   xl: 1200px
 )
 */
-.highlight {
-  background-color: rgba(109, 28, 233, 0.2); }
+.highlighted {
+  background-color: #b0cfe5; }
 
 .sticky-top {
   position: -webkit-sticky; }
@@ -6156,6 +6156,8 @@ code, pre {
   color: #bd4147;
   background-color: #f7f7f9;
   border-radius: 0.25rem; }
+  code .highlighted, pre .highlighted {
+    background-color: #b0cfe5; }
 
 .image-left {
   float: left;
