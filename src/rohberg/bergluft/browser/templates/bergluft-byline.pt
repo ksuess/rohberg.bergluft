@@ -3,7 +3,6 @@
 	        toLocalizedTime nocall: context/@@plone/toLocalizedTime;
 	        item_published python:toLocalizedTime(context.effective_date, long_format=0);"
 			>
-    <span tal:replace="python:view.toLocalizedTime(item_published,long_format=0)">
-      August 16, 2001 at 23:35:59
-    </span>
+    <!-- <span tal:replace="python:view.toLocalizedTime(item_published,long_format=0)"> -->
+    <span tal:replace="item_published">26.06.2017</span>
 </span>
