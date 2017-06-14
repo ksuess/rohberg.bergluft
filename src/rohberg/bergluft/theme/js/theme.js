@@ -206,9 +206,9 @@ $(document).ready(function(){
 									footer.slideDown();
 								};
 								// scroll up to make loaded content visible
-								var cb = article.find(".card-block");
-								cb = (cb.length==0) ? article : cb;
-								var toScrollTo = cb.offset().top - sitebrandingheight - 30;
+								// var cb = article.find(".card-block");
+								// cb = (cb.length==0) ? article : cb;
+								var toScrollTo = article.offset().top - sitebrandingheight - 30;
 								$('html, body').animate({
 									 scrollTop:toScrollTo
 								},'slow');

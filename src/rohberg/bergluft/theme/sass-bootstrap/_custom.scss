@@ -431,9 +431,7 @@ article.tileItem {
 			display: none;
 		}
 	}
-	.tileImage {
-		@include newsImageContainer;
-	}
+	.tileImage {}
 	.tileBody {
 	}
 	.tilePost {
@@ -444,6 +442,12 @@ article.tileItem {
 	}
 	.free_post {
 		font-size: 70%;
+	}
+}
+
+body.template-summary_view_plus {
+	.tileImage {
+		@include newsImageContainer;
 	}
 }
 
@@ -638,7 +642,7 @@ body.portaltype-easyform .easyformForm {
 nav#category {
 	display: flex;
 	hyphens: none;
-	margin-bottom: 1rem;
+//	margin-bottom: 1rem;
 	#categories-filed-under {
 		padding-right: 2rem;
 		display: none;
