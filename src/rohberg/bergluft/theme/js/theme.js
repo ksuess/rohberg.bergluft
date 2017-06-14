@@ -50,7 +50,7 @@ $(document).ready(function(){
 	// forms of package easyform
 	$("body.portaltype-easyform input[type='text'], body.portaltype-easyform textarea").addClass("form-control");
 	
-	// front-page: Click on blog post: add anchor and open blog with post
+	// front-page: Click on blog post title: open blog with enriched post (use blog url with anchor)
 	$("body.section-front-page a.tile").click(function() {
 		var href = $(this).attr("href");
 		var anchor = href.split("/");
@@ -142,7 +142,6 @@ $(document).ready(function(){
 		if (pos!=-1) {
 			href = href.substring(0,pos);
 		}
-		// window.location.assign(href + "#action_header");
 		$('html, body').animate({
 		      scrollTop:$("#action_header").offset().top
 		},'slow');
@@ -150,9 +149,8 @@ $(document).ready(function(){
 	});
 	
 	// *
-	// Load blog posts details
+	// Load blog posts details in view of collection or folder
 	// *
-	// Load content like sharing buttons?
 	var getViewletBelowContent = true; // ($("body").find(".shareable").length>0);
 	$(".tileFooter a, .tileHeadline a.summary, .tileImage a").click(
 		function() {
@@ -210,9 +208,7 @@ $(document).ready(function(){
 								// scroll up to make loaded content visible
 								var cb = article.find(".card-block");
 								cb = (cb.length==0) ? article : cb;
-								var toScrollTo = cb.offset().top - sitebrandingheight;
-								// console.log("show article"); console.log(cb.offset().top); console.log(sitebrandingheight);
-								// console.log(toScrollTo);	article.css("background-color", "rgb(239, 223, 243)");
+								var toScrollTo = cb.offset().top - sitebrandingheight - 30;
 								$('html, body').animate({
 									 scrollTop:toScrollTo
 								},'slow');
@@ -225,12 +221,10 @@ $(document).ready(function(){
 						// scroll up to make loaded content visible
 						var cb = article.find(".card-block");
 						cb = (cb.length==0) ? article : cb;
-						var toScrollTo = cb.offset().top - sitebrandingheight;
-						// console.log("show article"); console.log(cb.offset().top); console.log(sitebrandingheight);
-						// console.log(toScrollTo);	article.css("background-color", "rgb(239, 223, 243)");
+						var toScrollTo = cb.offset().top - sitebrandingheight - 30;
 						$('html, body').animate({
 							 scrollTop:toScrollTo
-						},'slow');		
+						},'slow');	
 					});		
 				};
 				return false;
@@ -257,22 +251,12 @@ $(document).ready(function(){
 			if (link.length>0) {
 				link[0].click();
 			};
-		  	$('html, body').animate({
-		      scrollTop:anchor_jq.offset().top - sitebrandingheight
-		  	},'fast');
 		}
 
 	};
 	
 	
-	// // Social Media Sharing Buttons in Blog
-	// $(".section-blog .tileFooter a").each(function() {
-	// 	var href = $(this).attr("href");
-	// 	var footer = $(this).parent();
-	// 	shariff = '<div class="shariff2" data-url="' + href + '" data-lang="en" data-theme="white" data-services="[&quot;facebook&quot;,&quot;twitter&quot;,&quot;googleplus&quot;,&quot;linkedin&quot;,&quot;mail&quot;,&quot;info&quot;]"></div>'
-	// 	footer.before(shariff);
-	// });
-	// initialize .shariff elements
+	// Social Media Sharing Buttons in Blog
 	$('.shariff2').each(function() {
 	    if (!this.hasOwnProperty('shariff')) {
 	        this.shariff = new Shariff(this);
