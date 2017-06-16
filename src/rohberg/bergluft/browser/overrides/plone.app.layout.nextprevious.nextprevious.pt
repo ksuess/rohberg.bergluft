@@ -16,6 +16,11 @@
 
       <ul>
 
+        <li class="up">
+          <a 
+             tal:attributes="href context/aq_parent/absolute_url"></a>
+        </li>
+
         <li class="previous" tal:condition="previous">
           <a 
              tal:attributes="href previous/url">

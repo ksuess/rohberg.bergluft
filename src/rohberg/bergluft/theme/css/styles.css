@@ -6230,8 +6230,7 @@ code, pre {
 #global_navi {
   background-color: transparent;
   padding: 0;
-  min-width: 12rem;
-  height: 2em; }
+  min-width: 12rem; }
   #global_navi .navbar-toggler {
     border: none;
     padding: 0; }
@@ -6296,6 +6295,9 @@ body.section-front-page .content_head {
       display: inline; }
       #languageselector ul li.currentLanguage a {
         color: #5194c5; }
+
+#viewlet-below-content {
+  clear: both; }
 
 #viewlet-below-content-title {
   display: none;
@@ -6368,43 +6370,48 @@ body.section-blog #viewlet-below-content-title,
 body.subsection-blog #viewlet-below-content-title {
   display: block; }
 
-body.portaltype-easyform .easyformForm {
-  max-width: 30rem; }
-  body.portaltype-easyform .easyformForm .field {
-    margin-top: 1rem; }
-    body.portaltype-easyform .easyformForm .field input[type="text"],
-    body.portaltype-easyform .easyformForm .field textarea {
-      width: 100%; }
-  body.portaltype-easyform .easyformForm div.formControls {
-    margin-top: 1rem;
-    text-align: end; }
-    body.portaltype-easyform .easyformForm div.formControls .button-field {
+body.portaltype-easyform .easyformForm .field {
+  max-width: 30rem;
+  margin-top: 1rem; }
+  body.portaltype-easyform .easyformForm .field input[type="text"],
+  body.portaltype-easyform .easyformForm .field textarea {
+    width: 100%; }
+  body.portaltype-easyform .easyformForm .field .formHelp {
+    display: block; }
+
+body.portaltype-easyform .easyformForm div.formControls {
+  max-width: 30rem;
+  margin-top: 1rem;
+  text-align: end; }
+  body.portaltype-easyform .easyformForm div.formControls .button-field {
+    color: #fff;
+    background-color: #8AB7D8;
+    border-color: transparent;
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    border-radius: 0.2rem; }
+    body.portaltype-easyform .easyformForm div.formControls .button-field:hover {
       color: #fff;
+      background-color: #649fcb;
+      border-color: transparent; }
+    body.portaltype-easyform .easyformForm div.formControls .button-field:focus, body.portaltype-easyform .easyformForm div.formControls .button-field.focus {
+      box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5); }
+    body.portaltype-easyform .easyformForm div.formControls .button-field.disabled, body.portaltype-easyform .easyformForm div.formControls .button-field:disabled {
       background-color: #8AB7D8;
-      border-color: transparent;
-      padding: 0.25rem 0.5rem;
-      font-size: 0.875rem;
-      border-radius: 0.2rem; }
-      body.portaltype-easyform .easyformForm div.formControls .button-field:hover {
-        color: #fff;
-        background-color: #649fcb;
-        border-color: transparent; }
-      body.portaltype-easyform .easyformForm div.formControls .button-field:focus, body.portaltype-easyform .easyformForm div.formControls .button-field.focus {
-        box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.5); }
-      body.portaltype-easyform .easyformForm div.formControls .button-field.disabled, body.portaltype-easyform .easyformForm div.formControls .button-field:disabled {
-        background-color: #8AB7D8;
-        border-color: transparent; }
-      body.portaltype-easyform .easyformForm div.formControls .button-field:active, body.portaltype-easyform .easyformForm div.formControls .button-field.active,
-      .show > body.portaltype-easyform .easyformForm div.formControls .button-field.dropdown-toggle {
-        color: #fff;
-        background-color: #649fcb;
-        background-image: none;
-        border-color: transparent; }
-  body.portaltype-easyform .easyformForm .fieldErrorBox {
-    color: #c4183c;
-    font-size: .9rem; }
-  body.portaltype-easyform .easyformForm #formEpilogue {
-    margin-top: 1rem; }
+      border-color: transparent; }
+    body.portaltype-easyform .easyformForm div.formControls .button-field:active, body.portaltype-easyform .easyformForm div.formControls .button-field.active,
+    .show > body.portaltype-easyform .easyformForm div.formControls .button-field.dropdown-toggle {
+      color: #fff;
+      background-color: #649fcb;
+      background-image: none;
+      border-color: transparent; }
+
+body.portaltype-easyform .easyformForm .fieldErrorBox {
+  color: #c4183c;
+  font-size: .9rem; }
+
+body.portaltype-easyform .easyformForm #formEpilogue {
+  margin-top: 1rem; }
 
 .newsImageContainer {
   float: right;
@@ -6569,7 +6576,8 @@ nav#category {
         nav#category ul li a.link-category:hover {
           color: #fff;
           background-color: #5194c5;
-          border-color: transparent; }
+          border-color: transparent;
+          text-decoration: none; }
           nav#category ul li a.link-category:hover:hover {
             color: #fff;
             background-color: #397aaa;
@@ -6596,17 +6604,33 @@ nav#category {
     list-style-type: none;
     width: 100%; }
     .pagination ul li {
-      display: inline;
+      display: inline-block;
       padding-right: .5rem;
       white-space: nowrap; }
       .pagination ul li.previous {
-        float: left; }
+        float: left;
+        width: 45%; }
         .pagination ul li.previous a:before {
           content: "<  "; }
       .pagination ul li.next {
         float: right; }
         .pagination ul li.next a:after {
           content: "  >"; }
+      .pagination ul li.up {
+        width: 5%; }
+        .pagination ul li.up a:before {
+          font-family: 'icomoon' !important;
+          speak: none;
+          font-style: normal;
+          font-weight: normal;
+          font-variant: normal;
+          text-transform: none;
+          line-height: 1;
+          /* Better Font Rendering =========== */
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+          content: "\f106";
+          font-size: 150%; }
 
 .discussion,
 #commenting {

@@ -265,7 +265,6 @@ $height-header: 5.5rem;
 	background-color: transparent;
 	padding: 0;
 	min-width: 12rem;
-	height: 2em;
 	.navbar-toggler {
 		border: none;
 		padding: 0;
@@ -367,7 +366,9 @@ body.section-front-page {
 	}
 }
 
-
+#viewlet-below-content {
+	clear: both;
+}
 // byline etc
 #viewlet-below-content-title {
 	display: none;
@@ -465,16 +466,20 @@ body.subsection-blog {
 }
 
 body.portaltype-easyform .easyformForm {
-	max-width: 30rem;
 	.field {
+		max-width: 30rem;
 		margin-top: 1rem;
 		input[type="text"],
 		textarea {
 //			max-width: 30rem;
 			width: 100%;
+		}
+		.formHelp {
+			display: block;
 		}		
 	}
 	div.formControls { // buttons
+		max-width: 30rem;
 		margin-top: 1rem;
 		text-align: end;
 		.button-field {
@@ -662,6 +667,7 @@ nav#category {
 				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
 				&:hover {
 					@include button-variant($body-bg, $link-hover-color, transparent);
+					text-decoration: none;
 				}
 				&:before {
 					content: "#";
@@ -679,13 +685,13 @@ nav#category {
 		list-style-type: none;
 		width: 100%;
 		li {
-//			display: block;
-			display: inline;
+		    display: inline-block;
 			padding-right: .5rem;
 			white-space: nowrap;
 
 			&.previous {
 				float: left;
+				width: 45%;
 				a:before {
 					content: "<  ";
 				}
@@ -695,6 +701,14 @@ nav#category {
 				a:after {
 					content: "  >";			
 				}
+			}
+			&.up {	
+				width: 5%;
+				a:before {
+					@include icon-mixin;
+					content: "\f106";
+					font-size: 150%;
+				};
 			}
 		}
 	}
