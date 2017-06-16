@@ -70,7 +70,6 @@ $(document).ready(function(){
 		
 	function doWhenScrolledStartpage() {
 		var yPos = $(window).scrollTop();
-
 		if (Math.abs(lastYPos - yPos) > delta) {
 			// scrolled downwards for at least minPixelToShowNLbox
 			if (yPos > lastYPos && yPos > minScrollDistance) {
@@ -90,7 +89,7 @@ $(document).ready(function(){
 	function watchScrolling () {
 		// on scroll, let the interval function know the user has scrolled
 		$(window).scroll(function(event){
-		  didScroll = true;
+		  	didScroll = true;
 		});
 		// run hasScrolled() and reset didScroll status
 		setInterval(function() {
@@ -107,7 +106,13 @@ $(document).ready(function(){
 	
 	$(window).on('resize', function(){
 		// watchScrolling depends on window height. So we recalculate height
-		minScrollDistance = $(window).height();
+		minScrollDistance = $("body > header").offset().top;
+		var yPos = $(window).scrollTop();
+		if (yPos < minScrollDistance) {
+			$(".site_branding").removeClass("site_branding_scrolled");
+		} else {
+			$(".site_branding").addClass("site_branding_scrolled");			
+		}
 	});
 	
 	// end // scrolling
