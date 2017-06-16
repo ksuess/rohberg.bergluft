@@ -6354,10 +6354,12 @@ article.tileItem {
   article.tileItem .free_post {
     font-size: 70%; }
 
+body.template-summary_view .tileItem,
 body.template-summary_view_plus .tileItem {
   clear: both;
   overflow: auto; }
 
+body.template-summary_view .tileImage,
 body.template-summary_view_plus .tileImage {
   float: right;
   margin: 0 0 .5rem 1rem;
@@ -6367,8 +6369,10 @@ body.template-summary_view_plus .tileImage {
   border: 1px solid rgba(0, 0, 0, 0.1);
   overflow: hidden; }
   @media (max-width: 767px) {
+    body.template-summary_view .tileImage,
     body.template-summary_view_plus .tileImage {
       max-width: 40%; } }
+  body.template-summary_view .tileImage img,
   body.template-summary_view_plus .tileImage img {
     max-width: 100%;
     height: auto; }
