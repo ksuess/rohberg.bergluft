@@ -245,7 +245,7 @@ $(document).ready(function(){
 	if (anchor!=-1) {
 		anchor = href.substring(anchor);
 		var anchor_jq = $(anchor);
-		anchor_jq = (anchor_jq.length==0 && anchor=="#discussion") ? $("#commenting") : anchor_jq;
+		// anchor_jq = (anchor_jq.length==0 && anchor=="#discussion") ? $("#commenting") : anchor_jq;
 		if (anchor_jq.length>0) {
 			link = anchor_jq.filter(".tileHeadline").find("a");
 			if (link.length>0) {

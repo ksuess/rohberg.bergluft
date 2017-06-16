@@ -1,4 +1,4 @@
-<tal:block tal:define="userHasReplyPermission view/can_reply;
+<div  id="discussion" tal:define="userHasReplyPermission view/can_reply;
                        isDiscussionAllowed view/is_discussion_allowed;
                        isAnonymousDiscussionAllowed view/anonymous_discussion_allowed;
                        isEditCommentAllowed view/edit_comment_allowed;
@@ -15,8 +15,8 @@
            i18n:domain="plone">
            <tal:comment replace="nothing">
 			   changes: ksuess 12.05.2017 Author
-			   ksuess 15.05.2017 coments only if parent shareable
-			   id "discussion" to have an anchor to jump to
+			   ksuess 15.05.2017 comments only if parent shareable
+			   id "discussion" to have an anchor to jump to. removed to top level
            </tal:comment>
 
     <div class="reply"
@@ -30,7 +30,7 @@
         </form>
     </div>
 
-    <div id="discussion" class="discussion"
+    <div class="discussion"
          tal:attributes="class python: showCommenterImage and 'discussion showCommenterImage' or 'discussion';"
          tal:condition="has_replies">
         <tal:getreplies repeat="reply_dict replies">
@@ -208,4 +208,4 @@
         </fieldset>
     </div>
 
-</tal:block>
+</div>
