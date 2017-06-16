@@ -404,6 +404,11 @@ body.section-front-page {
 	}
 }
 #details {
+	article#content {
+		& > header {
+			margin-bottom: 2rem;
+		}
+	}
 	#viewlet-below-content-title {
 		display: none;
 	}
@@ -450,6 +455,10 @@ article.tileItem {
 }
 
 body.template-summary_view_plus {
+	.tileItem {
+		clear: both;
+		overflow: auto;
+	}
 	.tileImage {
 		@include newsImageContainer;
 	}

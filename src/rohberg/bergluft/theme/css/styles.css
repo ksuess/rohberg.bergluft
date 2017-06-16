@@ -6327,6 +6327,9 @@ body.section-front-page .content_head {
 #overview article#content #parent-fieldname-text {
   margin-bottom: 2rem; }
 
+#details article#content > header {
+  margin-bottom: 2rem; }
+
 #details #viewlet-below-content-title {
   display: none; }
 
@@ -6350,6 +6353,10 @@ article.tileItem {
       max-width: 100%; }
   article.tileItem .free_post {
     font-size: 70%; }
+
+body.template-summary_view_plus .tileItem {
+  clear: both;
+  overflow: auto; }
 
 body.template-summary_view_plus .tileImage {
   float: right;
