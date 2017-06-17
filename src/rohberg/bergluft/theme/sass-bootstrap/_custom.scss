@@ -118,6 +118,10 @@ input:focus, textarea:focus, select:focus {
 	border-color: $link-hover-color;
 }
 
+ul, ol, dl {
+	padding-left: 1rem;
+}
+
 .discreet {
     color: #777777;
     font-weight: 300;
@@ -170,7 +174,7 @@ code, pre {
 }
 // Images in body
 .image-left{float:left;margin:.2em 1em .5em 0}
-.image-right{float:right;margin:.5em}
+.image-right{float:right;margin: .5em 0 .5em .5em}
 .image-inline{float:none}
 
 .image-tile {float: right;}
@@ -252,7 +256,7 @@ $height-header: 5.5rem;
 		}
 		a {
 			color: lighten($link-color, 25%);
-			font-weight: bold;
+			font-weight: 500;
 		}
 	}
 	p {
@@ -395,6 +399,7 @@ body.section-front-page {
 	padding-bottom: 3rem;
 	padding-top: 2rem;
 }
+
 #overview {
 	article#content {
 		& > header,
@@ -553,7 +558,7 @@ body.portaltype-easyform .easyformForm {
 	}
 	.card-title {
 		&:before {
-			content: "_";
+//			content: "_";
 		}
 		a {
 			text-decoration: none;

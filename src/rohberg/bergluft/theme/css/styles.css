@@ -6111,6 +6111,9 @@ label {
 input:focus, textarea:focus, select:focus {
   border-color: #5194c5; }
 
+ul, ol, dl {
+  padding-left: 1rem; }
+
 .discreet {
   color: #777777;
   font-weight: 300; }
@@ -6165,7 +6168,7 @@ code, pre {
 
 .image-right {
   float: right;
-  margin: .5em; }
+  margin: .5em 0 .5em .5em; }
 
 .image-inline {
   float: none; }
@@ -6223,7 +6226,7 @@ code, pre {
       display: none; }
     .site_branding .site_branding_inner a {
       color: #eaf2f8;
-      font-weight: bold; }
+      font-weight: 500; }
   .site_branding p {
     margin: 0; }
 
@@ -6482,8 +6485,6 @@ body.portaltype-easyform .easyformForm #formEpilogue {
   .card .card-footer {
     background-color: transparent;
     border: none; }
-  .card .card-title:before {
-    content: "_"; }
   .card .card-title a {
     text-decoration: none; }
   .card .card-text .tile {
