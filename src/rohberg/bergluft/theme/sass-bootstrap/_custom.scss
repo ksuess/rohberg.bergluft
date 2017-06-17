@@ -802,6 +802,9 @@ nav#category {
 	.LSResult {
 		padding: .5rem 0 .5rem .5rem;
 		text-align: start;
+	    font-size: 80%;
+	    max-width: 15rem;
+	    float: right;
 	}
 	.LSShadow {
 		max-width: 20rem;
@@ -891,6 +894,9 @@ nav#category {
 			}
 		}
 	}
+}
+#livesearch0 li {
+	margin-bottom: 2rem;
 }
 
 body.portaltype-folder, 

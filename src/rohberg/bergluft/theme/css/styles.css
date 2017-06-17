@@ -6701,7 +6701,10 @@ nav#category {
     display: none; }
   #portal-searchbox .LSResult {
     padding: .5rem 0 .5rem .5rem;
-    text-align: start; }
+    text-align: start;
+    font-size: 80%;
+    max-width: 15rem;
+    float: right; }
   #portal-searchbox .LSShadow {
     max-width: 20rem;
     max-height: 50rem; }
@@ -6788,6 +6791,9 @@ nav#category {
     #searchform .searchResults li .categories,
     #livesearch0 .searchResults li .categories {
       font-size: 80%; }
+
+#livesearch0 li {
+  margin-bottom: 2rem; }
 
 body.portaltype-folder #viewlet-below-content,
 body.portaltype-collection #viewlet-below-content {
