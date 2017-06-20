@@ -190,8 +190,10 @@ $(document).ready(function() {
 							if (getViewletBelowContent) {
 								footer.load(href_raw + " .shariff2", function(response, status, xhr) {
 									if (status == "success") {
+										// $(this) is .tileFooter
 										$(this).find('.shariff2').each(function() {
-											if (true) {
+											// $(this) is .shariff2
+											if (!this.hasOwnProperty('shariff')) {
 												this.shariff = new Shariff(this);
 												$(this).addClass("shariff");
 												if (response.indexOf("commenting") !== -1) {
