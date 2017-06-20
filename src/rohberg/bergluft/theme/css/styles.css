@@ -6445,24 +6445,31 @@ body.portaltype-easyform .easyformForm #formEpilogue {
     padding-left: .5rem;
     font-size: 80%; }
 
-.shariff .orientation-horizontal {
+.shariff .orientation-horizontal,
+.shariff2 .orientation-horizontal {
   flex-wrap: nowrap; }
 
-.shariff .theme-white .shariff-button {
+.shariff .theme-white .shariff-button,
+.shariff2 .theme-white .shariff-button {
   border: none; }
-  .shariff .theme-white .shariff-button a {
+  .shariff .theme-white .shariff-button a,
+  .shariff2 .theme-white .shariff-button a {
     color: grey !important; }
 
-.shariff .orientation-horizontal li {
+.shariff .orientation-horizontal li,
+.shariff2 .orientation-horizontal li {
   min-width: 0;
   max-width: 3rem; }
-  .shariff .orientation-horizontal li .share_text {
+  .shariff .orientation-horizontal li .share_text,
+  .shariff2 .orientation-horizontal li .share_text {
     display: none; }
 
-.shariff a:hover {
+.shariff a:hover,
+.shariff2 a:hover {
   background-color: white !important; }
 
-.shariff .shariff-button.comments .fa-comments:before {
+.shariff .shariff-button.comments .fa-comments:before,
+.shariff2 .shariff-button.comments .fa-comments:before {
   font-family: 'icomoon' !important;
   speak: none;
   font-style: normal;
