@@ -618,13 +618,12 @@ body.portaltype-easyform .easyformForm {
 
 
 .card-columns {
-	@include media-breakpoint-only(sm) {
-		column-count: 2;
+	@include media-breakpoint-up(sm) {
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
 	}
-	@include media-breakpoint-only(md) {
-		column-count: 2;
-	}
-	@include media-breakpoint-only(lg) {
+	@include media-breakpoint-up(lg) {
         -webkit-column-count: 3;
         -moz-column-count: 3;
         column-count: 3;
@@ -644,6 +643,9 @@ body.portaltype-easyform .easyformForm {
 	}
 	nav#category {
 		display: block;
+	}
+	li {
+		z-index: 1000;
 	}
 }
 

@@ -6516,15 +6516,13 @@ body.portaltype-easyform .easyformForm #formEpilogue {
       .card-deck .card:not(:last-child) {
         margin-right: 15px; } }
 
-@media (min-width: 576px) and (max-width: 767px) {
+@media (min-width: 576px) {
   .card-columns {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
     column-count: 2; } }
 
-@media (min-width: 768px) and (max-width: 991px) {
-  .card-columns {
-    column-count: 2; } }
-
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) {
   .card-columns {
     -webkit-column-count: 3;
     -moz-column-count: 3;
@@ -6538,6 +6536,9 @@ body.portaltype-easyform .easyformForm #formEpilogue {
 
 .card-columns nav#category {
   display: block; }
+
+.card-columns li {
+  z-index: 1000; }
 
 #content-core p img {
   max-width: 100%;
