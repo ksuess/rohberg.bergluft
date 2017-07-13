@@ -3,7 +3,12 @@
    meta_type="Factory-based Type Information with dynamic views"
    i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
-  <property name="view_methods"  purge="False">
+  <property name="view_methods"  remove="false">
     <element value="masonry_view" />
+    <element value="summary_view_plus" />
   </property>
+  
+  <property
+     name="model_source" remove="false"></property>
+	
 </object>

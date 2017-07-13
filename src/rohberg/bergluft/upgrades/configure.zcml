@@ -3,49 +3,9 @@
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     xmlns:upgrade-step="http://namespaces.zope.org/ftw.upgrade"
     xmlns:zcml="http://namespaces.zope.org/zcml"
-    i18n_domain="plonetheme.onegov">
+    i18n_domain="rohberg.bergluft">
 
     <include package="ftw.upgrade" file="meta.zcml" />
 
-    <upgrade-step:importProfile
-        title="register css-file"
-        profile="rohberg.bergluft:default"
-        source="*"
-        destination="1001"
-        directory="1001"
-        />
-
-    <upgrade-step:importProfile
-        title="add Masonry collection view" 
-        profile="rohberg.bergluft:default"
-        source="*"
-        destination="1004"
-        directory="1004"
-        />
-		
-    <upgrade-step:importProfile
-        title="image scales, controlpanel" 
-        profile="rohberg.bergluft:default"
-        source="*"
-        destination="1005"
-        directory="1005"
-        />
-		
-    <upgrade-step:importProfile
-        title="add Summary collection view with date" 
-        profile="rohberg.bergluft:default"
-        source="*"
-        destination="1006"
-        directory="1006"
-        />
-		
-    <upgrade-step:importProfile
-        title="Folder: added field shareable" 
-		description="shareable means that sharing buttons for facebook, etc are shown. To be configured in control panel."
-        profile="rohberg.bergluft:default"
-        source="*"
-        destination="1010"
-        directory="1010"
-        />
 	  
 </configure>

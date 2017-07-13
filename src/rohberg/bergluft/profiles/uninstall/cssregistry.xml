@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<object name="portal_css">
+	
+	 <stylesheet 
+	    id="++theme++rohberg.bergluft/sass/styles.scss"
+	    remove="True"
+	    />
+	 <stylesheet
+	    id="++theme++rohberg.bergluft/css/styles.css" 
+	    remove="True"
+	    />
+
+</object>

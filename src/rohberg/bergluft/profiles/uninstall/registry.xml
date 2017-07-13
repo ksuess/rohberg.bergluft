@@ -3,15 +3,15 @@
 	
 	<!-- bergluft interfaces -->
 	<records interface="rohberg.bergluft.browser.controlpanel.IBergluftControlPanel"
-	         prefix="bergluft" />
+	         remove="true" />
 				
-	<records
+	<!-- <records
 			interface="Products.CMFPlone.interfaces.controlpanel.IImagingSchema"
 			prefix="plone">
-		<value key="allowed_sizes" purge="false">
+		<value key="allowed_sizes" remove="true">
 			<element>cardimage 550:550</element>
 		</value>
-	</records>
+	</records> -->
 	
   
 </registry>
