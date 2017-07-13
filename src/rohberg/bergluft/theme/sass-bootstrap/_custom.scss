@@ -127,6 +127,13 @@ ul, ol, dl {
     font-weight: 300;
 }
 
+::selection {
+  background-color: $selection-color; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  background-color: $selection-color; /* Gecko Browsers */
+}
+
 .portalMessage.error {
     color: $color-error;
     border: 1px solid $color-error;
@@ -255,7 +262,7 @@ $height-header: 5.5rem;
 //			transition: all 500ms;
 		}
 		a {
-			color: lighten($link-color, 25%);
+			color: $link-sitebranding-color;
 			font-weight: 500;
 		}
 	}

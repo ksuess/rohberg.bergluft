@@ -4,6 +4,8 @@ $font-family-base: 'Roboto', sans-serif;
 $headings-font-family: 'Noto Sans', sans-serif;
 $link-color: #8AB7D8; // blue. see Adobe Kuler "Bergluft" 
 $link-hover-color: darken($link-color, 15%);
+$link-sitebranding-color: lighten($link-color, 25%);
+$selection-color: lighten($link-color, 20%);
 //https://color.adobe.com/de/cloud/aHR0cHM6Ly9jYy1hcGktYXNzZXRzLmFkb2JlLmlv/library/c177376d-49e3-41e1-999a-9bef3f4fbf08/theme/6a06f5e9-1d02-4cde-9afa-6ff00b0805d2/
 $color-error: #c4183c;
 
@@ -49,8 +51,10 @@ font-family: 'Amatic SC', cursive;
 //$link-color: #8DC82C; $link-hover-color: darken($link-color, 8%);// light green. lighten: #c5e68d darken: #61891e
 //$headings-font-family: 'Amatica SC', 'Roboto', sans-serif;
 //$headings-font-weight: 700;
+//$selection-color: lighten($link-color, 40%);
 
 
-//// customizations blauberg
-//// rot
-//$link-color: #BC0102; $link-hover-color: darken($link-color, 8%);// light green. lighten: #c5e68d darken: #61891e
+// customizations blauberg
+// rot
+$link-color: #BC0102; $link-hover-color: darken($link-color, 8%); $link-sitebranding-color: $link-color;
+$selection-color: lighten($link-color, 40%);
