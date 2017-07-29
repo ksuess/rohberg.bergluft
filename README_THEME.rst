@@ -9,12 +9,12 @@ Startseite (Startseiten, wenn multilingual) muss den Kurznamen "front-page" habe
 
 The front-page logo is inverted for the light background. To prevent this go to Diazo parameter $invert and change to string:somethingdifferent. The inversion is done if and only if $invert=string:invert.
 
-Header Site Branding wird aus Footer-Portlets "Sitebranding 1" und "Sitebranding 2" gespeist:
+Header Site Branding is fed with two Footer-Portlets "Sitebranding 1" and "Sitebranding 2".
 
 Links with class "inline_link" are loaded inline to section "details".
 
-Element mit class "load-portlet-blog" wird mit Portlet "Blog"" gefüllt.
+Element with class "load-portlet-blog" is fed with Collection-Portlet "Blog"" gefüllt.
 
-Syndication: atom.xml aktivieren: http://www.example.com/atom.xml
+Syndication: activate atom.xml: http://www.example.com/atom.xml
 
-Footer wird aus Footer-Portlet "Footer 2" gespeist.
+Footer is fed with Footer-Portlet "Footer 2".

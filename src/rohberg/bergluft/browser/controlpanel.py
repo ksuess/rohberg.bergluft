@@ -9,19 +9,19 @@ from zope.interface import Interface
 
 class IBergluftControlPanel(Interface):
 
-     channels = schema.List(
-         title=u'Social Media Channels',
-         description=u'["facebook","twitter","googleplus","linkedin", "pinterest", "tumblr","mail","print","info"] See Shariff for more channels.',
-         default=[u'facebook', u'twitter', u'mail', u'info'],
-         missing_value=[u'facebook', u'twitter', u'mail', u'info'],
-         value_type=schema.TextLine(),
-         required=False
-     )
-     GTMCode = schema.TextLine(
+    channels = schema.List(
+        title=u'Social Media Channels',
+        description=u'["facebook","twitter","googleplus","linkedin", "pinterest", "tumblr","mail","print","info"] See Shariff for more channels.',
+        default=[u'facebook', u'twitter', u'mail', u'info'],
+        missing_value=[u'facebook', u'twitter', u'mail', u'info'],
+        value_type=schema.TextLine(),
+        required=False
+    )
+    GTMCode = schema.TextLine(
         title=u'GTMCode',
         description=u'Google Tag Manager Code',
         required=False,
-     )
+    )
 
 
 class BergluftControlPanelForm(RegistryEditForm):

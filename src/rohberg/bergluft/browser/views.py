@@ -17,7 +17,7 @@ def format_datetime_friendly_ago(date):
     if date == None:
         return ""
 
-    date = date.asdatetime() # zope DateTime -> python datetime
+    date = date.asdatetime()  # zope DateTime -> python datetime
 
     # How long ago the timestamp is
     # See timedelta doc http://docs.python.org/lib/datetime-timedelta.html
@@ -30,7 +30,7 @@ def format_datetime_friendly_ago(date):
 
     seconds = since.seconds + since.microseconds / 1E6 + since.days * 86400
 
-    days = math.floor(seconds / (3600*24))
+    days = math.floor(seconds / (3600 * 24))
 
     if days <= 0 and seconds <= 0:
         # Timezone confusion, is in future
@@ -44,8 +44,8 @@ def format_datetime_friendly_ago(date):
         # Week day format
         return date.strftime("%A %H:%M")
     else:
-        hours = math.floor(seconds/3600.0)
-        minutes = math.floor((seconds % 3600) /60)
+        hours = math.floor(seconds / 3600.0)
+        minutes = math.floor((seconds % 3600) / 60)
         if hours > 0:
             return "%d hours %d minutes ago" % (hours, minutes)
         else:
@@ -53,6 +53,7 @@ def format_datetime_friendly_ago(date):
                 return "%d minutes ago" % minutes
             else:
                 return "few seconds ago"
+
 
 class CollectionViewPlus(CollectionView):
     """ CollectionViewPlus

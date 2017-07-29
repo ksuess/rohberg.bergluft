@@ -2,6 +2,19 @@
 $ gulp watch
 */
 
+/*
+Zip
+Compress css with:
+		.pipe(sass({
+			errLogToConsole: true,
+			//outputStyle: 'compressed',
+			outputStyle: 'compact',
+			// outputStyle: 'nested',
+			// outputStyle: 'expanded',
+			precision: 10
+		}))
+*/
+
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var browserSync = require('browser-sync').create();

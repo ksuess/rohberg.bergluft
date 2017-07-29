@@ -19,7 +19,7 @@
 			   <source media="(min-height: 700px)" srcset="/media/header_1200.jpg"
 				   tal:attributes="srcset string:$navigation_root_url/media/header_1200.jpg">
 				   
-			   <img src="/media/header_768.jpg" alt="Sky" 
+			   <img src="/media/header_768.jpg" alt="Gigantic Header Image" 
 				   tal:attributes="src string:$navigation_root_url/media/header_768.jpg">
 			 </picture>
 	 	 </div>

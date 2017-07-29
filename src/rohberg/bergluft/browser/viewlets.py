@@ -8,6 +8,7 @@ from plone import api
 
 from Products.CMFCore.utils import getToolByName
 
+
 def format_datetime_friendly_ago(date):
     """ Format date & time using site specific settings.
 
@@ -16,7 +17,7 @@ def format_datetime_friendly_ago(date):
     if date == None:
         return ""
 
-    date = date.asdatetime() # zope DateTime -> python datetime
+    date = date.asdatetime()  # zope DateTime -> python datetime
 
     # How long ago the timestamp is
     # See timedelta doc http://docs.python.org/lib/datetime-timedelta.html
@@ -29,7 +30,7 @@ def format_datetime_friendly_ago(date):
 
     seconds = since.seconds + since.microseconds / 1E6 + since.days * 86400
 
-    days = math.floor(seconds / (3600*24))
+    days = math.floor(seconds / (3600 * 24))
 
     if days <= 0 and seconds <= 0:
         # Timezone confusion, is in future
@@ -43,8 +44,8 @@ def format_datetime_friendly_ago(date):
         # Week day format
         return date.strftime("%A %H:%M")
     else:
-        hours = math.floor(seconds/3600.0)
-        minutes = math.floor((seconds % 3600) /60)
+        hours = math.floor(seconds / 3600.0)
+        minutes = math.floor((seconds % 3600) / 60)
         if hours > 0:
             return "%d hours %d minutes ago" % (hours, minutes)
         else:
@@ -52,8 +53,8 @@ def format_datetime_friendly_ago(date):
                 return "%d minutes ago" % minutes
             else:
                 return "few seconds ago"
-                
-                
+
+
 class GiganticHeaderViewlet(base.ViewletBase):
     """ Header with gigantic image
     """
@@ -63,10 +64,10 @@ class GiganticHeaderViewlet(base.ViewletBase):
         return True
 
 
-
 class ShariffViewlet(base.ViewletBase):
     """ Social Media Sharing with Heise Shariff
     """
+
     def show(self):
         shareable = getattr(self.context.aq_parent, "shareable", False)
         return shareable
@@ -74,6 +75,7 @@ class ShariffViewlet(base.ViewletBase):
     def getDataServices(self):
         channels = api.portal.get_registry_record('bergluft.channels')
         return json.dumps(channels)
+
 
 class BergluftBylineViewlet(base.ViewletBase):
     """
@@ -85,15 +87,17 @@ class BergluftBylineViewlet(base.ViewletBase):
         util = getToolByName(self.context, 'translation_service')
         return util.ulocalized_time(time, long_format, time_only, self.context,
                                     domain='plonelocales')
-                                    # 
+        #
+
     def getPubDate(self):
         dt = self.context.effective_date or self.context.modification_date
         dt_friendly = format_datetime_friendly_ago(dt)
         return dt_friendly
 
+
 class GoogleTagManagerViewlet(base.ViewletBase):
     """ two snippets: header and body
-    
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -101,7 +105,7 @@ class GoogleTagManagerViewlet(base.ViewletBase):
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-schnupsi');</script>
     <!-- End Google Tag Manager -->
-    
+
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-schnupsi"
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -110,8 +114,7 @@ class GoogleTagManagerViewlet(base.ViewletBase):
 
     def show(self):
         return True
-        
+
     def GTMCode(self):
         gtmc = api.portal.get_registry_record('bergluft.GTMCode')
         return gtmc
-        
