@@ -963,6 +963,15 @@ body.portaltype-collection {
     color: rgba(0, 0, 0, 0.5);
 }
 
+// Kleine Smartphones
+@media (max-width: 520px) {
+    .site_branding_inner .content_page {
+        font-size: .9rem !important; 
+        & h1, & h2, & h3, & h4 {
+            font-size: 1.1rem !important;            
+        }
+    }
+}
 
 // DEBUG debug-class
 @mixin debug  {
