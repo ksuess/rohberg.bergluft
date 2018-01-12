@@ -44,7 +44,6 @@ setup(
         'z3c.jbot',
         'plone.app.theming',
         'plone.app.themingplugins',
-        'ftw.upgrade',
     ],
     extras_require={
         'test': [

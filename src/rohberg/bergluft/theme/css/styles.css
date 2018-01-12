@@ -6250,9 +6250,6 @@ code, pre {
   #global_navi div.navbar-collapse ul a {
     padding-right: 1rem; }
 
-body.section-front-page #global_navi {
-  display: none; }
-
 body.section-front-page #overview header {
   display: none; }
 
