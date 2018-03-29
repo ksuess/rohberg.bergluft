@@ -6379,7 +6379,7 @@ body.template-summary_view_plus .tileImage {
   @media (max-width: 767px) {
     body.template-summary_view .tileImage,
     body.template-summary_view_plus .tileImage {
-      max-width: 40%; } }
+      margin: 0 0 1.5rem 0; } }
   body.template-summary_view .tileImage img,
   body.template-summary_view_plus .tileImage img {
     max-width: 100%;
@@ -6442,7 +6442,7 @@ body.portaltype-easyform .easyformForm #formEpilogue {
   overflow: hidden; }
   @media (max-width: 767px) {
     .newsImageContainer {
-      max-width: 40%; } }
+      margin: 0 0 1.5rem 0; } }
   .newsImageContainer img {
     max-width: 100%;
     height: auto; }

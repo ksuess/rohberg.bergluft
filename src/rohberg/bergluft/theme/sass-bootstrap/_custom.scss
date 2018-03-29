@@ -56,7 +56,8 @@ $shadow-enabled: false;
     float: right;
     margin: 0 0 .5rem 1rem;
 	@include media-breakpoint-down(sm) {
-		max-width: 40%;
+		// max-width: 40%;
+        margin: 0 0 1.5rem 0;
 	}
     border-radius: 3px;
 	@include shadow-light-allsides;
