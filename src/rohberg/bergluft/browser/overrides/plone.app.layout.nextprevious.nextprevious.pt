@@ -1,3 +1,6 @@
+<tal:comment replace="nothing">
+  up link added
+</tal:comment>
 <div xmlns="http://www.w3.org/1999/xhtml"
      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
      xmlns:tal="http://xml.zope.org/namespaces/tal"
@@ -17,19 +20,19 @@
       <ul>
 
         <li class="up">
-          <a 
+          <a
              tal:attributes="href context/aq_parent/absolute_url"></a>
         </li>
 
         <li class="previous" tal:condition="previous">
-          <a 
+          <a
              tal:attributes="href previous/url">
 			 	<span tal:replace="previous/title" />
           </a>
         </li>
 
         <li class="next" tal:condition="next">
-          <a 
+          <a
              tal:attributes="href next/url">
 				  <span tal:replace="next/title" />
           </a>

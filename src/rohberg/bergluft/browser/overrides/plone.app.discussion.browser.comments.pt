@@ -14,9 +14,10 @@
            tal:condition="python:getattr(context.aq_parent, 'shareable', False) and (isDiscussionAllowed or has_replies)"
            i18n:domain="plone">
            <tal:comment replace="nothing">
-			   changes: ksuess 12.05.2017 Author
-			   ksuess 15.05.2017 comments only if parent shareable
-			   id "discussion" to have an anchor to jump to. removed to top level
+			          changes:
+                class commentAuthor added
+			          comments only if parent shareable
+			          id "discussion" to have an anchor to jump to. removed to top level
            </tal:comment>
 
     <div class="reply"
