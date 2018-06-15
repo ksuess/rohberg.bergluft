@@ -19,10 +19,10 @@
   "author": "ksuess",
   "license": "GPL",
   "devDependencies": {
-    "browser-sync": "~2.18.8",
-    "gulp": "~3.9.1",
-    "gulp-plumber": "~1.1.0",
-    "gulp-sass": "^3.2.1"
+    "browser-sync": "^2.24.4",
+    "gulp": "^3.9.1",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^4.0.1"
   },
   "dependencies": {
     "npm": "^5.8.0"
