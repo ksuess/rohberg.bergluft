@@ -36,6 +36,8 @@
 			  
   			  <after css:theme-children="head" css:content="#tagmanagerhead" />
   			  <before css:theme-children="body" css:content="#tagmanagerbody" />
+  			  <!-- analytics -->
+  			  <after css:theme-children="body" css:content="#portal-footer-wrapper script" />
 	    </rules>
 	
 	    <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
