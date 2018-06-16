@@ -3,7 +3,7 @@
 // Copy variables from `_variables.scss` to this file to override default values
 // without modifying source files.
 
-/* 
+/*
 // Grid breakpoints
 //
 // Define the minimum dimensions at which your layout will change,
@@ -38,7 +38,7 @@ $shadow-enabled: false;
 @mixin shadow-light-allsides {
 	@if $shadow-enabled {
 		border: none;
-		box-shadow: 0 0 .4rem 0 rgba(0, 0, 0, 0.1);		
+		box-shadow: 0 0 .4rem 0 rgba(0, 0, 0, 0.1);
 	} @else {
 		box-shadow: none;
 		border: 1px solid #aaa;
@@ -71,7 +71,7 @@ $shadow-enabled: false;
 
 // overwrites and additons to bootstrap
 .sticky-top {
-	position: -webkit-sticky; 
+	position: -webkit-sticky;
 }
 
 section {
@@ -205,7 +205,7 @@ code, pre {
 // *** Header
 .site_header { // gigantic header image
     background-color: $body-bg;
-	display: none;
+	  display: none;
 }
 .custom_header {
 //	height: 20vh;
@@ -227,7 +227,7 @@ code, pre {
 $height-header: 5.5rem;
 .site_branding {
 	font-family: $headings-font-family;
-	color: $body-bg;
+	color: $label-site-header;
 	background-color: transparent;
 	height: auto; //$height-header;
 	@include shadow-normal-bottom;
@@ -256,7 +256,7 @@ $height-header: 5.5rem;
 		.front_page {
 			display: none;
 		}
-		.front_page, 
+		.front_page,
 		.content_page {
 //			-webkit-transition: all 500s;
 //			-moz-transition: all 500s;
@@ -304,7 +304,7 @@ body.section-front-page {
 	}
 	.site_header {
 		display: block;
-		color: $body-bg;
+		color: $label-site-header;
 		.custom_header {
 			height: 100vh;
 			.front_page {
@@ -330,7 +330,7 @@ body.section-front-page {
 		}
 		.content_page {
 			opacity: 0;
-		}	
+		}
 		&.site_branding_scrolled {
 			color: $body-color;
 			background-color: $body-bg;
@@ -393,7 +393,7 @@ body.section-front-page {
 #details,
 #footer {
 	position: relative;
-	background-color: #fff;	
+	background-color: #fff;
 	.section_inner {
 		width: 1140px;
 		max-width: 100%;
@@ -499,7 +499,7 @@ body.portaltype-easyform .easyformForm {
 		}
 		.formHelp {
 			display: block;
-		}		
+		}
 	}
 	div.formControls { // buttons
 		max-width: 30rem;
@@ -687,7 +687,7 @@ nav#category {
 			display: inline-block;
 			padding-right: .2rem;
 			margin-bottom: .2rem;
-			a.link-category { 
+			a.link-category {
 				@include button-variant($body-bg, $link-color, transparent);
 				@include button-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-sm, $btn-border-radius-sm);
 				&:hover {
@@ -724,10 +724,10 @@ nav#category {
 			&.next {
 				float: right;
 				a:after {
-					content: "  >";			
+					content: "  >";
 				}
 			}
-			&.up {	
+			&.up {
 				width: 5%;
 				a:before {
 					@include icon-mixin;
@@ -740,7 +740,7 @@ nav#category {
 }
 
 
-.discussion, 
+.discussion,
 #commenting {
 	margin: 2rem 0;
 	border-top: 1px solid $gray-light;
@@ -748,7 +748,7 @@ nav#category {
 	font-size: 80%;
 	.documentByLine {
 		.commentAuthor {
-			font-weight: bold;	
+			font-weight: bold;
 		}
 		.commentDate {
 			font-weight: normal;
@@ -770,7 +770,7 @@ nav#category {
 		margin: 2rem 0 0 5rem;
 		border-top: 1px solid $gray-light;
 		padding-top: 1rem;
-		
+
 	}
 	.comment {
 		margin-top: .5rem;
@@ -845,7 +845,7 @@ nav#category {
 	}
 }
 
-#searchform, 
+#searchform,
 #livesearch0 {
 	.input-group {
 		margin-bottom: 1rem;
@@ -880,7 +880,7 @@ nav#category {
 				font-size: 115%;
 			}
 			.croppedDescription {
-				color: $body-color;				
+				color: $body-color;
 			}
 			.documentLocation, .link-location {
 				font-size: 80%;
@@ -909,13 +909,13 @@ nav#category {
 	margin-bottom: 1rem;
 }
 
-body.portaltype-folder, 
+body.portaltype-folder,
 body.portaltype-collection {
 //	.documentPublished,
 	#viewlet-below-content { // categories of collection and pagination to posts
 		display: none;
 	}
-} 
+}
 .shareable .documentPublished {
 		display: block;
 	}
@@ -967,9 +967,9 @@ body.portaltype-collection {
 // Kleine Smartphones
 @media (max-width: 520px) {
     .site_branding_inner .content_page {
-        font-size: .9rem !important; 
+        font-size: .9rem !important;
         & h1, & h2, & h3, & h4 {
-            font-size: 1.1rem !important;            
+            font-size: 1.1rem !important;
         }
     }
 }
