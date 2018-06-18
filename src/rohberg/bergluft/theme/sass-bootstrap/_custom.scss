@@ -164,9 +164,9 @@ pre {
 	white-space: pre-wrap;
 }
 p.callout {
-    background: lighten($link-color, 25%);
+    background: lighten($link-color, 45%);
     padding: 1em;
-    border-left: 1em solid $link-color;
+    border-left: 1em solid lighten($link-color, 35%);
     clear: both;
 	border-radius: 3px;
 }
