@@ -233,8 +233,6 @@ $height-header: 5.5rem;
 	@include shadow-normal-bottom;
 	.custom_header_media_inside {
 		overflow: hidden;
-		margin: -1rem;
-//		height: $height-header;
 		z-index: 0;
 		img {
 			width: 100vw;
@@ -244,10 +242,14 @@ $height-header: 5.5rem;
 		}
 	}
 	.site_branding_inner {
-		position: absolute;
-//		-webkit-transition: all 500s;
-//		-moz-transition: all 500s;
-//		transition: all 500ms;
+		background-image: url(../images/header_768.jpg);
+		background-size: cover;
+		// @include media-breakpoint-up(md) {
+		// 	background-image: url(../media/header_1200.jpg);
+		// }
+		// @include media-breakpoint-up(lg) {
+		// 	background-image: url(../media/header_2000.jpg);
+		// }
 		#portal-logo {
 			display: block;
 		  padding-right: 1rem;
@@ -325,7 +327,7 @@ body.section-front-page {
 			display: none;
 		}
 		.site_branding_inner {
-			position: relative;
+			background-image: none;
 		}
 		.content_page {
 			opacity: 0;

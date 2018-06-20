@@ -6220,14 +6220,14 @@ code, pre {
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2); }
   .site_branding .custom_header_media_inside {
     overflow: hidden;
-    margin: -1rem;
     z-index: 0; }
     .site_branding .custom_header_media_inside img {
       width: 100vw;
       height: 5.5rem;
       object-fit: cover; }
   .site_branding .site_branding_inner {
-    position: absolute; }
+    background-image: url(../images/header_768.jpg);
+    background-size: cover; }
     .site_branding .site_branding_inner #portal-logo {
       display: block;
       padding-right: 1rem; }
@@ -6274,7 +6274,7 @@ body.section-front-page .site_branding {
   body.section-front-page .site_branding #portal-logo {
     display: none; }
   body.section-front-page .site_branding .site_branding_inner {
-    position: relative; }
+    background-image: none; }
   body.section-front-page .site_branding .content_page {
     opacity: 0; }
   body.section-front-page .site_branding.site_branding_scrolled {
