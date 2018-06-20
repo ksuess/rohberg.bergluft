@@ -249,9 +249,8 @@ $height-header: 5.5rem;
 //		-moz-transition: all 500s;
 //		transition: all 500ms;
 		#portal-logo {
-			//		position: sticky;
-			//		position: -webkit-sticky;
-		padding-right: 1rem;
+			display: block;
+		  padding-right: 1rem;
 		}
 		.front_page {
 			display: none;
@@ -337,8 +336,8 @@ body.section-front-page {
 			@include shadow-normal-bottom;
 			#portal-logo {
 				display: block;
-				a.invert img {
-					filter: invert(100%);
+				img {
+					filter: invert(0%);
 				}
 			}
 			.site_branding_inner {

@@ -36,7 +36,3 @@ content: " [" attr(href) "] ";
 text-decoration: none;
 display: inline;
 }
-
-#portal-logo a img {
-		filter: invert(100%);
-}

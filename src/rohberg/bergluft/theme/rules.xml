@@ -10,10 +10,10 @@
     <rules css:if-content="body.userrole-anonymous">
     <!-- <rules css:if-content="#visual-portal-wrapper"> -->
 
-	  
+
 	    <theme href="index.html" />
 		<!-- <theme href="theme/cards.html" css:if-content=".card"/> -->
-	
+
 	    <rules css:if-content="#portal-top">
 		      <!-- Attributes -->
 		      <copy attributes="*" css:theme="html" css:content="html" />
@@ -31,39 +31,32 @@
 		      <!-- <after css:theme-children="head" css:content="head style" /> -->
 		      <!-- Script -->
 		      <!-- <after css:theme-children="head" css:content="head script" /> -->
-	  
+
 			  <after css:theme-children="head" css:content="head link[rel='canonical']" />
-			  
+
   			  <after css:theme-children="head" css:content="#tagmanagerhead" />
   			  <before css:theme-children="body" css:content="#tagmanagerbody" />
   			  <!-- analytics -->
   			  <after css:theme-children="body" css:content="#portal-footer-wrapper script" />
 	    </rules>
-	
+
 	    <!-- Copy over the id/class attributes on the body tag. This is important for per-section styling -->
 	    <copy attributes="*" css:content="body" css:theme="body" />
-	
-		<!-- header 
+
+		<!-- header
 		gigantic image-->
 		<replace css:theme-children=".custom_header_media_inside" css:content-children=".custom_header_media_inside"  />
-		
+
 		<!-- site branding -->
-		<replace css:theme-children=".front_page" css:content-children=".portlet-static-sitebranding-1 .portletContent"/>	
-		<replace css:theme-children=".site_branding .content_page" css:content-children=".portlet-static-sitebranding-2 .portletContent"/>	
-		
-		<!-- logo -->		
-		<replace css:content="*[id='portal-logo']"> <!-- invert logo only if $invert=="invert" -->
-		     <xsl:copy>
-				<xsl:attribute name="class"><xsl:value-of select="./@class" /> <xsl:value-of select="$invert"/></xsl:attribute>
-				<xsl:attribute name="title"><xsl:value-of select="./@title" /></xsl:attribute> <!-- preserves title -->
-				<xsl:attribute name="href"><xsl:value-of select="./@href" /></xsl:attribute> <!-- preserves href -->
-		        <xsl:apply-templates /> <!-- keeps children in place -->
-		     </xsl:copy>
-		</replace>
-	    <replace css:theme="#portal-logo a" css:content="#portal-logo" />
-		<drop attributes="id" css:content="#portal-logo" />		
-		<drop attributes="title" css:content="#portal-logo img" />
-	
+		<replace css:theme-children=".front_page" css:content-children=".portlet-static-sitebranding-1 .portletContent"/>
+		<replace css:theme-children=".site_branding .content_page" css:content-children=".portlet-static-sitebranding-2 .portletContent"/>
+
+		<!-- logo -->
+    <replace
+        css:content='#portal-logo'
+        css:theme="#logo"
+        />
+
 		<!--action_header (Feed, Navi, Language, Search) -->
 		<!-- <replace css:theme-children=".content_head" css:content=".documentFirstHeading, .documentDescription"/> -->
 		<drop attributes="title" css:content="#portal-languageselector a" />
@@ -87,9 +80,9 @@
 	            <xsl:apply-templates css:select="#content, #viewlet-below-content" />
 	      </div>
 	    </replace>
-		
+
 		<replace css:theme-children="#global_statusmessage" css:content-children="#global_statusmessage"/>
-		
+
 	    <!-- Right column -->
 	    <rules css:if-content="#portal-column-two">
 	      <replace css:theme="#column2-container">
@@ -100,10 +93,10 @@
 	        </div>
 	      </replace>
 	    </rules>
-		
+
 		<!-- folder view -->
 		<drop attributes="title" css:content=".tileHeadline a" />
-	
+
 		<replace css:content-children=".load-portlet-blog">
 		  <xsl:for-each select="//section[@class='portlet portletCollection portlet-collection-blog']/ul/li/a">
 		    <xsl:copy-of select="." />
@@ -111,10 +104,10 @@
 		  </xsl:for-each>
 		</replace>
 		<drop css:content="div.documentActions" />
-	
+
 		<!-- details -->
 		<replace css:theme-children="div.details_inner" />
-		
+
 		<!-- footer -->
 		<replace css:theme-children="div.footer_inner" css:content-children=".portlet-static-footer-2 section.portletContent"/>
 
