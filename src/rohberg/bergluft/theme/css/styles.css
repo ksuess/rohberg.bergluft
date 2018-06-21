@@ -6217,15 +6217,15 @@ code, pre {
   color: #3e1515;
   background-color: transparent;
   height: auto;
+  overflow: hidden;
   box-shadow: 0 10px 10px -10px rgba(0, 0, 0, 0.2); }
   .site_branding .custom_header_media_inside {
-    overflow: hidden;
     z-index: -1;
     position: absolute;
     top: 0; }
     .site_branding .custom_header_media_inside img {
       width: 100vw;
-      height: 5.5rem;
+      height: 10rem;
       object-fit: cover; }
   .site_branding .site_branding_inner #portal-logo {
     display: block;

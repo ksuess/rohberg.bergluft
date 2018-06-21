@@ -224,15 +224,15 @@ code, pre {
 
 // *
 // site branding
-$height-header: 5.5rem;
+$height-header: 10rem;
 .site_branding {
 	font-family: $headings-font-family;
 	color: $label-site-header;
 	background-color: transparent;
 	height: auto; //$height-header;
+	overflow: hidden;
 	@include shadow-normal-bottom;
 	.custom_header_media_inside {
-		overflow: hidden;
 		z-index: -1;
 		position: absolute;
 		top: 0;
@@ -240,7 +240,7 @@ $height-header: 5.5rem;
 			width: 100vw;
 			height: $height-header;
 			object-fit: cover;
-//			object-position: 0rem -12rem;
+			// object-position: 0rem -12rem;
 		}
 	}
 	.site_branding_inner {
