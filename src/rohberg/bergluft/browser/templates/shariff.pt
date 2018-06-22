@@ -4,7 +4,8 @@
 		data-title dtitle;
 		data-mail-subject dtitle;
     data-services view/getDataServices;
-    data-media-url string: ${context/absolute_url}/@@images/image/cardimage"
+    data-media-url string: ${context/absolute_url}/@@images/image/cardimage;
+		data-piep dtitle"
 	class="shariff2"
 	data-url="" data-title=""
 	data-lang="en" data-theme="white" data-mail-url="mailto:"
