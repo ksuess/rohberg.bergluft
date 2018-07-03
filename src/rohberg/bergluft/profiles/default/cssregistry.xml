@@ -8,13 +8,13 @@
      /> -->
 
  <!-- Add new stylesheets -->
- <stylesheet title="" authenticated="False" cacheable="True"
+ <!-- <stylesheet title="" authenticated="False" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="off"
     expression="request/HTTP_X_THEME_ENABLED | nothing"
     id="++theme++rohberg.bergluft/sass/styles.scss" media="" rel="stylesheet"
     rendering="link"
     applyPrefix="True"
-    />
+    /> -->
  <stylesheet title="" authenticated="False" cacheable="True"
     compression="safe" conditionalcomment="" cookable="True" enabled="off"
     expression="request/HTTP_X_THEME_ENABLED | nothing"
