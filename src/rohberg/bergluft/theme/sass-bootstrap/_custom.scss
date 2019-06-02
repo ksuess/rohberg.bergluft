@@ -255,7 +255,9 @@ $height-header: 10rem;
 		// }
 		#portal-logo {
 			display: block;
-		  padding-right: 1rem;
+		    padding-right: 1rem;
+            & img:hover {
+            }
 		}
 		.front_page {
 			display: none;

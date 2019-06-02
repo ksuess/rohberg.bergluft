@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 	// Tooltips
 	// $('[data-toggle="tooltip"]').tooltip();
-	$('a, img').not("#portal-logo a").not(".newsImage")
+	$('a, img').not(".newsImage")
 		.tooltip();
 
 	// Anchors
@@ -140,7 +140,7 @@ $(document).ready(function() {
 	}
 
 
-	// Front Page: on click on branding: scroll to content 
+	// Front Page: on click on branding: scroll to content
 	$(".front_page").click(function() {
 		var href = window.location.href;
 		pos = href.indexOf("#");
@@ -186,7 +186,7 @@ $(document).ready(function() {
 									tilePost.after($(this));
 								};
 							});
-							
+
 							if (getViewletBelowContent) {
 								footer.load(href_raw + " .shariff2", function(response, status, xhr) {
 									if (status == "success") {
@@ -248,7 +248,7 @@ $(document).ready(function() {
 	); // click
 
 
-	// if page called with anchor: on load of page: click link in anchor to open details 
+	// if page called with anchor: on load of page: click link in anchor to open details
 	var href = window.location.href;
 	var anchor = href.indexOf("#"); // TODO: window.location.hash
 	if (anchor != -1) {

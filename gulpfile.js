@@ -2,59 +2,65 @@
 $ gulp watch
 */
 
-/*
-Zip
-Compress css with:
-		.pipe(sass({
-			errLogToConsole: true,
-			//outputStyle: 'compressed',
-			outputStyle: 'compact',
-			// outputStyle: 'nested',
-			// outputStyle: 'expanded',
-			precision: 10
-		}))
-*/
-
-var gulp = require('gulp');
-var sass = require('gulp-sass');
-var browserSync = require('browser-sync').create();
-var plumber = require('gulp-plumber');
-
 var dir_watch = './src/rohberg/bergluft/theme';
 
-/* Compile scss-Files once with
-$ gulp sass-now */
-gulp.task('sass-now', function() {
-	gulp.src(dir_watch + '/sass/**/*.scss')
-    	.pipe(sass())
-        .pipe(gulp.dest(dir_watch + '/css'));
-});
+// ************ gulp 4.0
+
+// const { series } = require('gulp');
+// const { src, dest } = require('gulp');
+// const uglify = require('gulp-uglify');
+const autoprefixer = require("autoprefixer");
+const browsersync = require('browser-sync').create();
+const cssnano = require("cssnano");
+const gulp = require("gulp");
+const plumber = require('gulp-plumber');
+const postcss = require("gulp-postcss");
+const rename = require('gulp-rename');
+const sass = require("gulp-sass");
+
+// BrowserSync
+function browserSync(done) {
+  browsersync.init({
+      proxy: 'localhost:10580/rohberg'
+  });
+  done();
+}
+
+// BrowserSync Reload
+function browserSyncReload(done) {
+  browsersync.reload();
+  done();
+}
+
+function sassTask () {
+    return (
+        gulp
+            .src(dir_watch + '/sass/**/*.scss') // compile only scss in theme/sass
+            .pipe(plumber())
+            .pipe(sass())
+            .on("error", sass.logError)
+            .pipe(gulp.dest(dir_watch + '/css/'))
+
+            .pipe(rename({ suffix: ".min" }))
+            .pipe(postcss([autoprefixer(), cssnano()]))
+            .pipe(gulp.dest(dir_watch + '/css/'))
+            .pipe(browsersync.stream())
+    );
+}
+
+function watchFiles() {
+    return (
+        gulp
+            .watch(dir_watch + '/**/*.scss', gulp.series(sassTask, browserSyncReload)) //watch all scss in theme
+        );
+}
+
+const watch = gulp.series(browserSync, watchFiles);
+
+exports.sass = sassTask;
+exports.watch = watch;
+exports.default = watch;
 
 
-
-// gulp watch
-gulp.task('sass', function() {
-  return gulp.src(dir_watch + '/sass/**/*.scss') // Gets all files ending with .scss in ./theme/sass
-    .pipe(plumber())
-    .pipe(sass())
-    .pipe(gulp.dest(dir_watch + '/css'))
-    .pipe(browserSync.reload({
-      stream: true
-    }))
-});
-
-
-gulp.task('browserSync', function() {
-  browserSync.init({
-	proxy: 'localhost:10580/rohberg'
-  })
-})
-
-
-gulp.task('watch', ['browserSync', 'sass'], function (){
-	gulp.watch(dir_watch + '/sass-bootstrap/_custom*.scss', ['sass']);
-	// Reloads the browser whenever HTML or JS files change
-	gulp.watch(dir_watch + '/*.html', browserSync.reload); 
-	gulp.watch(dir_watch + '/js/**/*.js', browserSync.reload); 
-	gulp.watch(dir_watch + '/rules.xml', browserSync.reload); 
-});
+// TODO reload browser
+// gulp.series(jekyll, browserSyncReload)

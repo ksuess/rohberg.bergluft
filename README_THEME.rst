@@ -1,7 +1,7 @@
 Content ist maximal 1140px breit.
 
 Für den Header braucht es 3 Bilder in /media:
-Header_2000.jpg
+header_2000.jpg
 Header_1200.jpg
 Header_768.jpg
 

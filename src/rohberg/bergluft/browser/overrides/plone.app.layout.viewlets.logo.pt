@@ -1,0 +1,6 @@
+<a id="portal-logo"
+   tal:attributes="href view/navigation_root_url;">
+    <img src="logo.png" alt=""
+         tal:attributes="alt view/logo_title;
+                         src view/img_src" />
+</a>

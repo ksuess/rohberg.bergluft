@@ -1,6 +1,6 @@
 {
   "name": "rohberg.bergluft",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Plone Theme",
   "main": "gulpfile.js",
   "scripts": {
@@ -19,10 +19,14 @@
   "author": "ksuess",
   "license": "GPL",
   "devDependencies": {
-    "browser-sync": "^2.24.4",
-    "gulp": "^3.9.1",
-    "gulp-plumber": "^1.2.0",
-    "gulp-sass": "^4.0.1"
+    "browser-sync": "^2.26.5",
+    "gulp": "^4.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-rename": "1.4",
+    "gulp-sass": "^4.0.2",
+    "gulp-postcss": "^7",
+    "autoprefixer": "^9",
+    "cssnano": "^4"
   },
   "dependencies": {
     "npm": "^5.8.0"

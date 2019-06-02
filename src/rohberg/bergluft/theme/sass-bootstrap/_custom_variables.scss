@@ -64,3 +64,11 @@ font-family: 'Amatic SC', cursive;
 // $link-sitebranding-color: lighten($link-color, 15%);
 // $selection-color: lighten($link-color, 40%);
 // #portal-logo img { filter: invert(100%);}
+
+
+// // customizations rohberg
+// // orange
+$link-color: #FF7432; $link-hover-color: darken($link-color, 8%); $link-sitebranding-color: $link-color;
+$link-sitebranding-color: lighten($link-color, 15%);
+$selection-color: lighten($link-color, 40%);
+// #portal-logo img { filter: invert(100%);}
