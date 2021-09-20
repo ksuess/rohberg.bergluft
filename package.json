@@ -22,11 +22,11 @@
     "autoprefixer": "^9.8.6",
     "browser-sync": "^2.27.5",
     "cssnano": "^4.1.11",
-    "gulp": "^4.0.0",
+    "gulp": "^4.0.2",
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^7",
     "gulp-rename": "1.4",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.1.1"
   },
   "dependencies": {
     "npm": "^5.8.0"
